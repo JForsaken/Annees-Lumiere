@@ -8,6 +8,7 @@ The standalone React-Redux frontend platform for the Années-Lumière project.
 $ npm install
 $ npm start
 ```
+*Années-Lumière* will now be running at http://localhost:3001.
 
 ### I18n support
 
