@@ -1,16 +1,16 @@
 {
-  "name": "redux-react-router-async-example",
+  "name": "Annees-Lumiere",
   "version": "0.0.1",
   "description": "",
-  "homepage": "https://github.com/emmenko/redux-react-router-async-example",
-  "author": "Nicola Molinari <emmenko@gmail.com>",
+  "homepage": "https://github.com/JForsaken/Annees-Lumiere",
+  "author": "Justin D'Errico <justin.derrico1991@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/emmenko/redux-react-router-async-example.git"
+    "url": "https://github.com/JForsaken/Annees-Lumiere.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emmenko/redux-react-router-async-example/issues"
+    "url": "https://github.com/JForsaken/Annees-Lumiere/issues"
   },
   "scripts": {
     "build": "npm run clean && npm run lint && webpack",
