@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { defineMessages, FormattedMessage } from 'react-intl'
-import Explore from '../github/Explore'
-import * as githubActions from '../../actions/github'
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { defineMessages, FormattedMessage } from 'react-intl';
+import Explore from '../github/Explore';
+import * as githubActions from '../../actions/github';
 
 const messages = defineMessages({
   subtitle: {

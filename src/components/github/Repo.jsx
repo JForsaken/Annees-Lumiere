@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
-import { fetchOnUpdate } from '../../decorators'
-import StargazersUser from './StargazersUser'
-import Pagination from './Pagination'
+import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
+import { fetchOnUpdate } from '../../decorators';
+import StargazersUser from './StargazersUser';
+import Pagination from './Pagination';
 
 class Repo extends React.Component {
 

@@ -1,6 +1,6 @@
-import React from 'react'
-import { defineMessages, FormattedMessage } from 'react-intl'
-import { secure } from '../../decorators'
+import React from 'react';
+import { defineMessages, FormattedMessage } from 'react-intl';
+import { secure } from '../../decorators';
 
 const messages = defineMessages({
   info: {

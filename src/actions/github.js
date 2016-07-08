@@ -1,15 +1,15 @@
-import 'whatwg-fetch'
-import parseLinkHeader from 'parse-link-header'
-import handleActionError from '../utils/handle-action-error'
-import processResponse from '../utils/process-response'
+import 'whatwg-fetch';
+import parseLinkHeader from 'parse-link-header';
+import handleActionError from '../utils/handle-action-error';
+import processResponse from '../utils/process-response';
 import {
   FETCH_USER,
   FETCH_REPO,
   FETCH_USER_STARGAZERS,
-  FETCH_REPO_STARGAZERS
-} from '../constants'
+  FETCH_REPO_STARGAZERS,
+} from '../constants';
 
-const GITHUB_API = 'https://api.github.com'
+const GITHUB_API = 'https://api.github.com';
 
 export function fetchUser (options) {
   const { username } = options
@@ -24,7 +24,6 @@ export function fetchUser (options) {
     .catch(error => handleActionError(dispatch, error, FETCH_USER))
   }
 }
-
 export function fetchUserStargazers (options) {
   const { page, username } = options
   const url = page ? page :

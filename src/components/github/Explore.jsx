@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react'
-import { findDOMNode } from 'react-dom'
-import shallowEqual from 'react-redux/lib/utils/shallowEqual'
-import { defineMessages, FormattedMessage } from 'react-intl'
+import React, { PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
+import shallowEqual from 'react-redux/lib/utils/shallowEqual';
+import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
   legend: {

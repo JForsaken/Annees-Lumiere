@@ -1,16 +1,16 @@
 /* global __DEVTOOLS__ */
-import '../assets/stylesheets/index.css'
+import '../assets/stylesheets/index.css';
 
-import React, { PropTypes } from 'react'
-import { Redirect, Route } from 'react-router'
-import { ReduxRouter } from 'redux-router'
-import { connect } from 'react-redux'
-import { IntlProvider } from 'react-intl'
-import configureStore from './utils/configure-store'
-import * as storage from './persistence/storage'
-import * as components from './components'
-import * as constants from './constants'
-import * as i18n from './i18n'
+import React, { PropTypes } from 'react';
+import { Redirect, Route } from 'react-router';
+import { ReduxRouter } from 'redux-router';
+import { connect } from 'react-redux';
+import { IntlProvider } from 'react-intl';
+import configureStore from './utils/configure-store';
+import * as storage from './persistence/storage';
+import * as components from './components';
+import * as constants from './constants';
+import * as i18n from './i18n';
 
 
 const {
@@ -23,18 +23,19 @@ const {
   GithubUser,
   Home,
   Login,
-  SuperSecretArea
-} = components
+  SuperSecretArea,
+  Reservation,
+} = components;
 
 const initialState = {
   application: {
     token: storage.get('token'),
     locale: storage.get('locale') || 'en',
-    user: { permissions: [/*'manage_account'*/] }
+    user: { permissions: [/*'manage_account'*/] },
   }
 }
 
-export const store = configureStore(initialState)
+export const store = configureStore(initialState);
 
 function getRootChildren (props) {
   const intlData = {
@@ -48,10 +49,10 @@ function getRootChildren (props) {
   ]
 
   if (__DEVTOOLS__) {
-    const DevTools = require('./components/DevTools').default
-    rootChildren.push(<DevTools key="devtools" />)
+    const DevTools = require('./components/DevTools').default;
+    rootChildren.push(<DevTools key="devtools" />);
   }
-  return rootChildren
+  return rootChildren;
 }
 
 function renderRoutes () {
@@ -71,6 +72,7 @@ function renderRoutes () {
         </Route>
         <Route path="login" component={Login} />
         <Route path="logout" onEnter={logout} />
+        <Route path="reservation" component={Reservation} />
       </Route>
     </ReduxRouter>
   )
@@ -102,4 +104,4 @@ class Root extends React.Component {
   }
 }
 
-export default connect(({ application }) => ({ application }))(Root)
+export default connect(({ application }) => ({ application }))(Root);

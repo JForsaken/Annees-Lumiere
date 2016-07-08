@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router'
-import { defineMessages, FormattedMessage } from 'react-intl'
+import React from 'react';
+import { Link } from 'react-router';
+import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
   aboutThanks: {

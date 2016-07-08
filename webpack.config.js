@@ -14,6 +14,9 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     publicPath: '/assets/'
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),

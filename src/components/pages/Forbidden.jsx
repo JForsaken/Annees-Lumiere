@@ -1,5 +1,5 @@
-import React from 'react'
-import { defineMessages, FormattedMessage } from 'react-intl'
+import React from 'react';
+import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
   forbidden: {

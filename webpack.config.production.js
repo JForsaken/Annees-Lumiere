@@ -12,6 +12,9 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     publicPath: ''
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),

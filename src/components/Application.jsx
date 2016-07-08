@@ -1,33 +1,37 @@
-import React, { PropTypes } from 'react'
-import classnames from 'classnames'
-import Menu from './Menu'
-import Footer from './Footer'
-import DisplayError from './DisplayError'
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import classnames from 'classnames';
+import Menu from './Menu';
+import Footer from './Footer';
+import DisplayError from './DisplayError';
+
+import { fetchOnUpdate } from '../decorators';
+import { fetchLanguages } from '../actions/languages';
 
 export default class Application extends React.Component {
 
   static propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
   };
 
   constructor (props, context) {
-    super(props, context)
+    super(props, context);
 
-    this.handleMenuClick = this.handleMenuClick.bind(this)
+    this.handleMenuClick = this.handleMenuClick.bind(this);
 
     this.state = {
-      isMenuActive: false
+      isMenuActive: false,
     }
   }
 
   handleMenuClick (evt) {
-    evt.preventDefault()
-    this.setState({ isMenuActive: !this.state.isMenuActive })
+    evt.preventDefault(),
+    this.setState({ isMenuActive: !this.state.isMenuActive });
   }
 
   render () {
-    const { isMenuActive } = this.state
-    const activeClass = isMenuActive ? 'active' : ''
+    const { isMenuActive } = this.state;
+    const activeClass = isMenuActive ? 'active' : '';
 
     return (
       <div id="layout" className={activeClass}>
@@ -47,6 +51,6 @@ export default class Application extends React.Component {
 
         <Footer />
       </div>
-    )
+    );
   }
-}
+};

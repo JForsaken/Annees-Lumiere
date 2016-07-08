@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react'
-import * as actions from '../../actions/application'
+import React, { PropTypes } from 'react';
+import * as actions from '../../actions/application';
 
 export default class Login extends React.Component {
 

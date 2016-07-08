@@ -7,7 +7,8 @@ import MenuListItem from './MenuListItem'
 const GITHUB_REPO =
   'https://github.com/emmenko/redux-react-router-async-example'
 const menuItems = [
-  { text: 'Stargazers', link: '/stargazers/emmenko', icon: 'fa fa-star' },
+ // { text: 'Stargazers', link: '/stargazers/emmenko', icon: 'fa fa-star' },
+  { text: 'Reservation', link: '/reservation', icon: 'fa fa-user' },
   { text: 'Account', link: '/account', icon: 'fa fa-user' },
   { text: 'About', link: '/about', icon: 'fa fa-dot-circle-o' },
   { text: 'Fork Me', link: GITHUB_REPO, icon: 'fa fa-github', isExternal: true }
