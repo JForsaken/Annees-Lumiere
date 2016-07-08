@@ -3,6 +3,7 @@ import handleActionError from '../utils/handle-action-error';
 import processResponse from '../utils/process-response';
 import {
   POST_RESERVATION,
+  CLEAR_RESERVATION,
 } from '../constants';
 
 const SAMFISH_API = 'http://localhost:5000';
@@ -46,7 +47,18 @@ export function postReservation() {
       .then(() => dispatch({
         type: POST_RESERVATION,
         reservation: MOCK_REQUEST,
+        errors: false,
       }))
-      .catch(error => handleActionError(dispatch, error, POST_RESERVATION));
+      .catch(error => dispatch({
+        type: POST_RESERVATION,
+        reservation: MOCK_REQUEST,
+        errors: true,
+      }));
   }
+};
+
+export function clearReservation() {
+  return {
+    type: CLEAR_RESERVATION,
+  };
 };
