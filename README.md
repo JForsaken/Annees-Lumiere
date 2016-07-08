@@ -1,4 +1,4 @@
-# Années-Lumière React-Redux Frontend :stars:
+# Années-Lumière Frontend :stars:
 
 The standalone React-Redux frontend platform for the Années-Lumière project.
 
