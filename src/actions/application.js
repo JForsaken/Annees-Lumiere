@@ -1,24 +1,32 @@
-import * as constants from '../constants'
+import * as constants from '../constants';
 
-export function login (form, redirect) {
+export function login(form, redirect) {
   return dispatch => {
     // simulate request
     setTimeout(() => {
-      const token = Math.random().toString(36).substring(7)
+      const token = Math.random().toString(36).substring(7);
       dispatch({
         type: constants.LOGGED_IN,
-        payload: { token }
-      })
+        payload: {
+          token,
+          user: {
+            permissions: ['manage_account'],
+          },
+        },
+      });
+
       // Can be used to navigate to a new route
-      if (redirect) redirect()
-    }, 300)
-  }
+      if (redirect) {
+        redirect();
+      }
+    }, 300);
+  };
 }
 
-export function switchLocale (locale) {
-  return { type: constants.LOCALE_SWITCHED, payload: locale }
+export function switchLocale(locale) {
+  return { type: constants.LOCALE_SWITCHED, payload: locale };
 }
 
-export function hideError () {
-  return { type: constants.HIDE_ERROR }
+export function hideError() {
+  return { type: constants.HIDE_ERROR };
 }

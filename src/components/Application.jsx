@@ -1,43 +1,40 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 import classnames from 'classnames';
 import Menu from './Menu';
 import Footer from './Footer';
 import DisplayError from './DisplayError';
 
-import { fetchOnUpdate } from '../decorators';
-import { fetchLanguages } from '../actions/languages';
-
 export default class Application extends React.Component {
-
   static propTypes = {
     children: PropTypes.any,
   };
 
-  constructor (props, context) {
+  constructor(props, context) {
     super(props, context);
 
     this.handleMenuClick = this.handleMenuClick.bind(this);
 
     this.state = {
       isMenuActive: false,
-    }
+    };
   }
 
-  handleMenuClick (evt) {
-    evt.preventDefault(),
+  handleMenuClick(evt) {
+    evt.preventDefault();
     this.setState({ isMenuActive: !this.state.isMenuActive });
   }
 
-  render () {
+  render() {
     const { isMenuActive } = this.state;
     const activeClass = isMenuActive ? 'active' : '';
 
     return (
       <div id="layout" className={activeClass}>
-        <a href="#menu" id="menuLink"
+        <a
+          href="#menu" id="menuLink"
           className={classnames('menu-link', activeClass)}
-          onClick={this.handleMenuClick}>
+          onClick={this.handleMenuClick}
+        >
           <span></span>
         </a>
 
@@ -53,4 +50,4 @@ export default class Application extends React.Component {
       </div>
     );
   }
-};
+}

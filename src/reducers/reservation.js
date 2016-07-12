@@ -1,6 +1,5 @@
 import * as constants from '../constants';
 import createReducer from '../utils/create-reducer';
-import { omit } from 'lodash';
 
 const initialState = {
   info: {},
@@ -12,10 +11,10 @@ const actionHandlers = {
     info: action.reservation,
     errors: action.errors,
   }),
-  [constants.CLEAR_RESERVATION]: (state) => ({
+  [constants.CLEAR_RESERVATION]: () => ({
     info: {},
     errors: false,
   }),
-}
+};
 
-export default createReducer(initialState, actionHandlers)
+export default createReducer(initialState, actionHandlers);

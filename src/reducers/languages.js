@@ -7,6 +7,6 @@ const initialState = {
 
 const actionHandlers = {
   [constants.FETCH_LANGUAGES]: (state, action) => ({ languages: action.languages }),
-}
+};
 
-export default createReducer(initialState, actionHandlers)
+export default createReducer(initialState, actionHandlers);

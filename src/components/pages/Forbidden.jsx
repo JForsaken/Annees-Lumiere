@@ -4,17 +4,17 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 const messages = defineMessages({
   forbidden: {
     id: 'forbidden',
-    defaultMessage: 'Forbidden'
+    defaultMessage: 'Forbidden',
   },
   notAuthorized: {
     id: 'forbiddenReason',
     description: 'The user doesn\'t have permissions to access the page',
-    defaultMessage: 'You are not authorized to see the XXX page'
-  }
-})
+    defaultMessage: 'You are not authorized to see the XXX page',
+  },
+});
 
 export default class Forbidden extends React.Component {
-  render () {
+  render() {
     return (
       <div>
         <div className="header">
@@ -29,6 +29,6 @@ export default class Forbidden extends React.Component {
           </p>
         </div>
       </div>
-    )
+    );
   }
 }

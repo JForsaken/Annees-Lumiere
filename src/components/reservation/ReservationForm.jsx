@@ -19,7 +19,9 @@ class ReservationForm extends React.Component {
       <div className="static-modal">
         <Modal.Dialog>
           <Modal.Header>
-            <Modal.Title>Reservation {this.props.reservation.errors ? 'Failed' : 'Confirmed'}</Modal.Title>
+            <Modal.Title>
+              Reservation {this.props.reservation.errors ? 'Failed' : 'Confirmed'}
+            </Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
@@ -35,16 +37,21 @@ class ReservationForm extends React.Component {
     );
   }
 
-  render () {
+  render() {
     return (
       <div>
         <span>TEST</span>
-        <button className="pure-button" onClick={this.props.actions.postReservation}>Reserve</button>
+        <button
+          className="pure-button"
+          onClick={this.props.actions.postReservation}
+        >
+          Reserve
+        </button>
         {this.renderModal()}
       </div>
     );
   }
-};
+}
 
 export default fetchOnUpdate([], (params, actions) => {
   actions.fetchLanguages();

@@ -3,6 +3,7 @@ import '../assets/stylesheets/index.css';
 
 import React, { PropTypes } from 'react';
 import { Redirect, Route } from 'react-router';
+import DevTools from './components/DevTools';
 import { ReduxRouter } from 'redux-router';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
@@ -18,9 +19,6 @@ const {
   Account,
   AccountHome,
   Application,
-  GithubStargazers,
-  GithubRepo,
-  GithubUser,
   Home,
   Login,
   SuperSecretArea,
@@ -31,40 +29,33 @@ const initialState = {
   application: {
     token: storage.get('token'),
     locale: storage.get('locale') || 'en',
-    user: { permissions: [/*'manage_account'*/] },
-  }
-}
+    user: { permissions: [/* 'manage_account'*/] },
+  },
+};
 
 export const store = configureStore(initialState);
 
-function getRootChildren (props) {
-  const intlData = {
-    locale: props.application.locale,
-    messages: i18n[props.application.locale]
-  }
-  const rootChildren = [
-    <IntlProvider key="intl" {...intlData}>
-      {renderRoutes()}
-    </IntlProvider>
-  ]
-
-  if (__DEVTOOLS__) {
-    const DevTools = require('./components/DevTools').default;
-    rootChildren.push(<DevTools key="devtools" />);
-  }
-  return rootChildren;
+function logout(nextState, replaceState) {
+  store.dispatch({ type: constants.LOG_OUT });
+  replaceState({}, '/login');
 }
 
-function renderRoutes () {
+function requireAuth(nextState, replaceState) {
+  const state = store.getState();
+  const isLoggedIn = Boolean(state.application.token);
+  if (!isLoggedIn) {
+    replaceState({
+      nextPathname: nextState.location.pathname,
+    }, '/login');
+  }
+}
+
+function renderRoutes() {
   return (
     <ReduxRouter>
       <Route component={Application}>
         <Route path="/" component={Home} />
         <Redirect from="/account" to="/account/profile" />
-        <Route path="stargazers" component={GithubStargazers}>
-          <Route path=':username/:repo' component={GithubRepo} />
-          <Route path=':username' component={GithubUser} />
-        </Route>
         <Route path="about" component={About} />
         <Route path="account" component={Account} onEnter={requireAuth}>
           <Route path="profile" component={AccountHome} />
@@ -75,33 +66,36 @@ function renderRoutes () {
         <Route path="reservation" component={Reservation} />
       </Route>
     </ReduxRouter>
-  )
+  );
 }
 
-function requireAuth (nextState, replaceState) {
-  const state = store.getState()
-  const isLoggedIn = Boolean(state.application.token)
-  if (!isLoggedIn)
-    replaceState({
-      nextPathname: nextState.location.pathname
-    }, '/login')
-}
+function getRootChildren(props) {
+  const intlData = {
+    locale: props.application.locale,
+    messages: i18n[props.application.locale],
+  };
+  const rootChildren = [
+    <IntlProvider key="intl" {...intlData}>
+      {renderRoutes()}
+    </IntlProvider>,
+  ];
 
-function logout (nextState, replaceState) {
-  store.dispatch({ type: constants.LOG_OUT })
-  replaceState({}, '/login')
+  if (__DEVTOOLS__) {
+    rootChildren.push(<DevTools key="devtools" />);
+  }
+  return rootChildren;
 }
 
 class Root extends React.Component {
-  static propTypes = {
-    application: PropTypes.object.isRequired
-  };
-
-  render () {
+  render() {
     return (
       <div>{getRootChildren(this.props)}</div>
-    )
+    );
   }
 }
+
+Root.propTypes = {
+  application: PropTypes.object.isRequired,
+};
 
 export default connect(({ application }) => ({ application }))(Root);

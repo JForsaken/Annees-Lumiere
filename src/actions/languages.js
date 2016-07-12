@@ -8,7 +8,6 @@ import {
 const SAMFISH_API = 'http://localhost:5000';
 
 export function fetchLanguages() {
-
   return dispatch => {
     fetch(`${SAMFISH_API}/languages`)
       .then(processResponse)
@@ -17,6 +16,6 @@ export function fetchLanguages() {
         languages: res,
       }))
       .catch(error => handleActionError(dispatch, error, FETCH_LANGUAGES));
-  }
-};
+  };
+}
 

@@ -1,29 +1,19 @@
-import React from 'react'
-import { defineMessages, FormattedMessage } from 'react-intl'
-
-const messages = defineMessages({
-  builtWith: {
-    id: 'footer.builtWith',
-    description: 'Mention how the site is built with',
-    defaultMessage: 'This site is built with <3 using {link}'
-  }
-})
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 export default class Footer extends React.Component {
-
-  render () {
-    const link = (<a href="http://purecss.io/" target="_blank">PureCSS</a>)
+  render() {
     return (
       <div className="footer">
         <div className="pure-g">
           <div className="pure-u-1 u-sm-1-2">
-            <FormattedMessage {...messages.builtWith} values={{ link }} />
+            <FormattedMessage id="footer.title" />
           </div>
           <div className="pure-u-1 u-sm-1-2">
-            &copy; 2015
+            &copy; {new Date().getFullYear()}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

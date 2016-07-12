@@ -1,13 +1,26 @@
-export default function processResponse (response) {
-  let isOk = response.ok
+export default function processResponse(response) {
+  let isOk = response.ok;
 
   return response.text()
   .then(body => {
-    try { body = JSON.parse(body) }
-    catch (error) { if (isOk) isOk = false }
+    let bodyCopy = body;
+    try {
+      bodyCopy = JSON.parse(body);
+    } catch (error) {
+      if (isOk) {
+        isOk = false;
+      }
+    }
 
-    if (isOk) return body
+    if (isOk) {
+      return bodyCopy;
+    }
 
-    throw { ...body, statusCode: response.status }
-  })
+    const objectToThrow = {
+      ...bodyCopy,
+      statusCode: response.status,
+    };
+
+    throw objectToThrow;
+  });
 }

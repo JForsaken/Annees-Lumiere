@@ -10,18 +10,18 @@ const messages = defineMessages({
   subtitle: {
     id: 'reservations.subtitle',
     description: 'Subtitle of the page',
-    defaultMessage: 'Reservation section.'
-  }
+    defaultMessage: 'Reservation section.',
+  },
 });
 
 class Reservation extends React.Component {
 
   static propTypes = {
     children: PropTypes.any,
-    actions: PropTypes.object
+    actions: PropTypes.object,
   };
 
-  render () {
+  render() {
     return (
       <div>
         <div className="header">
@@ -36,12 +36,17 @@ class Reservation extends React.Component {
         {this.props.children &&
           React.cloneElement(this.props.children, { ...this.props })}
       </div>
-    )
+    );
   }
 }
 
 
 export default connect(
   ({ languages, reservation }) => ({ languages, reservation }),
-  dispatch => ({ actions: bindActionCreators({ ...languageActions, ...reservationActions }, dispatch) })
+  dispatch => ({
+    actions: bindActionCreators({
+      ...languageActions,
+      ...reservationActions,
+    }, dispatch),
+  })
 )(Reservation);

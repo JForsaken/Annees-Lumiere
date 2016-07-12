@@ -19,9 +19,9 @@
     "clean": "rimraf dist",
     "deploy": "npm run dist && gh-pages -d dist",
     "dist": "npm run clean && npm run lint && NODE_ENV=production webpack --config webpack.config.production.js",
-    "lint": "eslint src ; exit 0",
+    "lint": "eslint --ext .js --ext .jsx --fix src ; exit 0",
     "start": "npm run build && node server.js",
-    "start:devtools": "npm run build && DEVTOOLS=true node server.js",
+    "dev": "npm run build && DEVTOOLS=true node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -46,7 +46,7 @@
   "devDependencies": {
     "babel-cli": "^6.4.0",
     "babel-core": "^6.4.0",
-    "babel-eslint": "^5.0.0-beta6",
+    "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.1",
     "babel-plugin-react-intl": "^2.0.0",
     "babel-plugin-react-transform": "^2.0.0",
@@ -60,9 +60,9 @@
     "css-loader": "^0.23.1",
     "cssnext-loader": "^1.0.1",
     "eslint": "^2.9.0",
-    "eslint-config-airbnb": "^8.0.0",
-    "eslint-plugin-import": "^1.6.1",
-    "eslint-plugin-jsx-a11y": "^1.0.4",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.10.2",
+    "eslint-plugin-jsx-a11y": "^1.5.5",
     "eslint-plugin-react": "^5.0.1",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^1.0.1",
