@@ -40,7 +40,7 @@ export default class Application extends React.Component {
 
         <Menu activeClass={activeClass} />
 
-        <div id="main">
+        <div id="main" className="container">
           <DisplayError />
           {/* this will render the child routes */}
           {this.props.children}
