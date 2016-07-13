@@ -40,7 +40,7 @@ class Menu extends React.Component {
       <div className="header">
         <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
           <Link to="/" className="pure-menu-heading">
-            YOUR SITE
+            <FormattedMessage id="website.title" />
           </Link>
           <ul className="pure-menu-list">
             {
