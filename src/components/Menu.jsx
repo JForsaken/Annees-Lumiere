@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { bindActionCreators } from 'redux';
+import { Nav, Navbar, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router';
+import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 
 import * as applicationActions from '../actions/application';
@@ -15,9 +17,9 @@ const menuItems = [
 class Menu extends React.Component {
 
   static propTypes = {
+    actions: PropTypes.object,
     activeClass: PropTypes.string.isRequired,
     application: PropTypes.object.isRequired,
-    switchLocale: PropTypes.func.isRequired,
   };
 
   constructor(props, context) {
@@ -25,41 +27,59 @@ class Menu extends React.Component {
     this.handleSwitchLocale = this.handleSwitchLocale.bind(this);
   }
 
-  handleSwitchLocale() {
-    const { locale, locales } = this.props.application;
-    const nextLocale = locales.indexOf(locale) + 1 === locales.length ?
-                       locales[0] : locales[locales.indexOf(locale) + 1];
-
-    this.props.switchLocale(nextLocale);
+  handleSwitchLocale(lang) {
+    this.props.actions.switchLocale(lang);
   }
 
   render() {
-    const { application: { locale } } = this.props;
+    const { application: { locales } } = this.props;
 
     return (
-      <div className="header">
-        <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-          <Link to="/" className="pure-menu-heading">
-            <FormattedMessage id="website.title" />
-          </Link>
-          <ul className="pure-menu-list">
+      <Navbar inverse>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <Link to="/">
+              <FormattedMessage id="website.title" />
+            </Link>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav>
             {
               menuItems.map((item, i) =>
-                <MenuListItem {...item} className="pure-menu-link" key={i} />)
+                <MenuListItem {...item} key={i} />)
             }
-            <li className="pure-menu-item">
-              <a onClick={this.handleSwitchLocale} className="pure-menu-link">
-                <i className="fa fa-globe"></i> {locale.toUpperCase()}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+          </Nav>
+          <Nav pullRight>
+            <NavDropdown
+              id="language-switcher"
+              eventKey={menuItems.length}
+              title={<FormattedMessage id="language.switcher" />}
+            >
+              {
+                locales.map((lang, i) =>
+                  <MenuItem
+                    eventKey={lang}
+                    key={i}
+                    onSelect={this.handleSwitchLocale}
+                  >
+                    {lang.toUpperCase()}
+                  </MenuItem>)
+              }
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }
 
 export default connect(
   ({ application }) => ({ application }),
-  applicationActions
+  dispatch => ({
+    actions: bindActionCreators({
+      ...applicationActions,
+    }, dispatch),
+  })
 )(Menu);

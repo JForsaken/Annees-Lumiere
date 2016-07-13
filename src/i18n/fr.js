@@ -20,4 +20,5 @@ export default {
   'menu.account': 'Compte',
   'superSecretArea.info': 'Ceci est une zone super secrète.',
   'website.title': 'Années-Lumière',
+  'language.switcher': 'Langue',
 };

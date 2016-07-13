@@ -19,4 +19,5 @@ export default {
   'menu.account': 'Account',
   'superSecretArea.info': 'This is a super secret area.',
   'website.title': 'Années-Lumière',
+  'language.switcher': 'Language',
 };

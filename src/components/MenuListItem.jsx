@@ -7,7 +7,7 @@ export default class MenuListItem extends Component {
     icon: PropTypes.string.isRequired,
     isExternal: PropTypes.bool,
     link: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.any.isRequired,
   };
 
   renderLink() {
