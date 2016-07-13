@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Button, Input } from 'react-bootstrap';
 import * as actions from '../../actions/application';
 
 export default class Login extends React.Component {
@@ -53,19 +54,17 @@ export default class Login extends React.Component {
           >
             <fieldset>
               <div className="pure-control-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" defaultValue="foo@bar.com" />
+                <Input type="email" name="email" placeholder="Email" />
               </div>
               <div className="pure-control-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" defaultValue="secret" />
+                <Input type="password" name="password" placeholder="Password" />
               </div>
-              <button
+              <Button
                 type="submit"
                 className="pure-button pure-button-primary"
               >
                 Login
-              </button>
+              </Button>
             </fieldset>
           </form>
         </div>

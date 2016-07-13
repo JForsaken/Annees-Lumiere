@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Button } from 'react-bootstrap';
 import { fetchOnUpdate } from '../../decorators';
 import { isEmpty } from 'lodash';
 
@@ -6,12 +7,11 @@ class ReservationForm extends React.Component {
 
   static propTypes = {
     actions: PropTypes.object,
-    languages: PropTypes.object,
-    reservation: PropTypes.object,
+    samfish: PropTypes.object,
   };
 
   renderModal() {
-    const closed = isEmpty(this.props.reservation.info);
+    const closed = isEmpty(this.props.samfish.reservation.info);
 
     if (closed) { return null; }
     return (
@@ -24,13 +24,11 @@ class ReservationForm extends React.Component {
   render() {
     return (
       <div>
-        <span>TEST</span>
-        <button
-          className="pure-button"
+        <Button
           onClick={this.props.actions.postReservation}
         >
-          Reserve
-        </button>
+          Mocked Reservation
+        </Button>
         {this.renderModal()}
       </div>
     );

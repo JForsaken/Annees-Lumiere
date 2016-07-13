@@ -1,0 +1,16 @@
+/* custom properties */
+:root {
+  --colorWhite: #FFF;
+  --colorRed: #DD514C;
+}
+
+.error-message { margin-left: 45px; width: 100%; }
+.error-message > div {
+  padding: 20px; padding-right: 60px; color: var(--colorWhite);
+  width: 100%; position: relative; background-color: var(--colorRed);
+}
+.error-message p { margin: 0; }
+.error-message .close-button {
+  float: right; font-size: 21px; line-height: 1; border: 0;
+  background: none; color: var(--colorWhite); font-size: 1em;
+}

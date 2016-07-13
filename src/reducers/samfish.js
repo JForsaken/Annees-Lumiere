@@ -2,18 +2,26 @@ import * as constants from '../constants';
 import createReducer from '../utils/create-reducer';
 
 const initialState = {
-  info: {},
-  errors: false,
+  languages: [],
+  reservation: {
+    info: {},
+    errors: false,
+  },
 };
 
 const actionHandlers = {
+  [constants.FETCH_LANGUAGES]: (state, action) => ({ languages: action.languages }),
   [constants.POST_RESERVATION]: (state, action) => ({
-    info: action.reservation,
-    errors: action.errors,
+    reservation: {
+      info: action.reservation,
+      errors: action.errors,
+    },
   }),
   [constants.CLEAR_RESERVATION]: () => ({
-    info: {},
-    errors: false,
+    reservation: {
+      info: {},
+      errors: false,
+    },
   }),
 };
 

@@ -1,8 +1,9 @@
 import 'whatwg-fetch';
+import handleActionError from '../utils/handle-action-error';
 import processResponse from '../utils/process-response';
 import {
   POST_RESERVATION,
-  CLEAR_RESERVATION,
+  FETCH_LANGUAGES,
 } from '../constants';
 
 const SAMFISH_API = 'http://localhost:5000';
@@ -11,7 +12,7 @@ const MOCK_REQUEST = {
   firstname: 'Jésus',
   lastname: 'Christ',
   address: '123 Jerusalem',
-  emailAddress: 'bertrandjoanie@gmail.com',
+  emailAddress: 'justin.derrico1991@gmail.com',
   primaryPhoneNumber: '514-000-1234',
   profession: 'Messie',
   language: 'EN',
@@ -30,6 +31,18 @@ const MOCK_REQUEST = {
     },
   ],
 };
+
+export function fetchLanguages() {
+  return dispatch => {
+    fetch(`${SAMFISH_API}/languages`)
+      .then(processResponse)
+      .then(res => dispatch({
+        type: FETCH_LANGUAGES,
+        languages: res,
+      }))
+      .catch(error => handleActionError(dispatch, error, FETCH_LANGUAGES));
+  };
+}
 
 export function postReservation() {
   return dispatch => {
@@ -52,11 +65,5 @@ export function postReservation() {
         reservation: MOCK_REQUEST,
         errors: true,
       }));
-  };
-}
-
-export function clearReservation() {
-  return {
-    type: CLEAR_RESERVATION,
   };
 }
