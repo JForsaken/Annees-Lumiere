@@ -3,7 +3,11 @@ import createReducer from '../utils/create-reducer';
 
 const initialState = {
   token: null,
-  locale: 'en',
+  locale: 'fr',
+  locales: [
+    'fr',
+    'en',
+  ],
   user: {
     // TODO: have a checkbox to update the state
     // e.g.: on the login page and/or menu

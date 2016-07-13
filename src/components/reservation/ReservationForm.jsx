@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { Modal, Button } from 'react-bootstrap';
 import { fetchOnUpdate } from '../../decorators';
 import { isEmpty } from 'lodash';
 
@@ -17,22 +16,7 @@ class ReservationForm extends React.Component {
     if (closed) { return null; }
     return (
       <div className="static-modal">
-        <Modal.Dialog>
-          <Modal.Header>
-            <Modal.Title>
-              Reservation {this.props.reservation.errors ? 'Failed' : 'Confirmed'}
-            </Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>
-            {JSON.stringify(this.props.reservation.info)}
-          </Modal.Body>
-
-          <Modal.Footer>
-            <Button onClick={this.props.actions.clearReservation}>Close</Button>
-          </Modal.Footer>
-
-        </Modal.Dialog>
+        couille
       </div>
     );
   }

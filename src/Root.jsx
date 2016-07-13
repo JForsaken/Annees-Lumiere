@@ -13,7 +13,6 @@ import * as components from './components';
 import * as constants from './constants';
 import * as i18n from './i18n';
 
-
 const {
   About,
   Account,
@@ -28,7 +27,11 @@ const {
 const initialState = {
   application: {
     token: storage.get('token'),
-    locale: storage.get('locale') || 'en',
+    locale: storage.get('locale') || 'fr',
+    locales: [
+      'fr',
+      'en',
+    ],
     user: { permissions: [/* 'manage_account'*/] },
   },
 };

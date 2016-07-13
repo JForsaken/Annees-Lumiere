@@ -11,7 +11,7 @@ const MOCK_REQUEST = {
   firstname: 'Jésus',
   lastname: 'Christ',
   address: '123 Jerusalem',
-  emailAddress: 'justin.derrico1991@gmail.com',
+  emailAddress: 'bertrandjoanie@gmail.com',
   primaryPhoneNumber: '514-000-1234',
   profession: 'Messie',
   language: 'EN',

@@ -8,8 +8,8 @@ html { box-sizing: border-box; }
 /* External CSS */
 @import "purecss/build/pure-min.css";
 @import "purecss/build/grids-responsive-min.css";
-@import "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css";
-@import "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css";
+@import "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
+
 
 /* Global CSS */
-@import "page.css";
+@import "annees-lumiere.css";
