@@ -44,7 +44,14 @@ module.exports = {
         test: /\.(jpg|png|gif|svg)$/i,
         loader:'file-loader'
       },
-      { test: /\.(js|jsx)$/, loaders: ['babel'], include: path.join(__dirname, 'src') }
+      {
+        test: /\.(js|jsx)$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'src'),
+        query: {
+          plugins: ['transform-decorators-legacy']
+        },
+      }
     ]
   },
   cssnext: {

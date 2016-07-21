@@ -35,7 +35,7 @@ class Menu extends React.Component {
     const { application: { locales } } = this.props;
 
     return (
-      <Navbar inverse>
+      <Navbar inverse fixedTop>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">
