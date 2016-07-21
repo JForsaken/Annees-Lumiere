@@ -40,6 +40,10 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!cssnext-loader') },
+      {
+        test: /\.(jpg|png|gif|svg)$/i,
+        loader:'file-loader'
+      },
       { test: /\.(js|jsx)$/, loaders: ['babel'], include: path.join(__dirname, 'src') }
     ]
   },
