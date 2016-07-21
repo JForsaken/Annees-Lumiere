@@ -46,11 +46,8 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        loaders: ['babel'],
         include: path.join(__dirname, 'src'),
-        query: {
-          plugins: ['transform-decorators-legacy']
-        },
+        loaders: ['babel?presets[]=es2015,presets[]=stage-0,presets[]=react,plugins[]=transform-decorators-legacy']
       }
     ]
   },
