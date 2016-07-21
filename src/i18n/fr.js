@@ -20,5 +20,6 @@ export default {
   'menu.account': 'Compte',
   'superSecretArea.info': 'Ceci est une zone super secrète.',
   'website.title': 'Années-Lumière',
+  'website.subtitle': 'Garderie éducative',
   'language.switcher': 'Langue',
 };

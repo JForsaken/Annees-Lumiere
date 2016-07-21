@@ -12,14 +12,14 @@ export default class MenuListItem extends Component {
 
   renderLink() {
     let link = (
-      <Link to={this.props.link} className="pure-menu-link">
+      <Link to={this.props.link} >
         <i className={this.props.icon}></i> {this.props.text}
       </Link>
     );
 
     if (this.props.isExternal) {
       link = (
-        <a href={this.props.link} target="_blank" className="pure-menu-link">
+        <a href={this.props.link} target="_blank">
           <i className={this.props.icon}></i> {this.props.text}
         </a>
       );
@@ -30,7 +30,7 @@ export default class MenuListItem extends Component {
 
   render() {
     return (
-      <li className="pure-menu-item">
+      <li>
         {this.renderLink()}
       </li>
     );

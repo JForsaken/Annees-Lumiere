@@ -27,7 +27,6 @@ export default class Application extends React.Component {
   render() {
     const { isMenuActive } = this.state;
     const activeClass = isMenuActive ? 'active' : '';
-    debugger;
     return (
       <div id="layout" className={activeClass}>
         <a

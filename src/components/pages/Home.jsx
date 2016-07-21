@@ -1,13 +1,31 @@
-/* eslint-disable max-len*/
-import React from 'react';
+/* Node modules */
+import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import Radium from 'radium';
+
+/* Components */
 import Footer from '../Footer';
 import ParallaxSplash from '../ParallaxSplash';
 
-@Radium
-export default class Home extends React.Component {
 
+/* Styles */
+const style = {
+  content: {
+    position: 'absolute',
+    width: '100%',
+    zIndex: 10,
+    background: 'white',
+    '@media (min-width: 320px)': {
+      top: '50%',
+    },
+    '@media (min-width: 800px)': {
+      top: '100%',
+    },
+  },
+};
+
+@Radium
+export default class Home extends Component {
   render() {
     return (
       <div>
@@ -182,13 +200,3 @@ export default class Home extends React.Component {
     );
   }
 }
-
-const style = {
-  content: {
-    position: 'absolute',
-    top: '400',
-    width: '100%',
-    zIndex: 10,
-    background: 'white',
-  },
-};

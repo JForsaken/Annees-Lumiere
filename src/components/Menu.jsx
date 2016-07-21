@@ -1,12 +1,18 @@
-import React, { PropTypes } from 'react';
+/* Node modules */
+import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
-import { Nav, Navbar, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
+import Radium from 'radium';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 
-import * as applicationActions from '../actions/application';
+/* Components */
 import MenuListItem from './MenuListItem';
+
+/* Actions */
+import * as applicationActions from '../actions/application';
+
 
 const menuItems = [
   { text: <FormattedMessage id="menu.reservation" />, link: '/reservation', icon: 'fa fa-user' },
@@ -14,7 +20,25 @@ const menuItems = [
   { text: <FormattedMessage id="menu.about" />, link: '/about', icon: 'fa fa-dot-circle-o' },
 ];
 
-class Menu extends React.Component {
+const style = {
+  langSwitcher: {
+    textDecoration: 'none',
+    paddingTop: '15px',
+    paddingBottom: '15px',
+  },
+  langSwitcherText: {
+    textDecoration: 'none',
+    color: '#9d9d9d',
+    ':hover': {
+      cursor: 'pointer',
+      fontWeight: 700,
+      color: 'black',
+    },
+  },
+};
+
+@Radium
+class Menu extends Component {
 
   static propTypes = {
     actions: PropTypes.object,
@@ -27,12 +51,17 @@ class Menu extends React.Component {
     this.handleSwitchLocale = this.handleSwitchLocale.bind(this);
   }
 
-  handleSwitchLocale(lang) {
-    this.props.actions.switchLocale(lang);
+  handleSwitchLocale() {
+    const { application: { locales, locale } } = this.props;
+
+    const langIndex = locales.indexOf(locale);
+    const nextLocale = langIndex + 1 < locales.length ? langIndex + 1 : 0;
+
+    this.props.actions.switchLocale(locales[nextLocale]);
   }
 
   render() {
-    const { application: { locales } } = this.props;
+    const { application: { locale } } = this.props;
 
     return (
       <Navbar inverse fixedTop>
@@ -51,23 +80,10 @@ class Menu extends React.Component {
                 <MenuListItem {...item} key={i} />)
             }
           </Nav>
-          <Nav pullRight>
-            <NavDropdown
-              id="language-switcher"
-              eventKey={menuItems.length}
-              title={<FormattedMessage id="language.switcher" />}
-            >
-              {
-                locales.map((lang, i) =>
-                  <MenuItem
-                    eventKey={lang}
-                    key={i}
-                    onSelect={this.handleSwitchLocale}
-                  >
-                    {lang.toUpperCase()}
-                  </MenuItem>)
-              }
-            </NavDropdown>
+          <Nav style={style.langSwitcher} pullRight>
+            <a style={style.langSwitcherText} onClick={this.handleSwitchLocale}>
+              {locale.toUpperCase()}
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

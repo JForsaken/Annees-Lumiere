@@ -19,5 +19,6 @@ export default {
   'menu.account': 'Account',
   'superSecretArea.info': 'This is a super secret area.',
   'website.title': 'Années-Lumière',
+  'website.subtitle': 'Educative nursery',
   'language.switcher': 'Language',
 };
