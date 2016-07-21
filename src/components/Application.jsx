@@ -27,7 +27,6 @@ export default class Application extends React.Component {
   render() {
     const { isMenuActive } = this.state;
     const activeClass = isMenuActive ? 'active' : '';
-
     return (
       <div id="layout" className={activeClass}>
         <a
@@ -40,13 +39,14 @@ export default class Application extends React.Component {
 
         <Menu activeClass={activeClass} />
 
-        <div id="main" className="container">
+        <div id="main">
           <DisplayError />
           {/* this will render the child routes */}
           {this.props.children}
         </div>
-
-        <Footer />
+        {
+          this.props.children.props.route.path === '/' ? null : <Footer />
+        }
       </div>
     );
   }

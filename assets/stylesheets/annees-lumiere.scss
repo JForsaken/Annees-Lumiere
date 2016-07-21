@@ -1,0 +1,38 @@
+body {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar {
+  background-image: -webkit-gradient(linear,left top,left bottom,from(white),to(white)); 
+  border-color: white;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+  text-shadow: none !important;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus,
+.navbar-inverse .navbar-brand:focus,
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-nav>li>a:hover {
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+a.navbar-inverse .navbar-nav>li>a:focus,
+.navbar-inverse .navbar-brand:focus,
+,
+.navbar-inverse .navbar-nav>li>a:hover:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding-bottom: 22px;
+    
+
+    border-width: 0 0 1px;
+    border-style: solid;
+}

@@ -1,7 +1,8 @@
 /* global __DEVTOOLS__ */
 import '../assets/stylesheets/index.css';
 
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { StyleRoot } from 'radium';
 import { Redirect, Route } from 'react-router';
 import DevTools from './components/DevTools';
 import { ReduxRouter } from 'redux-router';
@@ -79,7 +80,9 @@ function getRootChildren(props) {
   };
   const rootChildren = [
     <IntlProvider key="intl" {...intlData}>
-      {renderRoutes()}
+      <StyleRoot>
+        {renderRoutes()}
+      </StyleRoot>
     </IntlProvider>,
   ];
 
@@ -89,7 +92,7 @@ function getRootChildren(props) {
   return rootChildren;
 }
 
-class Root extends React.Component {
+class Root extends Component {
   render() {
     return (
       <div>{getRootChildren(this.props)}</div>
