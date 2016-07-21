@@ -44,7 +44,9 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'babel',
         include: path.join(__dirname, 'src'),
-        loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=stage-0,presets[]=react,plugins[]=transform-decorators-legacy']
+        query: {
+          plugins: ['transform-decorators-legacy']
+        },
       }
     ]
   },
