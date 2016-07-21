@@ -8,11 +8,12 @@ export default class MenuListItem extends Component {
     isExternal: PropTypes.bool,
     link: PropTypes.string.isRequired,
     text: PropTypes.any.isRequired,
+    onClick: PropTypes.any,
   };
 
   renderLink() {
     let link = (
-      <Link to={this.props.link} >
+      <Link to={this.props.link} onClick={this.props.onClick}>
         <i className={this.props.icon}></i> {this.props.text}
       </Link>
     );

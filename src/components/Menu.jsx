@@ -1,7 +1,7 @@
 /* Node modules */
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import Radium from 'radium';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
@@ -23,8 +23,6 @@ const menuItems = [
 const style = {
   langSwitcher: {
     textDecoration: 'none',
-    paddingTop: '15px',
-    paddingBottom: '15px',
   },
   langSwitcherText: {
     textDecoration: 'none',
@@ -49,6 +47,8 @@ class Menu extends Component {
   constructor(props, context) {
     super(props, context);
     this.handleSwitchLocale = this.handleSwitchLocale.bind(this);
+    this.toggleNav = this.toggleNav.bind(this);
+    this.state = { expanded: false };
   }
 
   handleSwitchLocale() {
@@ -60,11 +60,18 @@ class Menu extends Component {
     this.props.actions.switchLocale(locales[nextLocale]);
   }
 
+  toggleNav() {
+    this.setState({
+      expanded: !this.state.expanded,
+    });
+  }
+
   render() {
     const { application: { locale } } = this.props;
+    const { expanded } = this.state;
 
     return (
-      <Navbar inverse fixedTop>
+      <Navbar inverse fixedTop expanded={expanded} onToggle={this.toggleNav}>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">
@@ -77,13 +84,13 @@ class Menu extends Component {
           <Nav>
             {
               menuItems.map((item, i) =>
-                <MenuListItem {...item} key={i} />)
+                <MenuListItem {...item} key={i} onClick={this.toggleNav} />)
             }
           </Nav>
           <Nav style={style.langSwitcher} pullRight>
-            <a style={style.langSwitcherText} onClick={this.handleSwitchLocale}>
+            <NavItem style={style.langSwitcherText} onClick={this.handleSwitchLocale}>
               {locale.toUpperCase()}
-            </a>
+            </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
