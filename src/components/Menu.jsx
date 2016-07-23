@@ -84,7 +84,7 @@ class Menu extends Component {
           <Nav>
             {
               menuItems.map((item, i) =>
-                <MenuListItem {...item} key={i} onClick={this.toggleNav} />)
+                <MenuListItem {...item} key={i} onClick={this.state.expanded ? this.toggleNav : null} />)
             }
           </Nav>
           <Nav style={style.langSwitcher} pullRight>
