@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 /* global __DEVTOOLS__ */
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { reduxReactRouter, routerStateReducer } from 'redux-router';
@@ -19,7 +21,7 @@ const storeEnhancers = [
 ];
 
 if (__DEVTOOLS__) {
-  const DevTools = require('../components/DevTools').default; // eslint-disable-line global-require
+  const DevTools = require('../components/DevTools').default;
   storeEnhancers.push(DevTools.instrument());
 }
 
@@ -38,7 +40,7 @@ export default function configureStore(initialState) {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers').default; // eslint-disable-line global-require
+      const nextRootReducer = require('../reducers').default;
       store.replaceReducer(nextRootReducer);
     });
   }

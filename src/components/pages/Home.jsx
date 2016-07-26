@@ -1,7 +1,7 @@
 /* Node modules */
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import Radium from 'radium';
+import radium from 'radium';
 
 /* Components */
 import Footer from '../Footer';
@@ -24,7 +24,7 @@ const style = {
   },
 };
 
-@Radium
+@radium
 export default class Home extends Component {
   render() {
     return (

@@ -2,7 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
-import Radium from 'radium';
+import radium from 'radium';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
@@ -35,7 +35,7 @@ const style = {
   },
 };
 
-@Radium
+@radium
 class Menu extends Component {
 
   static propTypes = {
@@ -84,7 +84,11 @@ class Menu extends Component {
           <Nav>
             {
               menuItems.map((item, i) =>
-                <MenuListItem {...item} key={i} onClick={this.state.expanded ? this.toggleNav : null} />)
+                <MenuListItem
+                  {...item}
+                  key={i}
+                  onClick={this.state.expanded ? this.toggleNav : null}
+                />)
             }
           </Nav>
           <Nav style={style.langSwitcher} pullRight>
