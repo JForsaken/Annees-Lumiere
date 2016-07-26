@@ -1,13 +1,13 @@
 /* Node modules */
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import Radium from 'radium';
+import radium from 'radium';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 
 /* Components */
 import photoFille from '../../assets/images/lumiere.jpg';
-const RadiumLink = Radium(Link); // eslint-disable-line new-cap
+const RadiumLink = radium(Link);
 
 /* Styles */
 const style = {
@@ -63,7 +63,7 @@ const style = {
   },
 };
 
-@Radium
+@radium
 export default class ParallaxSplash extends Component {
   render() {
     return (
@@ -85,4 +85,3 @@ export default class ParallaxSplash extends Component {
     );
   }
 }
-
