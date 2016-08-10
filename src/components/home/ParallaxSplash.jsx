@@ -11,6 +11,7 @@ const RadiumLink = radium(Link);
 
 /* Styles */
 const style = {
+
   splash: {
     backgroundImage: `url(${photoFille})`,
     textAlign: 'center',
@@ -29,15 +30,18 @@ const style = {
       height: '100%',
     },
   },
+
   content: {
     color: '#404040',
     position: 'relative',
     top: '40%',
     transform: 'translateY(-50%)',
   },
+
   subtitle: {
     margin: 0,
   },
+
   title: {
     marginTop: 0,
     marginBottom: 15,
@@ -45,6 +49,7 @@ const style = {
     fontSize: '5vw',
     fontWeight: 700,
   },
+
   reservationButton: {
     border: '2px solid white',
     padding: '.5em 1em',
@@ -61,6 +66,7 @@ const style = {
       color: 'white',
     },
   },
+
 };
 
 @radium
