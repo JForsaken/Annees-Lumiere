@@ -13,6 +13,7 @@ import HomeHeadline from './HomeHeadline';
 const style = {
   content: {
     position: 'absolute',
+    overflowX: 'hidden',
     width: '100%',
     zIndex: 10,
     background: 'white',
