@@ -21,7 +21,7 @@ const storeEnhancers = [
 ];
 
 if (__DEVTOOLS__) {
-  const DevTools = require('../components/DevTools').default;
+  const DevTools = require('../components/common/DevTools').default;
   storeEnhancers.push(DevTools.instrument());
 }
 

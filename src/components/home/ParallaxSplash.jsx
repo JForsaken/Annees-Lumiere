@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 
 /* Components */
-import photoFille from '../../assets/images/lumiere.jpg';
+import photoFille from '../../../assets/images/lumiere.jpg';
 const RadiumLink = radium(Link);
 
 /* Styles */

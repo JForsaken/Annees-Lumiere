@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import Menu from './Menu';
-import Footer from './Footer';
-import DisplayError from './DisplayError';
+import Menu from './common/Menu';
+import Footer from './common/Footer';
+import DisplayError from './common/DisplayError';
 
 export default class Application extends React.Component {
   static propTypes = {

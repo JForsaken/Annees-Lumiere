@@ -4,8 +4,8 @@ import { FormattedMessage } from 'react-intl';
 import radium from 'radium';
 
 /* Components */
-import Footer from '../Footer';
-import ParallaxSplash from '../ParallaxSplash';
+import Footer from '../common/Footer';
+import ParallaxSplash from './ParallaxSplash';
 
 
 /* Styles */

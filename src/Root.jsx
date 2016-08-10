@@ -4,7 +4,7 @@ import '../assets/stylesheets/index.css';
 import React, { PropTypes, Component } from 'react';
 import { StyleRoot } from 'radium';
 import { Redirect, Route } from 'react-router';
-import DevTools from './components/DevTools';
+import DevTools from './components/common/DevTools';
 import { ReduxRouter } from 'redux-router';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';

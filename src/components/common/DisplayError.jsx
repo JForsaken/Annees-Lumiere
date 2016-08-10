@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import * as applicationActions from '../actions/application';
+import * as applicationActions from '../../actions/application';
 
 class DisplayError extends React.Component {
   static propTypes = {
