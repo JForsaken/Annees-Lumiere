@@ -33,6 +33,11 @@ const style = {
       color: 'white',
     },
   },
+
+  copyright: {
+    marginTop: 20,
+    color: '#9d9d9d',
+  },
 };
 
 @radium
@@ -66,6 +71,9 @@ export default class FooterSocialMedia extends Component {
               <i className="fa fa-envelope"></i>
             </a>
           </span>
+        </Row>
+        <Row style={style.copyright}>
+          &copy; {new Date().getFullYear()} Années-Lumière
         </Row>
       </div>
     );

@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import radium from 'radium';
 import { Row } from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 
 /* Styles */
 const style = {
@@ -43,7 +44,7 @@ export default class FooterContact extends Component {
       <div style={style.footerMapContainer}>
         <Row>
           <h2 style={style.title}>
-            Our offices.
+            <FormattedMessage id="footer.map.location" />
           </h2>
         </Row>
 
