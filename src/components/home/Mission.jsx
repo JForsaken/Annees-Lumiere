@@ -16,12 +16,12 @@ const style = {
     width: '100%',
     paddingTop: '100px',
     paddingBottom: '100px',
-    paddingLeft: '20px',
-    paddingRight: '20px',
+    paddingLeft: '40px',
+    paddingRight: '40px',
   },
 
   title: {
-    color: '#545454',
+    color: '#404040',
     marginBottom: 15,
     height: '100%',
     fontSize: '40px',
@@ -57,11 +57,11 @@ const style = {
   },
 
   inscriptionButton: {
-    border: '2px solid#545454',
+    border: '2px solid#404040',
     padding: '.5em 1em',
     fontWeight: 700,
     fontSize: '20px',
-    color: '#545454',
+    color: '#404040',
     backgroundColor: 'rgba(0,0,0,0)',
     textDecoration: 'none',
     borderRadius: '2px',

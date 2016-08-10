@@ -26,7 +26,7 @@ export default {
   'home.intro2': 'Second website introduction',
   'home.intro3': '...And a third website introduction',
   'home.welcome': 'Welcome',
-  'home.mission.title': 'The mission title',
+  'home.mission.title': 'Our mission',
   'home.mission.text': 'The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here',
   'home.mission.button': 'Reservation',
 

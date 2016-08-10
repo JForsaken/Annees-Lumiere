@@ -29,7 +29,7 @@ export default {
   'home.intro2': 'Une 2e introduction',
   'home.intro3': 'Une 3e introduction',
   'home.welcome': 'Bienvenu',
-  'home.mission.title': 'Le titre de la mission',
+  'home.mission.title': 'Notre mission',
   'home.mission.text': 'Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission  ',
   'home.mission.button': 'Inscription',
 
