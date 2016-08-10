@@ -25,13 +25,21 @@ export default {
   'forbiddenReason': 'Vous êtes pas autorisé à accéder à la page XXX.',
 
   // HOME
+
+  // home.component
   'home.intro1': 'Une première introduction',
   'home.intro2': 'Une 2e introduction',
   'home.intro3': 'Une 3e introduction',
   'home.welcome': 'Bienvenu',
+
+  // mission.component
   'home.mission.title': 'Notre mission',
-  'home.mission.text': 'Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission  ',
+  'home.mission.text': 'Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission',
   'home.mission.button': 'Inscription',
+
+  // homeHeadline.component
+  'home.homeHeadline.title': 'Jaime les chattes',
+  'home.homeHeadline.text': 'Le text ici est en français Le text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en français',
 
   // LOGOUT
   'logout': 'Déconnexion',

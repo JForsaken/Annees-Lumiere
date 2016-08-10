@@ -35,7 +35,7 @@ const style = {
   },
 
   mainText: {
-    fontSize: '18px',
+    fontSize: '16px',
     marginTop: '-40px !important',
     maxWidth: '600px',
     width: '100%',

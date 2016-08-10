@@ -7,6 +7,7 @@ import radium from 'radium';
 import Footer from '../common/Footer';
 import ParallaxSplash from './ParallaxSplash';
 import Mission from './Mission';
+import HomeHeadline from './HomeHeadline';
 
 /* Styles */
 const style = {
@@ -31,6 +32,7 @@ export default class Home extends Component {
       <div>
         <ParallaxSplash />
         <div style={style.content}>
+          <HomeHeadline />
           <Mission />
           <Footer />
         </div>
