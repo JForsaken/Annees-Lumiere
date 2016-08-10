@@ -1,12 +1,12 @@
 /* Node modules */
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import radium from 'radium';
+
 
 /* Components */
 import Footer from '../common/Footer';
 import ParallaxSplash from './ParallaxSplash';
-
+import Mission from './Mission';
 
 /* Styles */
 const style = {
@@ -30,169 +30,8 @@ export default class Home extends Component {
     return (
       <div>
         <ParallaxSplash />
-
         <div style={style.content}>
-          <div className="header">
-            <h1>
-              <FormattedMessage id="home.welcome" />
-            </h1>
-          </div>
-          <p>
-            <FormattedMessage id="home.intro1" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro2" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
-          <p>
-            <FormattedMessage id="home.intro3" />
-          </p>
+          <Mission />
           <Footer />
         </div>
 
