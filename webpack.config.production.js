@@ -44,6 +44,9 @@ module.exports = {
         test: /\.(jpg|png|gif|svg)$/i,
         loader:'file-loader'
       },
+      { test: /\.(ttf|otf|eot|)$/,
+        loader:'file-loader'
+      },
       {
         test: /\.(js|jsx)$/,
         include: path.join(__dirname, 'src'),
