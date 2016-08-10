@@ -1,5 +1,20 @@
+@font-face {
+    font-family: 'Geomanist';
+    src: url('../fonts/Geomanist-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url('../fonts/Helvetica-Light.ttf');
+}
+
 body {
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Geomanist', 'Helvetica Light', sans-serif;
+}
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 .navbar {

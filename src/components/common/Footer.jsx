@@ -1,18 +1,18 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
+/* Node modules */
+import React, { Component } from 'react';
 
-export default class Footer extends React.Component {
+/* Components */
+import FooterSocialMedia from './FooterSocialMedia';
+import FooterContact from './FooterContact';
+import FooterMap from './FooterMap';
+
+export default class Footer extends Component {
   render() {
     return (
-      <div className="footer">
-        <div className="pure-g">
-          <div className="pure-u-1 u-sm-1-2">
-            <FormattedMessage id="footer.title" />
-          </div>
-          <div className="pure-u-1 u-sm-1-2">
-            &copy; {new Date().getFullYear()}
-          </div>
-        </div>
+      <div>
+        <FooterContact />
+        <FooterMap />
+        <FooterSocialMedia />
       </div>
     );
   }
