@@ -22,13 +22,21 @@ export default {
   'forbiddenReason': 'You are not authorized to access page XXX.',
 
   // HOME
+
+  // home.component
   'home.intro1': 'First website introduction',
   'home.intro2': 'Second website introduction',
   'home.intro3': '...And a third website introduction',
   'home.welcome': 'Welcome',
+
+  // mission.component
   'home.mission.title': 'Our mission',
   'home.mission.text': 'The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here The mission text goes here',
   'home.mission.button': 'Reservation',
+
+  // homeHeadline.component
+  'home.homeHeadline.title': 'I love kitten',
+  'home.homeHeadline.text': 'This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english',
 
   // LOGOUT
   'logout': 'Logout',

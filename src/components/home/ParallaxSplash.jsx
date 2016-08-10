@@ -71,6 +71,7 @@ const style = {
 
 @radium
 export default class ParallaxSplash extends Component {
+
   render() {
     return (
       <div style={style.splash}>
