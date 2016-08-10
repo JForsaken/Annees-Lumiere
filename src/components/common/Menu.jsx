@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import MenuListItem from './MenuListItem';
 
 /* Actions */
-import * as applicationActions from '../actions/application';
+import * as applicationActions from '../../actions/application';
 
 
 const menuItems = [

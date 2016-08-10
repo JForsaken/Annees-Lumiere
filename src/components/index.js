@@ -1,11 +1,11 @@
 export { default as Application } from './Application';
 
-export { default as About } from './pages/About';
-export { default as Account } from './pages/Account';
-export { default as AccountHome } from './pages/AccountHome';
-export { default as Forbidden } from './pages/Forbidden';
-export { default as Login } from './pages/Login';
-export { default as Home } from './pages/Home';
-export { default as SuperSecretArea } from './pages/SuperSecretArea';
+export { default as About } from './about/About';
+export { default as Account } from './account/Account';
+export { default as AccountHome } from './account/AccountHome';
+export { default as Forbidden } from './account/Forbidden';
+export { default as Login } from './account/Login';
+export { default as Home } from './home/Home';
+export { default as SuperSecretArea } from './account/SuperSecretArea';
 
-export { default as Reservation } from './pages/Reservation';
+export { default as Reservation } from './reservation/Reservation';
