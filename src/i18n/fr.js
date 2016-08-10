@@ -19,6 +19,7 @@ export default {
 
   // FOOTER
   'footer.title': 'Ici est une petite note de bas de page.',
+  'footer.map.location': 'Notre emplacement',
 
   // FORBIDDEN
   'forbidden': 'Interdit',

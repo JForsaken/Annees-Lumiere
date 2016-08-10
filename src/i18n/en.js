@@ -16,6 +16,7 @@ export default {
 
   // FOOTER
   'footer.title': 'Here is an awesome footer.',
+  'footer.map.location': 'Our location',
 
   // FORBIDDEN
   'forbidden': 'Forbidden',
