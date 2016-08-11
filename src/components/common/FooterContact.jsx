@@ -13,14 +13,14 @@ const style = {
 
   footerContactContainer: {
     textAlign: 'center',
-    paddingBottom: 100,
+    paddingBottom: 60,
+    paddingTop: 60,
   },
 
   phoneNumber: {
     textDecoration: 'none',
     fontSize: 60,
     fontWeight: 0,
-    webkitFontSmoothing: 'antialiased',
     color: '#404040',
   },
 

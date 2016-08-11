@@ -39,6 +39,14 @@ export default {
   'home.homeHeadline.title': 'I love kitten',
   'home.homeHeadline.text': 'This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english',
 
+  // businessValues.component
+  'home.businessValues.title': 'Our values',
+  'home.businessValues.value1': 'Value 1',
+  'home.businessValues.value2': 'Value 2',
+  'home.businessValues.value3': 'Value 3',
+  'home.businessValues.value4': 'Value 4',
+  'home.businessValues.value5': 'Value 5',
+
   // LOGOUT
   'logout': 'Logout',
 

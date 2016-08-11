@@ -11,7 +11,6 @@ import photoFille from '../../../assets/images/terreReverse.jpg';
 const style = {
 
   homeHeadlineBackground: {
-
     backgroundImage: `url(${photoFille})`,
     textAlign: 'center',
     backgroundPosition: 'center 20%',
@@ -25,12 +24,6 @@ const style = {
     paddingBottom: '10%',
     paddingRight: '30px',
     paddingLeft: '30px',
-    '@media (min-width: 300px)': {
-      height: '300px',
-    },
-    '@media (min-width: 800px)': {
-      height: '800px',
-    },
   },
 
   title: {

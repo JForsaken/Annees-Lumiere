@@ -42,6 +42,15 @@ export default {
   'home.homeHeadline.title': 'Jaime les chattes',
   'home.homeHeadline.text': 'Le text ici est en français Le text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en français',
 
+  // businessValues.component
+  'home.businessValues.title': 'Nos valeurs',
+  'home.businessValues.value1': 'Valeur 1',
+  'home.businessValues.value2': 'Valeur 2',
+  'home.businessValues.value3': 'Valeur 3',
+  'home.businessValues.value4': 'Valeur 4',
+  'home.businessValues.value5': 'Valeur 5',
+
+
   // LOGOUT
   'logout': 'Déconnexion',
 
