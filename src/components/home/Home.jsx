@@ -8,6 +8,7 @@ import Footer from '../common/Footer';
 import ParallaxSplash from './ParallaxSplash';
 import Mission from './Mission';
 import HomeHeadline from './HomeHeadline';
+import BusinessValues from './BusinessValues';
 
 /* Styles */
 const style = {
@@ -35,6 +36,7 @@ export default class Home extends Component {
         <div style={style.content}>
           <HomeHeadline />
           <Mission />
+          <BusinessValues />
           <Footer />
         </div>
 

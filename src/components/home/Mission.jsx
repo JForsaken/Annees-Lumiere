@@ -36,16 +36,16 @@ const style = {
 
   mainText: {
     fontSize: '16px',
-    marginTop: '-40px !important',
     maxWidth: '600px',
     width: '100%',
     textAlign: 'center',
-    margin: 'auto',
+    margin: '-40px auto auto auto',
     paddingTop: '3.5em',
     paddingBottom: '3.5em',
     paddingLeft: '2em',
     paddingRight: '2em',
-    border: 'solid#7e7e7e',
+    borderStyle: 'solid',
+    borderColor: '#7e7e7e',
     borderWidth: '0 2px',
     borderRadius: '1em',
     '@media (min-width: 300px)': {

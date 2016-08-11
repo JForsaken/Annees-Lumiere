@@ -7,7 +7,6 @@ const style = {
 
   socialMediaContainter: {
     textAlign: 'center',
-    textAspangn: 'center',
     backgroundColor: '#303233',
     paddingTop: 40,
     paddingBottom: 40,

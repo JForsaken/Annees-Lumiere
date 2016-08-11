@@ -18,7 +18,6 @@ const style = {
     textDecoration: 'none',
     fontSize: 60,
     fontWeight: 0,
-    webkitFontSmoothing: 'antialiased',
     color: '#404040',
   },
 
