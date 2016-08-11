@@ -16,7 +16,7 @@ const style = {
   socialIcon: {
     paddingLeft: '30px',
     paddingRight: '30px',
-    '@media (min-width: 320px)': {
+    '@media (min-width: 300px)': {
       fontSize: '20px',
     },
     '@media (min-width: 800px)': {

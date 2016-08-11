@@ -17,7 +17,7 @@ const style = {
     width: '100%',
     zIndex: 10,
     background: 'white',
-    '@media (min-width: 320px)': {
+    '@media (min-width: 300px)': {
       top: '50%',
     },
     '@media (min-width: 800px)': {

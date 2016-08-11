@@ -26,7 +26,7 @@ const style = {
     height: '100%',
     fontSize: '40px',
     fontWeight: 700,
-    '@media (min-width: 320px)': {
+    '@media (min-width: 300px)': {
       fontSize: '30px',
     },
     '@media (min-width: 800px)': {
@@ -48,7 +48,7 @@ const style = {
     border: 'solid#7e7e7e',
     borderWidth: '0 2px',
     borderRadius: '1em',
-    '@media (min-width: 320px)': {
+    '@media (min-width: 300px)': {
       height: '100%',
     },
     '@media (min-width: 800px)': {

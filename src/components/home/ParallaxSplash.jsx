@@ -8,6 +8,7 @@ import { FormattedMessage } from 'react-intl';
 /* Components */
 import photoFille from '../../../assets/images/lumiere.jpg';
 const RadiumLink = radium(Link);
+const RadiumRow = radium(Row);
 
 /* Styles */
 const style = {
@@ -23,7 +24,7 @@ const style = {
     top: 50,
     left: 0,
     position: 'fixed',
-    '@media (min-width: 320px)': {
+    '@media (min-width: 300px)': {
       height: '45%',
     },
     '@media (min-width: 800px)': {
@@ -34,8 +35,14 @@ const style = {
   content: {
     color: '#404040',
     position: 'relative',
-    top: '40%',
     transform: 'translateY(-50%)',
+
+    '@media (min-width: 300px)': {
+      top: '30%',
+    },
+    '@media (min-width: 800px)': {
+      top: '50%',
+    },
   },
 
   subtitle: {
@@ -75,7 +82,7 @@ export default class ParallaxSplash extends Component {
   render() {
     return (
       <div style={style.splash}>
-        <Row style={style.content}>
+        <RadiumRow style={style.content}>
           <Col xs={6} sm={6} >
             <h3 style={style.subtitle}>
               <FormattedMessage id="website.subtitle" />
@@ -87,7 +94,7 @@ export default class ParallaxSplash extends Component {
               <FormattedMessage id="menu.reservation" />
             </RadiumLink>
           </Col>
-        </Row>
+        </RadiumRow>
       </div>
     );
   }

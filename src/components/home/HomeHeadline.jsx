@@ -25,7 +25,7 @@ const style = {
     paddingBottom: '10%',
     paddingRight: '30px',
     paddingLeft: '30px',
-    '@media (min-width: 320px)': {
+    '@media (min-width: 300px)': {
       height: '300px',
     },
     '@media (min-width: 800px)': {
