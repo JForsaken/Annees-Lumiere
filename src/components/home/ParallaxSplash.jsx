@@ -15,7 +15,7 @@ const style = {
   splash: {
     backgroundImage: `url(${photoFille})`,
     textAlign: 'center',
-    backgroundPosition: 'center center',
+    backgroundPosition: '100% 60%',
     backgroundSize: 'cover',
     zIndex: -10,
     overflow: 'hidden',
@@ -24,7 +24,7 @@ const style = {
     left: 0,
     position: 'fixed',
     '@media (min-width: 320px)': {
-      height: '50%',
+      height: '45%',
     },
     '@media (min-width: 800px)': {
       height: '100%',
