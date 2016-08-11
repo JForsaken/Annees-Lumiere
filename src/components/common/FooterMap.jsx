@@ -14,13 +14,6 @@ const style = {
     background: '#f0f0f0',
   },
 
-  title: {
-    textDecoration: 'none',
-    fontSize: 60,
-    fontWeight: 0,
-    color: '#404040',
-  },
-
   mapRow: {
     paddingTop: 20,
   },
@@ -42,9 +35,9 @@ export default class FooterContact extends Component {
     return (
       <div style={style.footerMapContainer}>
         <Row>
-          <h2 style={style.title}>
+          <h1>
             <FormattedMessage id="footer.map.location" />
-          </h2>
+          </h1>
         </Row>
 
         <Row style={style.mapRow}>
@@ -62,12 +55,12 @@ export default class FooterContact extends Component {
         </Row>
 
         <Row style={style.mapRow}>
-          <h5>
+          <h4>
             5311 Chemin de la Cote Saint-Luc
-          </h5>
-          <h5>
+          </h4>
+          <h4>
             Montreal, Qc, Canada
-          </h5>
+          </h4>
         </Row>
       </div>
     );

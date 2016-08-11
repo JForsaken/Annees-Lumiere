@@ -2,13 +2,12 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import radium from 'radium';
-import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 
 /* Components */
 import photoFille from '../../../assets/images/lumiere.jpg';
-const RadiumLink = radium(Link);
 const RadiumRow = radium(Row);
+import StyledButton from '../common/StyledButton';
 
 /* Styles */
 const style = {
@@ -53,25 +52,6 @@ const style = {
     marginTop: 0,
     marginBottom: 15,
     height: '100%',
-    fontSize: '5vw',
-    fontWeight: 700,
-  },
-
-  reservationButton: {
-    border: '2px solid white',
-    padding: '.5em 1em',
-    fontWeight: 700,
-    fontSize: '20px',
-    color: 'white',
-    backgroundColor: 'rgba(0,0,0,0)',
-    textDecoration: 'none',
-    borderRadius: '2px',
-    ':hover': {
-      cursor: 'pointer',
-      border: '2px solid black',
-      backgroundColor: 'black',
-      color: 'white',
-    },
   },
 
 };
@@ -90,9 +70,7 @@ export default class ParallaxSplash extends Component {
             <h1 className="splash" style={style.title}>
               <FormattedMessage id="website.title" />
             </h1>
-            <RadiumLink style={style.reservationButton} to="/reservation">
-              <FormattedMessage id="menu.reservation" />
-            </RadiumLink>
+            <StyledButton textId="home.mission.button" link="/reservation" isReversed />
           </Col>
         </RadiumRow>
       </div>

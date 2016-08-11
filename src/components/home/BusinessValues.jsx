@@ -6,13 +6,6 @@ import { FormattedMessage } from 'react-intl';
 /* Styles */
 const style = {
 
-  title: {
-    textDecoration: 'none',
-    fontSize: 60,
-    fontWeight: 0,
-    color: '#404040',
-  },
-
   businessValuesContainer: {
     textAlign: 'center',
     paddingTop: 20,
@@ -61,9 +54,9 @@ export default class BusinessValues extends Component {
   render() {
     return (
       <div style={style.businessValuesContainer}>
-        <h2 style={style.title}>
+        <h1>
           <FormattedMessage id="home.businessValues.title" />
-        </h2>
+        </h1>
         <div style={style.businessValueRow}>
           <div style={style.singleValueContainer}>
             <i style={style.businessValue} className="fa fa-glass"> </i>
