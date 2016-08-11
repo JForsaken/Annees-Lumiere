@@ -15,37 +15,31 @@ body {
 
 @media all and (min-width: 300px) {
   h1 {
-    font-size: 45px !important;
+    font-size: 45px;
     color: #404040;
   }
-}
-@media all and (min-width: 800px) {
-  h1 {
-    font-size: 60px !important;
-    color: #404040;
-  }
-}
 
-@media all and (min-width: 300px) {
   h2 {
-    font-size: 35px !important;
+    font-size: 35px;
     color: #404040;
   }
-}
-@media all and (min-width: 800px) {
-  h2 {
-    font-size: 45px !important;
-    color: #404040;
-  }
-}
 
-@media all and (min-width: 300px) {
   h3 {
     font-size: 25px !important;
     color: #404040;
   }
 }
 @media all and (min-width: 800px) {
+  h1 {
+    font-size: 60px;
+    color: #404040;
+  }
+
+  h2 {
+    font-size: 45px;
+    color: #404040;
+  }
+
   h3 {
     font-size: 35px !important;
     color: #404040;
