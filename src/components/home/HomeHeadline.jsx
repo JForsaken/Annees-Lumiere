@@ -29,7 +29,6 @@ const style = {
   title: {
     marginTop: 0,
     height: '100%',
-    fontSize: '4vw',
     fontWeight: 700,
   },
 
@@ -40,9 +39,7 @@ const style = {
   },
 
   transbox: {
-    backgroundColor: '#ffffff',
-    opacity: '0.6',
-    filter: 'alpha(opacity=60)',
+    backgroundColor: 'rgba(255, 255, 255, 0.6)',
     padding: '40px',
     paddingTop: '20px',
   },
@@ -55,9 +52,9 @@ export default class HomeHeadline extends Component {
       <Row style={style.homeHeadlineBackground}>
         <Col xs={12} md={6} />
         <Col xs={12} md={6} style={style.transbox}>
-          <div style={style.title}>
+          <h3 style={style.title}>
             <FormattedMessage id="home.homeHeadline.title" />
-          </div>
+          </h3>
           <div style={style.text}>
             <FormattedMessage id="home.homeHeadline.text" />
           </div>

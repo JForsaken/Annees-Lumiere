@@ -2,11 +2,10 @@
 import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import radium from 'radium';
-import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 
 /* Components */
-const RadiumLink = radium(Link);
+import StyledButton from '../common/StyledButton';
 
 /* Styles */
 const style = {
@@ -26,12 +25,6 @@ const style = {
     height: '100%',
     fontSize: '40px',
     fontWeight: 700,
-    '@media (min-width: 300px)': {
-      fontSize: '30px',
-    },
-    '@media (min-width: 800px)': {
-      fontSize: '40px',
-    },
   },
 
   mainText: {
@@ -56,23 +49,6 @@ const style = {
     },
   },
 
-  inscriptionButton: {
-    border: '2px solid#404040',
-    padding: '.5em 1em',
-    fontWeight: 700,
-    fontSize: '20px',
-    color: '#404040',
-    backgroundColor: 'rgba(0,0,0,0)',
-    textDecoration: 'none',
-    borderRadius: '2px',
-    ':hover': {
-      cursor: 'pointer',
-      border: '2px solid black',
-      backgroundColor: 'black',
-      color: 'white',
-    },
-  },
-
   buttonRow: {
     paddingTop: '40px',
   },
@@ -86,16 +62,16 @@ export default class Mission extends Component {
       <div style={style.missionContainer}>
         <Row>
           <div style={style.title}>
-            <FormattedMessage id="home.mission.title" />
+            <h2>
+              <FormattedMessage id="home.mission.title" />
+            </h2>
           </div>
           <div style={style.mainText}>
             <FormattedMessage id="home.mission.text" />
           </div>
         </Row>
         <Row style={style.buttonRow}>
-          <RadiumLink style={style.inscriptionButton} to="/reservation">
-            <FormattedMessage id="home.mission.button" />
-          </RadiumLink>
+          <StyledButton textId="home.mission.button" link="/reservation" />
         </Row>
       </div>
     );
