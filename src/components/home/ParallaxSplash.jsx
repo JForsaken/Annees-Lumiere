@@ -5,7 +5,7 @@ import radium from 'radium';
 import { FormattedMessage } from 'react-intl';
 
 /* Components */
-import photoFille from '../../../assets/images/lumiere.jpg';
+import photoFille from '../../../assets/images/garcon_appuyer_reverse.jpg';
 const RadiumRow = radium(Row);
 import StyledButton from '../common/StyledButton';
 
@@ -70,7 +70,7 @@ export default class ParallaxSplash extends Component {
             <h1 className="splash" style={style.title}>
               <FormattedMessage id="website.title" />
             </h1>
-            <StyledButton textId="home.mission.button" link="/reservation" isReversed />
+            <StyledButton textId="home.mission.button" link="/reservation" />
           </Col>
         </RadiumRow>
       </div>
