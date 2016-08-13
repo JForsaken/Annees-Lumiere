@@ -13,14 +13,24 @@ const style = {
     background: '#f0f0f0',
   },
 
-  singleValueContainer: {
-    width: 100,
+  title: {
     '@media (min-width: 300px)': {
-      display: 'table',
-      margin: '30px auto 30px auto',
+      marginBottom: 30,
     },
     '@media (min-width: 800px)': {
-      display: 'inline-block',
+      marginBottom: 0,
+    },
+  },
+
+  singleValueContainer: {
+    display: 'inline-block',
+    '@media (min-width: 300px)': {
+      width: 150,
+      marginLeft: 0,
+      marginRight: 0,
+    },
+    '@media (min-width: 800px)': {
+      width: 100,
       marginLeft: 30,
       marginRight: 30,
     },
@@ -29,9 +39,11 @@ const style = {
   businessValueRow: {
     '@media (min-width: 300px)': {
       paddingBottom: 0,
+      paddingTop: 0,
     },
     '@media (min-width: 800px)': {
       paddingBottom: 0,
+      paddingTop: 20,
     },
   },
 
@@ -54,7 +66,7 @@ export default class BusinessValues extends Component {
   render() {
     return (
       <div style={style.businessValuesContainer}>
-        <h1>
+        <h1 style={style.title}>
           <FormattedMessage id="home.businessValues.title" />
         </h1>
         <div style={style.businessValueRow}>
