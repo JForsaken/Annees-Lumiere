@@ -22,6 +22,18 @@ export default {
   'forbidden': 'Forbidden',
   'forbiddenReason': 'You are not authorized to access page XXX.',
 
+  // FORM
+  'form.title': 'Reservation',
+  'form.firstname': 'First name',
+  'form.lastname': 'Last name',
+  'form.address': 'Address',
+  'form.emailAddress': 'Email',
+  'form.primaryPhoneNumber': 'Primary phone number',
+  'form.optionalPhoneNumber': 'Optional phone number',
+  'form.profession': 'Profession',
+  'form.language': 'Preferred language',
+  'form.kids': 'Kids on reservation',
+
   // HOME
 
   // home.component

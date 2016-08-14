@@ -25,6 +25,18 @@ export default {
   'forbidden': 'Interdit',
   'forbiddenReason': 'Vous êtes pas autorisé à accéder à la page XXX.',
 
+  // FORM
+  'form.title': 'Inscription',
+  'form.firstname': 'Prénom',
+  'form.lastname': 'Nom',
+  'form.address': 'Adresse',
+  'form.emailAddress': 'Adresse courriel',
+  'form.primaryPhoneNumber': 'Numéro de téléphone primaire',
+  'form.optionalPhoneNumber': 'Numéro de téléphone optionnel',
+  'form.profession': 'Profession',
+  'form.language': 'Langue maternelle',
+  'form.kids': 'Enfants à inscrire',
+
   // HOME
 
   // home.component

@@ -1,18 +1,24 @@
+/* Node modules */
 import React, { PropTypes } from 'react';
+import radium from 'radium';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { defineMessages, FormattedMessage } from 'react-intl';
+
+/* Components */
 import ReservationForm from '../reservation/ReservationForm';
+
+/* Actions */
 import * as samfishActions from '../../actions/samfish';
 
-const messages = defineMessages({
-  subtitle: {
-    id: 'reservations.subtitle',
-    description: 'Subtitle of the page',
-    defaultMessage: 'Reservation section.',
+/* Styles */
+const style = {
+  page: {
+    paddingTop: 50,
+    paddingRight: 35,
+    paddingLeft: 35,
   },
-});
-
+};
+@radium
 class Reservation extends React.Component {
 
   static propTypes = {
@@ -22,12 +28,9 @@ class Reservation extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="header">
+      <div style={style.page}>
+        <div>
           <h1>Reservations</h1>
-          <FormattedMessage {...messages.subtitle}>
-            {text => <h3>{text}</h3>}
-          </FormattedMessage>
         </div>
         <ReservationForm {...this.props} />
       </div>
