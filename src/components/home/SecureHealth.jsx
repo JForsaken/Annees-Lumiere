@@ -5,12 +5,12 @@ import radium from 'radium';
 import { FormattedMessage } from 'react-intl';
 
 /* Components */
-import photoFille from '../../../assets/images/terreReverse.jpg';
+import photoFille from '../../../assets/images/avion.jpg';
 
 /* Styles */
 const style = {
 
-  homeHeadlineBackground: {
+  secureHealthBackground: {
     backgroundImage: `url(${photoFille})`,
     textAlign: 'center',
     backgroundPosition: 'center 20%',
@@ -20,16 +20,21 @@ const style = {
     marginLeft: '0',
     marginRight: '0',
     marginTop: '10px',
-    paddingTop: '10%',
-    paddingBottom: '10%',
+    paddingTop: '30px',
+    paddingBottom: '100px',
     paddingRight: '30px',
     paddingLeft: '30px',
   },
 
-  title: {
+  titleTop: {
     marginTop: 0,
     height: '100%',
-    fontWeight: 700,
+    textDecoration: 'underline',
+  },
+
+  titleBottom: {
+    marginTop: -15,
+    height: '100%',
   },
 
   text: {
@@ -46,17 +51,19 @@ const style = {
 };
 
 @radium
-export default class HomeHeadline extends Component {
+export default class SecureHealth extends Component {
   render() {
     return (
-      <Row style={style.homeHeadlineBackground}>
-        <Col xs={12} md={6} />
+      <Row style={style.secureHealthBackground}>
+        <h3 style={style.titleTop}>
+          <FormattedMessage id="home.secureHealth.titleTop" />
+        </h3>
+        <h1 style={style.titleBottom}>
+          <FormattedMessage id="home.secureHealth.titleBottom" />
+        </h1>
         <Col xs={12} md={6} style={style.transbox}>
-          <h3 style={style.title}>
-            <FormattedMessage id="home.homeHeadline.title" />
-          </h3>
           <div style={style.text}>
-            <FormattedMessage id="home.homeHeadline.text" />
+            <FormattedMessage id="home.secureHealth.text" />
           </div>
         </Col>
       </Row>

@@ -42,6 +42,11 @@ export default {
   'home.homeHeadline.title': 'Jaime les chattes',
   'home.homeHeadline.text': 'Le text ici est en français Le text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en français',
 
+  // secureHealth.component
+  'home.secureHealth.titleTop': 'Santé &',
+  'home.secureHealth.titleBottom': 'Sécurité',
+  'home.secureHealth.text': 'This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component',
+
   // businessValues.component
   'home.businessValues.title': 'Nos valeurs',
   'home.businessValues.value1': 'Valeur 1',

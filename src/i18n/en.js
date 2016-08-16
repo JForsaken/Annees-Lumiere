@@ -39,6 +39,11 @@ export default {
   'home.homeHeadline.title': 'I love kitten',
   'home.homeHeadline.text': 'This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english',
 
+  // secureHealth.component
+  'home.secureHealth.titleTop': 'Health &',
+  'home.secureHealth.titleBottom': 'Security',
+  'home.secureHealth.text': 'This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component',
+
   // businessValues.component
   'home.businessValues.title': 'Our values',
   'home.businessValues.value1': 'Value 1',
