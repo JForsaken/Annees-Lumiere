@@ -9,7 +9,7 @@ import ParallaxSplash from './ParallaxSplash';
 import Mission from './Mission';
 import HomeHeadline from './HomeHeadline';
 import BusinessValues from './BusinessValues';
-import SecureHealth from './SecureHealth.jsx';
+import SecureHealth from './SecureHealth';
 
 /* Styles */
 const style = {
