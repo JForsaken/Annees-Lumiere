@@ -34,7 +34,7 @@ const style = {
 
   text: {
     fontSize: '16px',
-    textAlign: 'center',
+    textAlign: 'justify',
     margin: 'auto',
   },
 

@@ -9,6 +9,7 @@ import ParallaxSplash from './ParallaxSplash';
 import Mission from './Mission';
 import HomeHeadline from './HomeHeadline';
 import BusinessValues from './BusinessValues';
+import SecureHealth from './SecureHealth.jsx';
 
 /* Styles */
 const style = {
@@ -37,6 +38,7 @@ export default class Home extends Component {
           <HomeHeadline />
           <Mission />
           <BusinessValues />
+          <SecureHealth />
           <Footer />
         </div>
 

@@ -31,7 +31,7 @@ const style = {
     fontSize: '16px',
     maxWidth: '600px',
     width: '100%',
-    textAlign: 'center',
+    textAlign: 'justify',
     margin: '-40px auto auto auto',
     paddingTop: '3.5em',
     paddingBottom: '3.5em',
