@@ -51,7 +51,7 @@ const style = {
 };
 
 @radium
-export default class HomeHeadline extends Component {
+export default class SecureHealth extends Component {
   render() {
     return (
       <Row style={style.secureHealthBackground}>
