@@ -52,6 +52,15 @@ export default {
   'home.businessValues.value4': 'Value 4',
   'home.businessValues.value5': 'Value 5',
 
+  // educationalProgram.component
+  'home.educationalProgram.title': 'Our educational program',
+  'home.educationalProgram.box1': '18-24 months old',
+  'home.educationalProgram.box2': '2-3 years old',
+  'home.educationalProgram.box3': '3-4 years old',
+  'home.educationalProgram.box4': '4-5 years old',
+  'home.educationalProgram.box5': '5-12 years old',
+  'home.educationalProgram.box6': 'Activities',
+
   // LOGOUT
   'logout': 'Logout',
 
