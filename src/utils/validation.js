@@ -6,7 +6,7 @@ const join = (rules) =>
 export function email(value) {
   // Let's not start a debate on email regex. This is just for an example app!
   if (!isEmpty(value) && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-    return 'Invalid email address';
+    return 'email';
   }
   return null;
 }
@@ -14,21 +14,21 @@ export function email(value) {
 export function phoneNumber(value) {
   if (!isEmpty(value) &&
       !/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/.test(value)) {
-    return 'Invalid phone number';
+    return 'phoneNumber';
   }
   return null;
 }
 
 export function required(value) {
   if (isEmpty(value)) {
-    return 'Required';
+    return 'required';
   }
   return null;
 }
 
 export function selectOption(value) {
   if (isEmpty(value) || value === 'select') {
-    return 'Required';
+    return 'selectOption';
   }
   return null;
 }
@@ -39,7 +39,7 @@ export function selectOptionKid(value, key, data) {
 
   if (data && data[`kid${kidNumId}language`] !== undefined &&
       (isEmpty(value) || value === 'select')) {
-    return 'Required';
+    return 'selectOption';
   }
   return null;
 }
@@ -49,7 +49,7 @@ export function requiredKid(value, key, data) {
   const kidNumId = /^\d+$/.test(id[1]) ? id : id[0];
 
   if (data && data[`kid${kidNumId}language`] !== undefined && isEmpty(value)) {
-    return 'Required';
+    return 'required';
   }
   return null;
 }
@@ -75,7 +75,7 @@ export function minLength(min) {
 export function maxLength(max) {
   return value => {
     if (!isEmpty(value) && value.length > max) {
-      return `Must be no more than ${max} characters`;
+      return 'maxLength';
     }
     return null;
   };

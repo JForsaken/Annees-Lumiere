@@ -27,6 +27,12 @@ export default {
 
   // FORM
   'form.title': 'Inscription',
+  'form.parent': 'Parent',
+  'form.kid': 'Kid',
+  'form.clearValues': 'Vider les champs',
+  'form.removeKid': 'Remove kid',
+  'form.addKid': 'Add kid',
+  'form.submit': 'Soumettre',
   'form.firstname': 'Prénom',
   'form.lastname': 'Nom',
   'form.address': 'Adresse',
@@ -37,6 +43,14 @@ export default {
   'form.language': 'Langue maternelle',
   'form.birthday': 'Date de naissance',
   'form.sex': 'Genre',
+
+  // FORM ERRORS
+  'form.errors.required': 'Champs requis',
+  'form.errors.email': 'Adresse courriel invalide',
+  'form.errors.phoneNumber': 'Numéro de téléphone invalide',
+  'form.errors.selectOption': 'Veuillez sélectionner une option',
+  'form.errors.date': 'Format de date invalide',
+  'form.errors.maxLength': 'Ne doit pas être plus que 30 caractères',
 
   // HOME
 

@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 import radium from 'radium';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { FormattedMessage } from 'react-intl';
 
 /* Components */
 import ReservationForm from '../reservation/ReservationForm';
@@ -30,7 +31,9 @@ class Reservation extends React.Component {
     return (
       <div style={style.page}>
         <div>
-          <h1>Reservations</h1>
+          <h1>
+            <FormattedMessage id="form.title" />
+          </h1>
         </div>
         <ReservationForm {...this.props} />
       </div>

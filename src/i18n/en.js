@@ -24,6 +24,12 @@ export default {
 
   // FORM
   'form.title': 'Reservation',
+  'form.parent': 'Parent',
+  'form.kid': 'Enfant',
+  'form.clearValues': 'Clear values',
+  'form.removeKid': "Supprimer l'enfant",
+  'form.addKid': 'Ajouter un enfant',
+  'form.submit': 'Submit',
   'form.firstname': 'First name',
   'form.lastname': 'Last name',
   'form.address': 'Address',
@@ -34,6 +40,14 @@ export default {
   'form.language': 'Preferred language',
   'form.birthday': 'Date of birth',
   'form.sex': 'Gender',
+
+  // FORM ERRORS
+  'form.errors.required': 'Required',
+  'form.errors.email': 'Invalid email',
+  'form.errors.phoneNumber': 'Invalid phone number',
+  'form.errors.selectOption': 'Please select an option',
+  'form.errors.date': 'Invalid date format',
+  'form.errors.maxLength': 'Must be no more than 30 characters',
 
   // HOME
 

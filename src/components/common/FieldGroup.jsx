@@ -1,5 +1,6 @@
 import React from 'react';
 import { ControlLabel, FormControl, FormGroup, HelpBlock } from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 
 const style = {
 
@@ -30,7 +31,10 @@ export default function FieldGroup({ id, label, help, ...props }) {
         {props.options && props.options}
       </FormControl>
       {help && <HelpBlock>{help}</HelpBlock>}
-      {props.touched && props.error && <div style={style.errorMessage}>{props.error}</div>}
+      {props.touched && props.error &&
+       <div style={style.errorMessage}>
+         <FormattedMessage id={`form.errors.${props.error}`} />
+       </div>}
     </FormGroup>
   );
 }

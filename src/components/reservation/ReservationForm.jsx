@@ -4,7 +4,7 @@ import { Form, Button, Row } from 'react-bootstrap';
 import radium from 'radium';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { injectIntl } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 /* Components */
 import FieldGroup from '../common/FieldGroup';
@@ -156,7 +156,7 @@ class ReservationForm extends Component {
           <hr />
           <Row style={style.headerColumn}>
             <h3>
-              {`kid ${i + 1}`}
+              <FormattedMessage id="form.kid" /> #{i + 1}
             </h3>
           </Row>
           <FieldGroup
@@ -233,12 +233,12 @@ class ReservationForm extends Component {
 
     const removeKidButton = (
       <RadiumButton
-          bsStyle="danger"
-          style={style.trashButton}
-          disabled={kids <= 1}
-          onClick={this.removeKid}
+        bsStyle="danger"
+        style={style.trashButton}
+        disabled={kids <= 1}
+        onClick={this.removeKid}
       >
-        <i className="fa fa-trash" /> Remove
+        <i className="fa fa-trash" /> <FormattedMessage id="form.removeKid" />
       </RadiumButton>
     );
 
@@ -311,7 +311,7 @@ class ReservationForm extends Component {
 
         <RadiumRow style={style.addKidButtonRow}>
           <Button onClick={this.addKid} disabled={this.state.kids >= 10}>
-            <i className="fa fa-plus" /> Add kid
+            <i className="fa fa-plus" /> <FormattedMessage id="form.addKid" />
           </Button>
         </RadiumRow>
         <Row style={style.lastButtonRow}>
@@ -322,7 +322,8 @@ class ReservationForm extends Component {
             type="submit"
             disabled={submitting}
           >
-            {submitting ? <i /> : <i />} <i className="fa fa-paper-plane" /> Submit
+            {submitting ? <i /> : <i />}
+            <i className="fa fa-paper-plane" /> <FormattedMessage id="form.submit" />
           </Button>
           <Button
             style={style.lastButtonRowItem}
@@ -331,7 +332,7 @@ class ReservationForm extends Component {
             disabled={submitting}
             onClick={resetForm}
           >
-            Clear Values
+            <FormattedMessage id="form.clearValues" />
           </Button>
         </Row>
       </Form>
