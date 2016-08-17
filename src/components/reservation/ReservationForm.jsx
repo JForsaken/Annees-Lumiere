@@ -185,7 +185,11 @@ class ReservationForm extends Component {
             options={this.getSexOptions()}
             {...this.props.fields[`kid${i + 1}sex`]}
           />
-          <RadiumButton bsStyle="danger" style={style.trashButton}>
+          <RadiumButton
+            bsStyle="danger"
+            style={style.trashButton}
+            disabled={kids <= 1}
+          >
             <i className="fa fa-trash" /> Remove
           </RadiumButton>
         </div>
@@ -212,6 +216,14 @@ class ReservationForm extends Component {
       submitting,
       intl,
     } = this.props;
+
+    const maxKidContainer = (
+      <div style={style.maxKidContainer}>
+        <div style={style.maxKidText}>
+          <i className="fa fa-exclamation-triangle" /> No more than 10 kids allowed!
+        </div>
+      </div>
+    );
 
     return (
       <Form onSubmit={handleSubmit(this.handleSubmit)}>
@@ -275,17 +287,10 @@ class ReservationForm extends Component {
           options={this.getLanguageOptions()}
           {...language}
         />
-      {
-        this.renderKids()
-      }
-      {
-        this.state.kids >= 10 &&
-          <div style={style.maxKidContainer}>
-            <div style={style.maxKidText}>
-              <i className="fa fa-exclamation-triangle" /> No more than 10 kids allowed!
-            </div>
-          </div>
-      }
+
+        {this.renderKid}
+        {this.state.kids >= 10 && maxKidContainer}
+
         <RadiumRow style={style.addKidButtonRow}>
           <Button onClick={this.addKid} disabled={this.state.kids >= 10}>
             <i className="fa fa-plus" /> Add kid
@@ -299,7 +304,7 @@ class ReservationForm extends Component {
             type="submit"
             disabled={submitting}
           >
-        {submitting ? <i /> : <i />} <i className="fa fa-paper-plane" /> Submit
+            {submitting ? <i /> : <i />} <i className="fa fa-paper-plane" /> Submit
           </Button>
           <Button
             style={style.lastButtonRowItem}
