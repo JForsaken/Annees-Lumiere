@@ -1,7 +1,7 @@
 const isEmpty = value => value === undefined || value === null || value === '';
 const join = (rules) =>
-        (value, data) =>
-        rules.map(rule => rule(value, data)).filter(error => !!error)[0];
+        (value, key, data) =>
+        rules.map(rule => rule(value, key, data)).filter(error => !!error)[0];
 
 export function email(value) {
   // Let's not start a debate on email regex. This is just for an example app!
@@ -21,6 +21,34 @@ export function phoneNumber(value) {
 
 export function required(value) {
   if (isEmpty(value)) {
+    return 'Required';
+  }
+  return null;
+}
+
+export function selectOption(value) {
+  if (isEmpty(value) || value === 'select') {
+    return 'Required';
+  }
+  return null;
+}
+
+export function selectOptionKid(value, key, data) {
+  const id = key.substr(3, 2);
+  const kidNumId = /^\d+$/.test(id[1]) ? id : id[0];
+
+  if (data && data[`kid${kidNumId}language`] !== undefined &&
+      (isEmpty(value) || value === 'select')) {
+    return 'Required';
+  }
+  return null;
+}
+
+export function requiredKid(value, key, data) {
+  const id = key.substr(3, 2);
+  const kidNumId = /^\d+$/.test(id[1]) ? id : id[0];
+
+  if (data && data[`kid${kidNumId}language`] !== undefined && isEmpty(value)) {
     return 'Required';
   }
   return null;
@@ -86,7 +114,7 @@ export function createValidator(rules) {
     Object.keys(rules).forEach((key) => {
       // concat for both functions
       const rule = join([].concat(rules[key]));
-      const error = rule(data[key], data);
+      const error = rule(data[key], key, data);
 
       if (error) {
         errors[key] = error;
