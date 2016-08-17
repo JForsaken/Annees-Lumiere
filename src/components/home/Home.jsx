@@ -10,6 +10,7 @@ import Mission from './Mission';
 import HomeHeadline from './HomeHeadline';
 import BusinessValues from './BusinessValues';
 import SecureHealth from './SecureHealth';
+import EducationalProgram from './EducationalProgram';
 
 /* Styles */
 const style = {
@@ -38,6 +39,7 @@ export default class Home extends Component {
           <HomeHeadline />
           <Mission />
           <BusinessValues />
+          <EducationalProgram />
           <SecureHealth />
           <Footer />
         </div>
