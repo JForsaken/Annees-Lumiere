@@ -20,7 +20,6 @@ import reservationFormValidation, { fields } from './reservationFormValidation';
 const style = {
 
   kidContainer: {
-    paddingBottom: 20,
     display: 'block',
   },
 
@@ -33,6 +32,7 @@ const style = {
     textAlign: 'center',
     height: 50,
     display: 'block',
+    marginBottom: 10,
   },
 
   maxKidText: {
@@ -49,6 +49,7 @@ const style = {
     display: 'block',
     fontSize: 15,
     width: '100%',
+    marginBottom: 10,
   },
 
   lastButtonRow: {
@@ -91,6 +92,7 @@ class ReservationForm extends Component {
     super(props, context);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addKid = this.addKid.bind(this);
+    this.removeKid = this.removeKid.bind(this);
 
     this.state = { kids: 1 };
     props.fields.kid1language.onChange('select');
@@ -125,8 +127,17 @@ class ReservationForm extends Component {
   }
 
   addKid() {
-    this.setState({ kids: this.state.kids + 1 });
     this.props.fields[`kid${this.state.kids + 1}language`].onChange('select');
+    this.setState({ kids: this.state.kids + 1 });
+  }
+
+  removeKid() {
+    this.props.fields[`kid${this.state.kids}firstname`].onChange(undefined);
+    this.props.fields[`kid${this.state.kids}lastname`].onChange(undefined);
+    this.props.fields[`kid${this.state.kids}birthday`].onChange(undefined);
+    this.props.fields[`kid${this.state.kids}language`].onChange(undefined);
+    this.props.fields[`kid${this.state.kids}sex`].onChange(undefined);
+    this.setState({ kids: this.state.kids - 1 });
   }
 
   handleSubmit() {
@@ -185,13 +196,6 @@ class ReservationForm extends Component {
             options={this.getSexOptions()}
             {...this.props.fields[`kid${i + 1}sex`]}
           />
-          <RadiumButton
-            bsStyle="danger"
-            style={style.trashButton}
-            disabled={kids <= 1}
-          >
-            <i className="fa fa-trash" /> Remove
-          </RadiumButton>
         </div>
       );
     }
@@ -217,12 +221,25 @@ class ReservationForm extends Component {
       intl,
     } = this.props;
 
+    const { kids } = this.state;
+
     const maxKidContainer = (
       <div style={style.maxKidContainer}>
         <div style={style.maxKidText}>
           <i className="fa fa-exclamation-triangle" /> No more than 10 kids allowed!
         </div>
       </div>
+    );
+
+    const removeKidButton = (
+      <RadiumButton
+          bsStyle="danger"
+          style={style.trashButton}
+          disabled={kids <= 1}
+          onClick={this.removeKid}
+      >
+        <i className="fa fa-trash" /> Remove
+      </RadiumButton>
     );
 
     return (
@@ -289,6 +306,7 @@ class ReservationForm extends Component {
         />
 
         {this.renderKids()}
+        {removeKidButton}
         {this.state.kids >= 10 && maxKidContainer}
 
         <RadiumRow style={style.addKidButtonRow}>
