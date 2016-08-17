@@ -32,7 +32,8 @@ export default {
   'form.optionalPhoneNumber': 'Optional phone number',
   'form.profession': 'Profession',
   'form.language': 'Preferred language',
-  'form.kids': 'Kids on reservation',
+  'form.birthday': 'Date of birth',
+  'form.sex': 'Gender',
 
   // HOME
 

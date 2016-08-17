@@ -35,7 +35,8 @@ export default {
   'form.optionalPhoneNumber': 'Numéro de téléphone optionnel',
   'form.profession': 'Profession',
   'form.language': 'Langue maternelle',
-  'form.kids': 'Enfants à inscrire',
+  'form.birthday': 'Date de naissance',
+  'form.sex': 'Genre',
 
   // HOME
 
