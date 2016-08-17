@@ -14,10 +14,6 @@ const style = {
   educationalProgramBackground: {
     textAlign: 'center',
     fontSize: '30px',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    overflow: 'hidden',
-    width: '100%',
     marginLeft: '0',
     marginRight: '0',
     marginTop: '20px',

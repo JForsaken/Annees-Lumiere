@@ -39,7 +39,7 @@ export default class Home extends Component {
           <HomeHeadline />
           <Mission />
           <BusinessValues />
-          <EducationalProgram boxQuantity={6} />
+          <EducationalProgram />
           <SecureHealth />
           <Footer />
         </div>
