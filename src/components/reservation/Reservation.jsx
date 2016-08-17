@@ -31,7 +31,7 @@ class Reservation extends React.Component {
     return (
       <div style={style.page}>
         <div>
-          <h1>
+          <h1 style={{ textAlign: 'center' }}>
             <FormattedMessage id="form.title" />
           </h1>
         </div>
