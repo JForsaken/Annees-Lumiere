@@ -288,7 +288,7 @@ class ReservationForm extends Component {
           {...language}
         />
 
-        {this.renderKid}
+        {this.renderKids()}
         {this.state.kids >= 10 && maxKidContainer}
 
         <RadiumRow style={style.addKidButtonRow}>
