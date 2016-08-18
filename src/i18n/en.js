@@ -44,6 +44,12 @@ export default {
   'form.birthYear': 'Year',
   'form.sex': 'Gender',
 
+  // FORM MODAL
+  'form.modal.title.success': 'Reservation submitted!',
+  'form.modal.title.errors': 'Oops! Something went wrong...',
+  'form.modal.content.success': 'Verify your email inbox for the confirmation message :)',
+  'form.modal.content.errors': 'Our servers look down, please try again later :(',
+
   // FORM ERRORS
   'form.errors.required': 'Required',
   'form.errors.email': 'Invalid email',

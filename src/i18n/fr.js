@@ -47,6 +47,12 @@ export default {
   'form.birthYear': 'Année',
   'form.sex': 'Genre',
 
+  // FORM MODAL
+  'form.modal.title.success': 'Inscription effectuée avec succès!',
+  'form.modal.title.errors': 'Oups! Il y a quelque chose qui cloche...',
+  'form.modal.content.success': 'Veuillez vérifier votre boîte de réception pour la confirmation :)',
+  'form.modal.content.errors': 'Nos serveurs sont présentement hors service, veuillez réessayer plus tard :(',
+
   // FORM ERRORS
   'form.errors.required': 'Champs requis',
   'form.errors.email': 'Adresse courriel invalide',

@@ -5,6 +5,7 @@ import radium from 'radium';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 
 /* Components */
 import FieldGroup from '../common/FieldGroup';
@@ -15,6 +16,14 @@ const RadiumForm = radium(Form);
 /* Utils */
 import reservationFormValidation, { fields } from './reservationFormValidation';
 import { extractReservationBody } from './helpers';
+
+/* Constants */
+import {
+  POST_RESERVATION_PENDING,
+  POST_RESERVATION_SUCCESS,
+  POST_RESERVATION_FAILED,
+} from '../../constants';
+
 
 const style = {
 
@@ -35,6 +44,20 @@ const style = {
     borderRadius: 10,
     background: '#f0f0f0',
     padding: 20,
+  },
+
+  modal: {
+    errors:{
+      background: '#f4e9e9',
+      borderTop: '11px solid #c12e2a',
+      boxShadow: '#c12e2a 0px 0px 1px',
+    },
+
+    success: {
+      background: '#f0f5ea',
+      borderTop: '11px solid green',
+      boxShadow: 'green 0px 0px 1px',
+    },
   },
 
   divider: {
@@ -110,12 +133,65 @@ class ReservationForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addKid = this.addKid.bind(this);
     this.removeKid = this.removeKid.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
 
-    this.state = { kids: 1 };
+    this.state = {
+      kids: 1,
+      isShowingModal: false,
+    };
   }
 
   componentDidMount() {
     this.props.fields.kid1language.onChange('select');
+  }
+
+  shouldComponentUpdate(nextProps) {
+    const currentReservation = this.props.samfish.reservation;
+    const reservation = nextProps.samfish.reservation;
+
+    if (reservation.lastAction !== currentReservation.lastAction) {
+      this.handleSamfishResponse(reservation);
+    }
+    return true;
+  }
+
+  handleModalClose() {
+    this.setState({ isShowingModal: false });
+  }
+
+  renderModal() {
+    const samfishErrors = this.props.samfish.reservation.errors;
+    const messageType = samfishErrors ? 'errors' : 'success';
+    const modalStyle = samfishErrors ? style.modal.errors : style.modal.success;
+
+    return (
+      <ModalContainer style={style.modal.container} onClose={this.handleModalClose}>
+        <ModalDialog style={modalStyle} onClose={this.handleModalClose}>
+          <h2>
+            <FormattedMessage id={`form.modal.title.${messageType}`} />
+          </h2>
+          <h4>
+            <FormattedMessage id={`form.modal.content.${messageType}`} />
+          </h4>
+        </ModalDialog>
+      </ModalContainer>
+    );
+  }
+
+  handleSamfishResponse(reservation) {
+    switch (reservation.lastAction) {
+
+      case POST_RESERVATION_FAILED:
+        this.setState({ isShowingModal: true });
+        break;
+
+      case POST_RESERVATION_SUCCESS:
+        this.setState({ isShowingModal: true });
+        break;
+
+      default:
+        break;
+    }
   }
 
   getLanguageOptions() {
@@ -227,6 +303,7 @@ class ReservationForm extends Component {
 
   handleSubmit() {
     const body = extractReservationBody(this.props.fields);
+    this.props.actions.postReservationPending();
     this.props.actions.postReservation(body);
   }
 
@@ -351,9 +428,10 @@ class ReservationForm extends Component {
 
     return (
       <RadiumRow style={style.formContainer}>
+      {this.state.isShowingModal && this.renderModal()}
         <RadiumForm style={style.formBackground} onSubmit={handleSubmit(this.handleSubmit)}>
           <h3>
-            Parent
+            <FormattedMessage id="form.parent" />
           </h3>
           <FieldGroup
             id="firstname"
@@ -428,7 +506,7 @@ class ReservationForm extends Component {
               bsStyle="primary"
               bsSize="large"
               type="submit"
-              disabled={samfish.pending}
+              disabled={samfish.reservation.pending}
             >
               <i className="fa fa-paper-plane" /> <FormattedMessage id="form.submit" />
             </Button>
@@ -436,7 +514,7 @@ class ReservationForm extends Component {
               style={style.lastButtonRowItem}
               bsSize="large"
               type="button"
-              disabled={samfish.pending}
+              disabled={samfish.reservation.pending}
               onClick={resetForm}
             >
               <FormattedMessage id="form.clearValues" />

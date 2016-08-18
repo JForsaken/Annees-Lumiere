@@ -2,7 +2,9 @@ import 'whatwg-fetch';
 import handleActionError from '../utils/handle-action-error';
 import processResponse from '../utils/process-response';
 import {
-  POST_RESERVATION,
+  POST_RESERVATION_PENDING,
+  POST_RESERVATION_SUCCESS,
+  POST_RESERVATION_FAILED,
   FETCH_LANGUAGES,
 } from '../constants';
 
@@ -20,6 +22,14 @@ export function fetchLanguages() {
   };
 }
 
+export function postReservationPending() {
+  return dispatch => dispatch({
+    type: POST_RESERVATION_PENDING,
+    pending: true,
+    errors: false,
+  });
+}
+
 export function postReservation(reservation) {
   return dispatch => {
     fetch(`${SAMFISH_API}/reservations`, {
@@ -33,16 +43,16 @@ export function postReservation(reservation) {
       .then(processResponse)
       .then(data => {
         dispatch({
-          type: POST_RESERVATION,
-          info: data.body,
+          type: POST_RESERVATION_SUCCESS,
+          response: data,
           errors: false,
-          pending: true,
+          pending: false,
         });
       })
       .catch(err => {
         dispatch({
-          type: POST_RESERVATION,
-          info: err.body,
+          type: POST_RESERVATION_FAILED,
+          response: err,
           errors: true,
           pending: false,
         });
