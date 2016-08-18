@@ -3,6 +3,7 @@
 /* global __DEVTOOLS__ */
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { reduxReactRouter, routerStateReducer } from 'redux-router';
+import { reducer as formReducer } from 'redux-form';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import createHashHistory from 'history/lib/createHashHistory';
 import thunk from 'redux-thunk';
@@ -32,6 +33,7 @@ const finalCreateStore = compose(
 
 const combinedReducer = combineReducers(Object.assign({
   router: routerStateReducer,
+  form: formReducer,
 }, reducers));
 
 export default function configureStore(initialState) {

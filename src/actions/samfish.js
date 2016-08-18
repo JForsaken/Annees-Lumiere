@@ -2,35 +2,13 @@ import 'whatwg-fetch';
 import handleActionError from '../utils/handle-action-error';
 import processResponse from '../utils/process-response';
 import {
-  POST_RESERVATION,
+  POST_RESERVATION_PENDING,
+  POST_RESERVATION_SUCCESS,
+  POST_RESERVATION_FAILED,
   FETCH_LANGUAGES,
 } from '../constants';
 
 const SAMFISH_API = 'http://localhost:5000';
-
-const MOCK_REQUEST = {
-  firstname: 'Jésus',
-  lastname: 'Christ',
-  address: '123 Jerusalem',
-  emailAddress: 'justin.derrico1991@gmail.com',
-  primaryPhoneNumber: '514-000-1234',
-  profession: 'Messie',
-  language: 'EN',
-  kids: [
-    {
-      firstname: 'Bebe Jesus',
-      lastname: 'Christ',
-      birthday: '24-12-2000',
-      language: 'EN',
-    },
-    {
-      firstname: 'Aîné Jesus',
-      lastname: 'Christ',
-      birthday: '24-12-1995',
-      language: 'EN',
-    },
-  ],
-};
 
 export function fetchLanguages() {
   return dispatch => {
@@ -44,7 +22,15 @@ export function fetchLanguages() {
   };
 }
 
-export function postReservation() {
+export function postReservationPending() {
+  return dispatch => dispatch({
+    type: POST_RESERVATION_PENDING,
+    pending: true,
+    errors: false,
+  });
+}
+
+export function postReservation(reservation) {
   return dispatch => {
     fetch(`${SAMFISH_API}/reservations`, {
       method: 'post',
@@ -52,18 +38,24 @@ export function postReservation() {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(MOCK_REQUEST),
+      body: JSON.stringify(reservation),
     })
       .then(processResponse)
-      .then(() => dispatch({
-        type: POST_RESERVATION,
-        reservation: MOCK_REQUEST,
-        errors: false,
-      }))
-      .catch(() => dispatch({
-        type: POST_RESERVATION,
-        reservation: MOCK_REQUEST,
-        errors: true,
-      }));
+      .then(data => {
+        dispatch({
+          type: POST_RESERVATION_SUCCESS,
+          response: data,
+          errors: false,
+          pending: false,
+        });
+      })
+      .catch(err => {
+        dispatch({
+          type: POST_RESERVATION_FAILED,
+          response: err,
+          errors: true,
+          pending: false,
+        });
+      });
   };
 }

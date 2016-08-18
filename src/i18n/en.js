@@ -22,6 +22,57 @@ export default {
   'forbidden': 'Forbidden',
   'forbiddenReason': 'You are not authorized to access page XXX.',
 
+  // FORM
+  'form.title': 'Reservation',
+  'form.parent': 'Parent',
+  'form.kid': 'Enfant',
+  'form.clearValues': 'Clear values',
+  'form.removeKid': "Supprimer l'enfant",
+  'form.addKid': 'Ajouter un enfant',
+  'form.submit': 'Submit',
+  'form.firstname': 'First name',
+  'form.lastname': 'Last name',
+  'form.address': 'Address',
+  'form.emailAddress': 'Email',
+  'form.primaryPhoneNumber': 'Primary phone number',
+  'form.optionalPhoneNumber': 'Optional phone number',
+  'form.profession': 'Profession',
+  'form.language': 'Preferred language',
+  'form.birthday': 'Date of birth',
+  'form.birthDay': 'Day',
+  'form.birthMonth': 'Month',
+  'form.birthYear': 'Year',
+  'form.sex': 'Gender',
+
+  // FORM MODAL
+  'form.modal.title.success': 'Reservation submitted!',
+  'form.modal.title.errors': 'Oops! Something went wrong...',
+  'form.modal.content.success': 'Verify your email inbox for the confirmation message :)',
+  'form.modal.content.errors': 'Our servers look down, please try again later :(',
+
+  // FORM ERRORS
+  'form.errors.required': 'Required',
+  'form.errors.email': 'Invalid email',
+  'form.errors.phoneNumber': 'Invalid phone number',
+  'form.errors.selectOption': 'Please select an option',
+  'form.errors.selectDateOption': ' ',
+  'form.errors.date': 'Invalid date format',
+  'form.errors.maxLength': 'Must be no more than 30 characters',
+
+  // FORM MONTHS
+  'form.months.1': 'January',
+  'form.months.2': 'February',
+  'form.months.3': 'March',
+  'form.months.4': 'April',
+  'form.months.5': 'May',
+  'form.months.6': 'June',
+  'form.months.7': 'July',
+  'form.months.8': 'August',
+  'form.months.9': 'September',
+  'form.months.10': 'October',
+  'form.months.11': 'November',
+  'form.months.12': 'December',
+
   // HOME
 
   // home.component

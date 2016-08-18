@@ -25,6 +25,58 @@ export default {
   'forbidden': 'Interdit',
   'forbiddenReason': 'Vous êtes pas autorisé à accéder à la page XXX.',
 
+  // FORM
+  'form.title': 'Inscription',
+  'form.parent': 'Parent',
+  'form.kid': 'Kid',
+  'form.clearValues': 'Vider les champs',
+  'form.removeKid': 'Remove kid',
+  'form.addKid': 'Add kid',
+  'form.submit': 'Soumettre',
+  'form.firstname': 'Prénom',
+  'form.lastname': 'Nom',
+  'form.address': 'Adresse',
+  'form.emailAddress': 'Adresse courriel',
+  'form.primaryPhoneNumber': 'Numéro de téléphone primaire',
+  'form.optionalPhoneNumber': 'Numéro de téléphone optionnel',
+  'form.profession': 'Profession',
+  'form.language': 'Langue maternelle',
+  'form.birthday': 'Date de naissance',
+  'form.birthDay': 'Jour',
+  'form.birthMonth': 'Mois',
+  'form.birthYear': 'Année',
+  'form.sex': 'Genre',
+
+  // FORM MODAL
+  'form.modal.title.success': 'Inscription effectuée avec succès!',
+  'form.modal.title.errors': 'Oups! Il y a quelque chose qui cloche...',
+  'form.modal.content.success': 'Veuillez vérifier votre boîte de réception pour la confirmation :)',
+  'form.modal.content.errors': 'Nos serveurs sont présentement hors service, veuillez réessayer plus tard :(',
+
+  // FORM ERRORS
+  'form.errors.required': 'Champs requis',
+  'form.errors.email': 'Adresse courriel invalide',
+  'form.errors.phoneNumber': 'Numéro de téléphone invalide',
+  'form.errors.selectOption': 'Veuillez sélectionner une option',
+  'form.errors.selectDateOption': ' ',
+  'form.errors.date': 'Format de date invalide',
+  'form.errors.maxLength': 'Ne doit pas être plus que 30 caractères',
+
+  // FORM MONTHS
+  'form.months.1': 'Janvier',
+  'form.months.2': 'Février',
+  'form.months.3': 'Mars',
+  'form.months.4': 'Avril',
+  'form.months.5': 'Mai',
+  'form.months.6': 'Juin',
+  'form.months.7': 'Juillet',
+  'form.months.8': 'Août',
+  'form.months.9': 'Septembre',
+  'form.months.10': 'Octobre',
+  'form.months.11': 'Novembre',
+  'form.months.12': 'Décembre',
+
+
   // HOME
 
   // home.component
