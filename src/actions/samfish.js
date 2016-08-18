@@ -44,7 +44,8 @@ export function fetchLanguages() {
   };
 }
 
-export function postReservation() {
+export function postReservation(reservation) {
+  debugger;
   return dispatch => {
     fetch(`${SAMFISH_API}/reservations`, {
       method: 'post',
@@ -52,17 +53,17 @@ export function postReservation() {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(MOCK_REQUEST),
+      body: JSON.stringify(reservation),
     })
       .then(processResponse)
       .then(() => dispatch({
         type: POST_RESERVATION,
-        reservation: MOCK_REQUEST,
+        reservation: reservation,
         errors: false,
       }))
       .catch(() => dispatch({
         type: POST_RESERVATION,
-        reservation: MOCK_REQUEST,
+        reservation: reservation,
         errors: true,
       }));
   };

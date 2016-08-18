@@ -17,6 +17,7 @@ import * as samfishActions from '../../actions/samfish';
 
 /* Utils */
 import reservationFormValidation, { fields } from './reservationFormValidation';
+import { extractReservationBody } from './helpers';
 
 const style = {
 
@@ -156,7 +157,12 @@ class ReservationForm extends Component {
 
     for (let i = 1; i <= 31; i++) {
       days.push(
-        <option key={`day${i}`} value={i}>{i}</option>
+        <option
+            key={`day${i}`}
+            value={i.toString().length === 1 ? `0${i}` : i.toString()}
+        >
+          {i}
+        </option>
       );
     }
 
@@ -174,7 +180,12 @@ class ReservationForm extends Component {
     for (let i = 1; i <= 12; i++) {
       const currentMonth = intl.messages[`form.months.${i}`];
       months.push(
-        <option key={`month${i}`} value={currentMonth}>{currentMonth}</option>
+        <option
+            key={`month${i}`}
+            value={i.toString().length === 1 ? `0${i}` : i.toString()}
+        >
+          {currentMonth}
+        </option>
       );
     }
 
@@ -192,7 +203,7 @@ class ReservationForm extends Component {
 
     for (let i = currentYear; i >= currentYear - 50; i--) {
       years.push(
-        <option key={`year${i}`} value={i}>{i}</option>
+        <option key={`year${i}`} value={i.toString()}>{i}</option>
       );
     }
 
@@ -216,8 +227,9 @@ class ReservationForm extends Component {
   }
 
   handleSubmit() {
-    // Do Samfish API Call (⌐■_■)
-    alert('submitted');
+    const body = extractReservationBody(this.props.fields);
+    console.log(this.props);
+    this.props.actions.postReservation(body);
   }
 
   renderKids() {
