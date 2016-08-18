@@ -3,21 +3,14 @@ import { forEach, omitBy } from 'lodash';
 const isEmpty = value => value === undefined || value === null || value === '';
 
 export function extractReservationBody(fields) {
-
   // remove all empty values
-  const filtered = omitBy(fields, field => {
-    return isEmpty(field.value);
-  });
+  const filtered = omitBy(fields, field => isEmpty(field.value));
 
   // parent form related fields
-  const parentForm = omitBy(filtered, (field, key) => {
-    return key.includes('kid');
-  });
+  const parentForm = omitBy(filtered, (field, key) => key.includes('kid'));
 
   // kid form related fields
-  const kidFields = omitBy(filtered, (field, key) => {
-    return !key.includes('kid');
-  });
+  const kidFields = omitBy(filtered, (field, key) => !key.includes('kid'));
 
   // 7 fields per kid
   const kidCount = Object.keys(kidFields).length / 7;
@@ -42,14 +35,11 @@ export function extractReservationBody(fields) {
     forEach(currentKid, (field, key) => {
       if (key.includes('Day')) {
         day = field.value;
-      }
-      else if (key.includes('Month')) {
+      } else if (key.includes('Month')) {
         month = field.value;
-      }
-      else if (key.includes('Year')) {
+      } else if (key.includes('Year')) {
         year = field.value;
-      }
-      else {
+      } else {
         const formattedKey = key.substr(3 + i.toString().length);
         kid[formattedKey] = field.value;
       }
@@ -67,6 +57,6 @@ export function extractReservationBody(fields) {
 
   return {
     ...cleanedParent,
-    kids: kids,
+    kids,
   };
 }

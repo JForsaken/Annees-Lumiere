@@ -13,11 +13,18 @@ export default function processResponse(response) {
     }
 
     if (isOk) {
-      return bodyCopy;
+      return {
+        body: bodyCopy,
+        statusCode: response.status,
+        statusText: response.statusText,
+        url: response.url,
+      };
     }
 
     const objectToThrow = {
-      ...bodyCopy,
+      body: bodyCopy,
+      url: response.url,
+      statusText: response.statusText,
       statusCode: response.status,
     };
 

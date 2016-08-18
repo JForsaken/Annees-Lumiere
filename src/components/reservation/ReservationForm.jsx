@@ -12,9 +12,6 @@ const RadiumButton = radium(Button);
 const RadiumRow = radium(Row);
 const RadiumForm = radium(Form);
 
-/* Actions */
-import * as samfishActions from '../../actions/samfish';
-
 /* Utils */
 import reservationFormValidation, { fields } from './reservationFormValidation';
 import { extractReservationBody } from './helpers';
@@ -106,7 +103,6 @@ class ReservationForm extends Component {
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     resetForm: PropTypes.func.isRequired,
-    submitting: PropTypes.bool.isRequired,
   };
 
   constructor(props, context) {
@@ -116,7 +112,10 @@ class ReservationForm extends Component {
     this.removeKid = this.removeKid.bind(this);
 
     this.state = { kids: 1 };
-    props.fields.kid1language.onChange('select');
+  }
+
+  componentDidMount() {
+    this.props.fields.kid1language.onChange('select');
   }
 
   getLanguageOptions() {
@@ -158,8 +157,8 @@ class ReservationForm extends Component {
     for (let i = 1; i <= 31; i++) {
       days.push(
         <option
-            key={`day${i}`}
-            value={i.toString().length === 1 ? `0${i}` : i.toString()}
+          key={`day${i}`}
+          value={i.toString().length === 1 ? `0${i}` : i.toString()}
         >
           {i}
         </option>
@@ -181,8 +180,8 @@ class ReservationForm extends Component {
       const currentMonth = intl.messages[`form.months.${i}`];
       months.push(
         <option
-            key={`month${i}`}
-            value={i.toString().length === 1 ? `0${i}` : i.toString()}
+          key={`month${i}`}
+          value={i.toString().length === 1 ? `0${i}` : i.toString()}
         >
           {currentMonth}
         </option>
@@ -228,7 +227,6 @@ class ReservationForm extends Component {
 
   handleSubmit() {
     const body = extractReservationBody(this.props.fields);
-    console.log(this.props);
     this.props.actions.postReservation(body);
   }
 
@@ -326,7 +324,7 @@ class ReservationForm extends Component {
       },
       resetForm,
       handleSubmit,
-      submitting,
+      samfish,
       intl,
     } = this.props;
 
@@ -430,16 +428,15 @@ class ReservationForm extends Component {
               bsStyle="primary"
               bsSize="large"
               type="submit"
-              disabled={submitting}
+              disabled={samfish.pending}
             >
-              {submitting ? <i /> : <i />}
               <i className="fa fa-paper-plane" /> <FormattedMessage id="form.submit" />
             </Button>
             <Button
               style={style.lastButtonRowItem}
               bsSize="large"
               type="button"
-              disabled={submitting}
+              disabled={samfish.pending}
               onClick={resetForm}
             >
               <FormattedMessage id="form.clearValues" />
