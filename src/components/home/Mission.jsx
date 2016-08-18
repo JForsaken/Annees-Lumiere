@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import radium from 'radium';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 /* Components */
 import StyledButton from '../common/StyledButton';
@@ -67,7 +67,7 @@ export default class Mission extends Component {
             </h2>
           </div>
           <div style={style.mainText}>
-            <FormattedMessage id="home.mission.text" />
+            <FormattedHTMLMessage id="home.mission.text" />
           </div>
         </Row>
         <Row style={style.buttonRow}>

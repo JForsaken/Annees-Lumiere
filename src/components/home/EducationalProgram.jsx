@@ -27,6 +27,7 @@ const style = {
     paddingRight: 5,
     paddingBottom: 20,
     height: '100%',
+    fontWeight: '500',
   },
 
   standardBox: {

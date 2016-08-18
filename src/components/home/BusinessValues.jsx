@@ -55,8 +55,8 @@ const style = {
     borderRadius: '50%',
     textAlign: 'center',
     verticalAlign: 'middle',
-    padding: 30,
-    fontSize: 40,
+    paddingTop: 18,
+    fontSize: 65,
   },
 
 };
@@ -71,19 +71,19 @@ export default class BusinessValues extends Component {
         </h1>
         <div style={style.businessValueRow}>
           <div style={style.singleValueContainer}>
-            <i style={style.businessValue} className="fa fa-glass"> </i>
+            <i style={style.businessValue} className="fa fa-heart"> </i>
             <h4>
               <FormattedMessage id="home.businessValues.value1" />
             </h4>
           </div>
           <div style={style.singleValueContainer}>
-            <i style={style.businessValue} className="fa fa-glass"> </i>
+            <i style={style.businessValue} className="fa fa-home"> </i>
             <h4>
               <FormattedMessage id="home.businessValues.value2" />
             </h4>
           </div>
           <div style={style.singleValueContainer}>
-            <i style={style.businessValue} className="fa fa-glass"> </i>
+            <i style={style.businessValue} className="fa fa-thumbs-up"> </i>
             <h4>
               <FormattedMessage id="home.businessValues.value3" />
             </h4>
@@ -92,13 +92,13 @@ export default class BusinessValues extends Component {
 
         <div style={style.businessValueRow}>
           <div style={style.singleValueContainer}>
-            <i style={style.businessValue} className="fa fa-glass"> </i>
+            <i style={style.businessValue} className="fa fa-lightbulb-o"> </i>
             <h4>
               <FormattedMessage id="home.businessValues.value4" />
             </h4>
           </div>
           <div style={style.singleValueContainer}>
-            <i style={style.businessValue} className="fa fa-glass"> </i>
+            <i style={style.businessValue} className="fa fa-share-alt"> </i>
             <h4>
               <FormattedMessage id="home.businessValues.value5" />
             </h4>

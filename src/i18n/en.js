@@ -87,8 +87,7 @@ export default {
   'home.mission.button': 'Reservation',
 
   // homeHeadline.component
-  'home.homeHeadline.title': 'I love kitten',
-  'home.homeHeadline.text': 'This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english This text is in english',
+  'home.homeHeadline.text': '<h2>Welcome,</h2></br> <i>Années-Lumière is a nursery blablnalbabla anglais privée qui offre des services de garde aux enfants âgés de 6 mois à 5 ans.</i></br></br>Notre programme éducatif a été conçu par des PROFESSIONNELS DE LA PETITE ENFANCE et s’inspire des plus récentes théories d’éducation. Chez nous, votre enfant aura la chance d’évoluer dans un environnement <b style="font-size:18px;">chaleureux, sécuritaire et stimulant</b> où nous l’aidons à se construire une image positive de lui-même et des autres.</br></br> Nos éducatrices qualifiées offrent des activités structurées qui permettent notamment le <b style="font-size:18px;">développement de nouvelles aptitudes sociales, physiques et intellectuelles</b> qui aideront votre enfant à RÉUSSIR DANS LE MONDE QUI L’ENTOUR. Nous réservons également à notre petite routine des périodes de temps libre ce qui favorise <b style="font-size:18px;">la créativité, l’initiative, la confiance en soi et la joie de vivre.</b>',
 
   // secureHealth.component
   'home.secureHealth.titleTop': 'Health &',
@@ -97,19 +96,19 @@ export default {
 
   // businessValues.component
   'home.businessValues.title': 'Our values',
-  'home.businessValues.value1': 'Value 1',
-  'home.businessValues.value2': 'Value 2',
-  'home.businessValues.value3': 'Value 3',
-  'home.businessValues.value4': 'Value 4',
-  'home.businessValues.value5': 'Value 5',
+  'home.businessValues.value1': 'HEALTH',
+  'home.businessValues.value2': 'SECURITY',
+  'home.businessValues.value3': 'POSITIVITY',
+  'home.businessValues.value4': 'CREATIVITY',
+  'home.businessValues.value5': 'STIMULATION',
 
   // educationalProgram.component
   'home.educationalProgram.title': 'Our educational program',
-  'home.educationalProgram.box1': '18-24 months old',
-  'home.educationalProgram.box2': '2-3 years old',
-  'home.educationalProgram.box3': '3-4 years old',
-  'home.educationalProgram.box4': '4-5 years old',
-  'home.educationalProgram.box5': '5-12 years old',
+  'home.educationalProgram.box1': '6-18 months old',
+  'home.educationalProgram.box2': '18-24 months old',
+  'home.educationalProgram.box3': '2-3 years old',
+  'home.educationalProgram.box4': '3-4 years old',
+  'home.educationalProgram.box5': '4-5 years old',
   'home.educationalProgram.box6': 'Activities',
 
   // LOGOUT

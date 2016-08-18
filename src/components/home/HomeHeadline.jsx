@@ -2,10 +2,10 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import radium from 'radium';
-import { FormattedMessage } from 'react-intl';
+import { FormattedHTMLMessage } from 'react-intl';
 
 /* Components */
-import photoFille from '../../../assets/images/terreReverse.jpg';
+import photoFille from '../../../assets/images/melonEauv2.jpg';
 
 /* Styles */
 const style = {
@@ -25,21 +25,31 @@ const style = {
     paddingRight: '30px',
     paddingLeft: '30px',
   },
-
-  title: {
-    marginTop: 0,
-    height: '100%',
-    fontWeight: 700,
+  homeHeadlineBackgroundMobile: {
+    backgroundImage: `url(${photoFille})`,
+    textAlign: 'center',
+    backgroundPosition: 'center 20%',
+    backgroundSize: 'cover',
+    overflow: 'hidden',
+    width: '100%',
+    height: '300px',
   },
 
   text: {
     fontSize: '16px',
-    textAlign: 'justify',
     margin: 'auto',
+    textAlign: 'justify',
+  },
+
+  textMobile: {
+    fontSize: '18px',
+    margin: 'auto',
+    textAlign: 'justify',
+    padding: '20',
   },
 
   transbox: {
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
     padding: '40px',
     paddingTop: '20px',
   },
@@ -47,19 +57,44 @@ const style = {
 
 @radium
 export default class HomeHeadline extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.handleResize = this.handleResize.bind(this);
+    this.state = {
+      windowWidth: window.innerWidth,
+    };
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+  handleResize() {
+    this.setState({ windowWidth: window.innerWidth });
+  }
   render() {
+    const width = this.state.windowWidth;
+    if (width > 800) {
+      return (
+        <Row style={style.homeHeadlineBackground}>
+          <Col xs={6} />
+          <Col xs={6} style={style.transbox}>
+            <div style={style.text}>
+              <FormattedHTMLMessage id="home.homeHeadline.text" />
+            </div>
+          </Col>
+        </Row>
+      );
+    }
     return (
-      <Row style={style.homeHeadlineBackground}>
-        <Col xs={12} md={6} />
-        <Col xs={12} md={6} style={style.transbox}>
-          <h3 style={style.title}>
-            <FormattedMessage id="home.homeHeadline.title" />
-          </h3>
-          <div style={style.text}>
-            <FormattedMessage id="home.homeHeadline.text" />
-          </div>
-        </Col>
-      </Row>
+      <div>
+        <Row style={style.textMobile}>
+          <FormattedHTMLMessage id="home.homeHeadline.text" />
+        </Row>
+        <div style={style.homeHeadlineBackgroundMobile} />
+      </div>
+
     );
   }
 }
