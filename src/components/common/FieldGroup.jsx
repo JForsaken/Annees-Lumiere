@@ -8,6 +8,16 @@ const style = {
     width: '100%',
   },
 
+  dateFormControl: {
+    display: 'inline-block',
+    marginRight: 10,
+    width: 86,
+  },
+
+  dateFormGroup: {
+    display: 'inline-block',
+  },
+
   errorMessage: {
     color: '#a94442',
   },
@@ -23,18 +33,21 @@ function getValidationState(props) {
 
 export default function FieldGroup({ id, label, help, ...props }) {
   const validationState = getValidationState(props);
+  const formControlStyle = props.isDateField ? style.dateFormControl : style.formControl;
+  const formGroupStyle = props.isDateField ? style.dateFormGroup : null;
 
   return (
-    <FormGroup controlId={id} validationState={validationState}>
-      <ControlLabel>{label}</ControlLabel>
-      <FormControl style={style.formControl} {...props}>
+    <FormGroup style={formGroupStyle} controlId={id} validationState={validationState}>
+      {!props.isDateField && <ControlLabel>{label}</ControlLabel>}
+      <FormControl style={formControlStyle} {...props}>
         {props.options && props.options}
       </FormControl>
-      {help && <HelpBlock>{help}</HelpBlock>}
-      {props.touched && props.error &&
-       <div style={style.errorMessage}>
-         <FormattedMessage id={`form.errors.${props.error}`} />
-       </div>}
+    {help && <HelpBlock>{help}</HelpBlock>}
+    {props.touched && props.error &&
+      <div style={style.errorMessage}>
+        <FormattedMessage id={`form.errors.${props.error}`} />
+      </div>
+    }
     </FormGroup>
   );
 }

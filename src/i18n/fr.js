@@ -42,6 +42,9 @@ export default {
   'form.profession': 'Profession',
   'form.language': 'Langue maternelle',
   'form.birthday': 'Date de naissance',
+  'form.birthDay': 'Jour',
+  'form.birthMonth': 'Mois',
+  'form.birthYear': 'Année',
   'form.sex': 'Genre',
 
   // FORM ERRORS
@@ -49,8 +52,24 @@ export default {
   'form.errors.email': 'Adresse courriel invalide',
   'form.errors.phoneNumber': 'Numéro de téléphone invalide',
   'form.errors.selectOption': 'Veuillez sélectionner une option',
+  'form.errors.selectDateOption': ' ',
   'form.errors.date': 'Format de date invalide',
   'form.errors.maxLength': 'Ne doit pas être plus que 30 caractères',
+
+  // FORM MONTHS
+  'form.months.1': 'Janvier',
+  'form.months.2': 'Février',
+  'form.months.3': 'Mars',
+  'form.months.4': 'Avril',
+  'form.months.5': 'Mai',
+  'form.months.6': 'Juin',
+  'form.months.7': 'Juillet',
+  'form.months.8': 'Août',
+  'form.months.9': 'Septembre',
+  'form.months.10': 'Octobre',
+  'form.months.11': 'Novembre',
+  'form.months.12': 'Décembre',
+
 
   // HOME
 

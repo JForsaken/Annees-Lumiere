@@ -1,6 +1,6 @@
 /* Node modules */
 import React, { Component, PropTypes } from 'react';
-import { Form, Button, Row } from 'react-bootstrap';
+import { ControlLabel, Form, Button, Row } from 'react-bootstrap';
 import radium from 'radium';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
@@ -24,8 +24,8 @@ const style = {
     paddingTop: 10,
     paddingBottom: 10,
     '@media (min-width: 300px)': {
-      paddingLeft: '5%',
-      paddingRight: '5%',
+      paddingLeft: 0,
+      paddingRight: 0,
     },
     '@media (min-width: 800px)': {
       paddingLeft: '15%',
@@ -146,6 +146,59 @@ class ReservationForm extends Component {
     ];
   }
 
+  getBirthDayOptions() {
+    const days = [];
+    const { intl } = this.props;
+
+    days.push(
+      <option key="select" value="select">{intl.messages['form.birthDay']}</option>
+    );
+
+    for (let i = 1; i <= 31; i++) {
+      days.push(
+        <option key={`day${i}`} value={i}>{i}</option>
+      );
+    }
+
+    return days;
+  }
+
+  getBirthMonthOptions() {
+    const months = [];
+    const { intl } = this.props;
+
+    months.push(
+      <option key="select" value="select">{intl.messages['form.birthMonth']}</option>
+    );
+
+    for (let i = 1; i <= 12; i++) {
+      const currentMonth = intl.messages[`form.months.${i}`];
+      months.push(
+        <option key={`month${i}`} value={currentMonth}>{currentMonth}</option>
+      );
+    }
+
+    return months;
+  }
+
+  getBirthYearOptions() {
+    const years = [];
+    const { intl } = this.props;
+    const currentYear = new Date().getFullYear();
+
+    years.push(
+      <option key="select" value="select">{intl.messages['form.birthYear']}</option>
+    );
+
+    for (let i = currentYear; i >= currentYear - 50; i--) {
+      years.push(
+        <option key={`year${i}`} value={i}>{i}</option>
+      );
+    }
+
+    return years;
+  }
+
   addKid() {
     this.props.fields[`kid${this.state.kids + 1}language`].onChange('select');
     this.setState({ kids: this.state.kids + 1 });
@@ -154,7 +207,9 @@ class ReservationForm extends Component {
   removeKid() {
     this.props.fields[`kid${this.state.kids}firstname`].onChange(undefined);
     this.props.fields[`kid${this.state.kids}lastname`].onChange(undefined);
-    this.props.fields[`kid${this.state.kids}birthday`].onChange(undefined);
+    this.props.fields[`kid${this.state.kids}birthDay`].onChange(undefined);
+    this.props.fields[`kid${this.state.kids}birthMonth`].onChange(undefined);
+    this.props.fields[`kid${this.state.kids}birthYear`].onChange(undefined);
     this.props.fields[`kid${this.state.kids}language`].onChange(undefined);
     this.props.fields[`kid${this.state.kids}sex`].onChange(undefined);
     this.setState({ kids: this.state.kids - 1 });
@@ -193,12 +248,34 @@ class ReservationForm extends Component {
             placeholder={intl.messages['form.lastname']}
             {...this.props.fields[`kid${i + 1}lastname`]}
           />
+          <ControlLabel>{intl.messages['form.birthday']}</ControlLabel>
+          <br />
           <FieldGroup
-            id={`kid${i + 1}birthday`}
-            type="text"
-            label={intl.messages['form.birthday']}
-            placeholder={intl.messages['form.birthday']}
-            {...this.props.fields[`kid${i + 1}birthday`]}
+            id={`kid${i + 1}birthDay`}
+            isDateField
+            componentClass="select"
+            label={intl.messages['form.birthDay']}
+            placeholder={intl.messages['form.birthDay']}
+            options={this.getBirthDayOptions()}
+            {...this.props.fields[`kid${i + 1}birthDay`]}
+          />
+          <FieldGroup
+            id={`kid${i + 1}birthMonth`}
+            isDateField
+            componentClass="select"
+            label={intl.messages['form.birthMonth']}
+            placeholder={intl.messages['form.birthMonth']}
+            options={this.getBirthMonthOptions()}
+            {...this.props.fields[`kid${i + 1}birthMonth`]}
+          />
+          <FieldGroup
+            id={`kid${i + 1}birthYear`}
+            isDateField
+            componentClass="select"
+            label={intl.messages['form.birthYear']}
+            placeholder={intl.messages['form.birthYear']}
+            options={this.getBirthYearOptions()}
+            {...this.props.fields[`kid${i + 1}birthYear`]}
           />
           <FieldGroup
             id={`kid${i + 1}language`}

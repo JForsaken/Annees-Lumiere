@@ -44,6 +44,17 @@ export function selectOptionKid(value, key, data) {
   return null;
 }
 
+export function selectDateOptionKid(value, key, data) {
+  const id = key.substr(3, 2);
+  const kidNumId = /^\d+$/.test(id[1]) ? id : id[0];
+
+  if (data && data[`kid${kidNumId}language`] !== undefined &&
+      (isEmpty(value) || value === 'select')) {
+    return 'selectDateOption';
+  }
+  return null;
+}
+
 export function requiredKid(value, key, data) {
   const id = key.substr(3, 2);
   const kidNumId = /^\d+$/.test(id[1]) ? id : id[0];
