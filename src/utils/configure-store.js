@@ -10,15 +10,17 @@ import thunk from 'redux-thunk';
 import logger from '../middleware/logger';
 import persistenceStore from '../persistence/store';
 import * as reducers from '../reducers';
+import createHistory from 'history/lib/createBrowserHistory';
+import withScroll from 'scroll-behavior';
 
-// Use hash location for Github Pages
-// but switch to HTML5 history locally.
-const createHistory = process.env.NODE_ENV === 'production' ?
-        createHashHistory : createBrowserHistory;
+const history = withScroll(createHistory(), (prevLocation, location) => (
+  // Scroll to top when attempting to vist the current path.
+  prevLocation && location.pathname === prevLocation.pathname ? [0, 0] : true
+));
 
 const storeEnhancers = [
   persistenceStore,
-  reduxReactRouter({ createHistory }),
+  reduxReactRouter({ history }),
 ];
 
 if (__DEVTOOLS__) {
