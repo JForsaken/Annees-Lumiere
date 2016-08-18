@@ -5,7 +5,7 @@ import radium from 'radium';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import {ModalContainer, ModalDialog} from 'react-modal-dialog';
+import { ModalContainer, ModalDialog } from 'react-modal-dialog';
 
 /* Components */
 import FieldGroup from '../common/FieldGroup';
@@ -19,7 +19,6 @@ import { extractReservationBody } from './helpers';
 
 /* Constants */
 import {
-  POST_RESERVATION_PENDING,
   POST_RESERVATION_SUCCESS,
   POST_RESERVATION_FAILED,
 } from '../../constants';
@@ -47,7 +46,7 @@ const style = {
   },
 
   modal: {
-    errors:{
+    errors: {
       background: '#f4e9e9',
       borderTop: '11px solid #c12e2a',
       boxShadow: '#c12e2a 0px 0px 1px',
@@ -155,45 +154,6 @@ class ReservationForm extends Component {
     return true;
   }
 
-  handleModalClose() {
-    this.setState({ isShowingModal: false });
-  }
-
-  renderModal() {
-    const samfishErrors = this.props.samfish.reservation.errors;
-    const messageType = samfishErrors ? 'errors' : 'success';
-    const modalStyle = samfishErrors ? style.modal.errors : style.modal.success;
-
-    return (
-      <ModalContainer style={style.modal.container} onClose={this.handleModalClose}>
-        <ModalDialog style={modalStyle} onClose={this.handleModalClose}>
-          <h2>
-            <FormattedMessage id={`form.modal.title.${messageType}`} />
-          </h2>
-          <h4>
-            <FormattedMessage id={`form.modal.content.${messageType}`} />
-          </h4>
-        </ModalDialog>
-      </ModalContainer>
-    );
-  }
-
-  handleSamfishResponse(reservation) {
-    switch (reservation.lastAction) {
-
-      case POST_RESERVATION_FAILED:
-        this.setState({ isShowingModal: true });
-        break;
-
-      case POST_RESERVATION_SUCCESS:
-        this.setState({ isShowingModal: true });
-        break;
-
-      default:
-        break;
-    }
-  }
-
   getLanguageOptions() {
     const options = this.props.application.locales.map(locale => {
       const uppercasedLocale = locale.toUpperCase();
@@ -285,6 +245,26 @@ class ReservationForm extends Component {
     return years;
   }
 
+  handleSamfishResponse(reservation) {
+    switch (reservation.lastAction) {
+
+      case POST_RESERVATION_FAILED:
+        this.setState({ isShowingModal: true });
+        break;
+
+      case POST_RESERVATION_SUCCESS:
+        this.setState({ isShowingModal: true });
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  handleModalClose() {
+    this.setState({ isShowingModal: false });
+  }
+
   addKid() {
     this.props.fields[`kid${this.state.kids + 1}language`].onChange('select');
     this.setState({ kids: this.state.kids + 1 });
@@ -305,6 +285,25 @@ class ReservationForm extends Component {
     const body = extractReservationBody(this.props.fields);
     this.props.actions.postReservationPending();
     this.props.actions.postReservation(body);
+  }
+
+  renderModal() {
+    const samfishErrors = this.props.samfish.reservation.errors;
+    const messageType = samfishErrors ? 'errors' : 'success';
+    const modalStyle = samfishErrors ? style.modal.errors : style.modal.success;
+
+    return (
+      <ModalContainer style={style.modal.container} onClose={this.handleModalClose}>
+        <ModalDialog style={modalStyle} onClose={this.handleModalClose}>
+          <h2>
+            <FormattedMessage id={`form.modal.title.${messageType}`} />
+          </h2>
+          <h4>
+            <FormattedMessage id={`form.modal.content.${messageType}`} />
+          </h4>
+        </ModalDialog>
+      </ModalContainer>
+    );
   }
 
   renderKids() {

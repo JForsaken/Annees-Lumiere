@@ -38,8 +38,8 @@ const actionHandlers = {
   }),
   [constants.CLEAR_RESERVATION]: () => ({
     reservation: {
-      response: action.response,
-      lastAction: action.type,
+      response: {},
+      lastAction: null,
       errors: false,
       pending: false,
     },
