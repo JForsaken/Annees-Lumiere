@@ -35,33 +35,31 @@ export default {
 
   // mission.component
   'home.mission.title': 'Notre mission',
-  'home.mission.text': 'Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission Le texte de la mission',
+  'home.mission.text': 'Faire vivre aux enfants des EXPÉRIENCES DIVERSIFIÉES ET ENRICHISSANTES, qui leur permettront <b style="font-size:18px;">d’explorer le monde</b> sous tous ses angles, et de <b style="font-size:18px;">se découvrir</b> en tant qu’être unique. Nous sommes soucieux d’assurer le bien-être des enfants, en leur offrant un [environnement chaleureux, sécuritaire et stimulant], dans lequel ils pourront se développer à leur rythme, et s’épanouir pleinement aux côtés d’un <u>personnel éducateur qualifié.</u>',
   'home.mission.button': 'Inscription',
 
   // homeHeadline.component
-  'home.homeHeadline.title': 'Jaime les chattes',
-  'home.homeHeadline.text': 'Le text ici est en français Le text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en françaisLe text ici est en français',
+  'home.homeHeadline.text': '<h2>BIENVENUE,</h2></br> <i>Années-Lumière est une garderie privée qui offre des services de garde aux enfants âgés de 6 mois à 5 ans.</i></br></br>Notre programme éducatif a été conçu par des PROFESSIONNELS DE LA PETITE ENFANCE et s’inspire des plus récentes théories d’éducation. Chez nous, votre enfant aura la chance d’évoluer dans un environnement <b style="font-size:18px;">chaleureux, sécuritaire et stimulant</b> où nous l’aidons à se construire une image positive de lui-même et des autres.</br></br> Nos éducatrices qualifiées offrent des activités structurées qui permettent notamment le <b style="font-size:18px;">développement de nouvelles aptitudes sociales, physiques et intellectuelles</b> qui aideront votre enfant à RÉUSSIR DANS LE MONDE QUI L’ENTOUR. Nous réservons également à notre petite routine des périodes de temps libre ce qui favorise <b style="font-size:18px;">la créativité, l’initiative, la confiance en soi et la joie de vivre.</b>',
 
   // secureHealth.component
-  'home.secureHealth.titleTop': 'Santé &',
-  'home.secureHealth.titleBottom': 'Sécurité',
-  'home.secureHealth.text': 'This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component',
+  'home.secureHealth.title': '<u><h3 style= "margin:0">Santé &</h3></u><h1 style= "margin-top:0">Sécurité</h1>',
+  'home.secureHealth.text': 'Chez nous, votre enfant aura la chance de jouer dans de grands espaces libres de tous obstacles, propres et sécuritaires, avec du matériel éducatif et de l’équipement adaptés à chaque groupe d’âge et maintenu en bon état d’entretien. Les enfants seront placée sous constante surveillance d’un adulte qui leur donnera toute l’attention et le support nécessaire. À tous les jours, si le temps le permet, nous effectuerons des petites activités d’apprentissages et des jeux libres à l’extérieur. De plus, nous servirons à votre enfant deux collations et un repas équilibrés et nutritifs, qui tiennent compte du Guide alimentaire canadien.',
 
   // businessValues.component
   'home.businessValues.title': 'Nos valeurs',
-  'home.businessValues.value1': 'Valeur 1',
-  'home.businessValues.value2': 'Valeur 2',
-  'home.businessValues.value3': 'Valeur 3',
-  'home.businessValues.value4': 'Valeur 4',
-  'home.businessValues.value5': 'Valeur 5',
+  'home.businessValues.value1': 'SANTÉ',
+  'home.businessValues.value2': 'SÉCURITÉ',
+  'home.businessValues.value3': 'POSITIVIÉ ',
+  'home.businessValues.value4': 'CRÉATIVITÉ',
+  'home.businessValues.value5': 'STIMULATION',
 
   // educationalProgram.component
   'home.educationalProgram.title': 'Notre programme éducatif',
-  'home.educationalProgram.box1': '18-24 mois',
-  'home.educationalProgram.box2': '2-3 ans',
-  'home.educationalProgram.box3': '3-4 ans',
-  'home.educationalProgram.box4': '4-5 ans',
-  'home.educationalProgram.box5': '5-12 ans',
+  'home.educationalProgram.box1': '6-18 mois',
+  'home.educationalProgram.box2': '18-24 mois',
+  'home.educationalProgram.box3': '2-3 ans',
+  'home.educationalProgram.box4': '3-4 ans',
+  'home.educationalProgram.box5': '4-5 ans',
   'home.educationalProgram.box6': 'Activités',
 
 

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import radium from 'radium';
 import { Row } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
+import photoFille from '../../../assets/images/map.jpg';
+
 
 /* Styles */
 const style = {
@@ -17,6 +19,15 @@ const style = {
   mapRow: {
     paddingTop: 20,
   },
+  mapImg: {
+    backgroundImage: `url(${photoFille})`,
+    paddingTop: 20,
+    height: '420px',
+    width: '500px',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    margin: '0 auto',
+  },
 
   line: {
     margin: '0 auto',
@@ -26,7 +37,6 @@ const style = {
     borderColor: '#a8a8a8',
     width: 50,
   },
-
 };
 
 @radium
@@ -40,20 +50,14 @@ export default class FooterContact extends Component {
           </h1>
         </Row>
 
-        <Row style={style.mapRow}>
-          <a href="https://goo.gl/maps/qQQJeEpDraU2" target="_blank" key="maps">
-            <img src="https://static.viget.com/offices/_450x450_crop_center-center/contact-hq.jpg?mtime=20160301153453" alt="" />
-          </a>
-        </Row>
+        <div style={style.mapImg} />
 
         <Row>
           <h2>
             Années-Lumière
           </h2>
-          <div style={style.line}>
-          </div>
+          <div style={style.line} />
         </Row>
-
         <Row style={style.mapRow}>
           <h4>
             5311 Chemin de la Cote Saint-Luc
