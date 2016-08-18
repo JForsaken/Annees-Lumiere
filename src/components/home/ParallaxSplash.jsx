@@ -22,25 +22,18 @@ const style = {
     width: '100%',
     top: 50,
     left: 0,
+    height: '100%',
     position: 'fixed',
-    '@media (min-width: 300px)': {
-      height: '45%',
-    },
-    '@media (min-width: 800px)': {
-      height: '100%',
-    },
   },
 
   content: {
     color: '#404040',
     position: 'relative',
-    transform: 'translateY(-50%)',
-
     '@media (min-width: 300px)': {
-      top: '30%',
+      top: '10%',
     },
     '@media (min-width: 800px)': {
-      top: '50%',
+      top: '30%',
     },
   },
 
@@ -63,7 +56,7 @@ export default class ParallaxSplash extends Component {
     return (
       <div style={style.splash}>
         <RadiumRow style={style.content}>
-          <Col xs={6} sm={6} >
+          <Col xs={12} sm={6} >
             <h3 style={style.subtitle}>
               <FormattedMessage id="website.subtitle" />
             </h3>
