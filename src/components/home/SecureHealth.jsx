@@ -75,13 +75,12 @@ const style = {
     display: 'block',
     content: '',
     height: '30px',
-    marginTop: '-31px',
     borderStyle: 'solid',
     borderColor: '#8c8b8b',
     borderWidth: '0 0 1px 0',
     borderRadius: '20px',
     width: '95%',
-    margin: '0 auto',
+    margin: '31px auto 0 auto',
   },
 
   lineAfter: {
