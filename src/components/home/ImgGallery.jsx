@@ -22,14 +22,7 @@ export default class ImgGallery extends Component {
     const images = [
       {
         original: image1,
-        originalClass: 'featured-slide',
-        thumbnailClass: 'featured-thumb',
-        originalAlt: 'original-alt',
-        thumbnailAlt: 'thumbnail-alt',
-        thumbnailLabel: 'Optional',
         description: 'Description 1...',
-        srcSet: 'Optional srcset (responsive images src)',
-        size: '20px',
       },
       {
         original: image2,
