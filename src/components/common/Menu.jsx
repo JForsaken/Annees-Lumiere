@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 
 /* Components */
 import MenuListItem from './MenuListItem';
+const RadiumLink = radium(Link);
 
 /* Actions */
 import * as applicationActions from '../../actions/application';
@@ -20,6 +21,39 @@ import {
   PROGRAMS_SCROLL,
 } from './scrollConstants';
 
+/* Styles */
+const style = {
+
+  brandImage: {
+    backgroundImage: 'url(https://placekitten.com/32)',
+    position: 'fixed',
+    height: 32,
+    width: 32,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    marginTop: -6,
+  },
+
+  brandFontIcon: {
+    fontSize: 20,
+  },
+
+  brandImageSpacer: {
+    marginRight: 10,
+    verticalAlign: 'middle',
+    width: 32,
+    height: 1,
+    display: 'inline-block',
+  },
+
+  brandName: {
+    color: '#545454',
+    textDecoration: 'none',
+    ':hover': {
+      color: 'black',
+    },
+  },
+};
 
 const menuItems = [
   {
@@ -87,9 +121,11 @@ class Menu extends Component {
       <Navbar inverse fixedTop expanded={expanded} onToggle={this.toggleNav}>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">
+            <div style={style.brandImage} />
+            <div style={style.brandImageSpacer} />
+            <RadiumLink to="/" style={style.brandName}>
               <FormattedMessage id="website.title" />
-            </Link>
+            </RadiumLink>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
