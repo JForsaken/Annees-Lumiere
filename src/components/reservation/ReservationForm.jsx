@@ -141,7 +141,9 @@ class ReservationForm extends Component {
   }
 
   componentDidMount() {
-    this.props.fields.kid1language.onChange('select');
+    if (!this.props.fields.kid1language.value) {
+      this.props.fields.kid1language.onChange('select');
+    }
   }
 
   shouldComponentUpdate(nextProps) {
