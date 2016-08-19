@@ -4,9 +4,16 @@ import { Col, Row } from 'react-bootstrap';
 import radium from 'radium';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router';
+import Scroll from 'react-scroll';
+const Element = Scroll.Element;
 
 /* Components */
 const RadiumLink = radium(Link);
+
+/* Constants */
+import {
+  PROGRAMS_SCROLL,
+} from '../common/scrollConstants';
 
 /* Styles */
 const style = {
@@ -113,67 +120,69 @@ export default class EducationalProgram extends Component {
 
   render() {
     return (
-      <Row style={style.educationalProgramBackground}>
-        <h1 style={style.title}>
-          <FormattedMessage id="home.educationalProgram.title" />
-        </h1>
-        <Row>
-          <Col style={style.boxColumn} xs={6} md={4}>
-            <RadiumLink to="/reservation" style={style.boxLink}>
-              <div style={{ ...style.standardBox, ...style.box1 }} key="box1" >
-                <div style={style.boxTitle}>
-                  <FormattedMessage id="home.educationalProgram.box1" />
+      <Element name={PROGRAMS_SCROLL}>
+        <Row style={style.educationalProgramBackground}>
+          <h1 style={style.title}>
+            <FormattedMessage id="home.educationalProgram.title" />
+          </h1>
+          <Row>
+            <Col style={style.boxColumn} xs={6} md={4}>
+              <RadiumLink to="/reservation" style={style.boxLink}>
+                <div style={{ ...style.standardBox, ...style.box1 }} key="box1" >
+                  <div style={style.boxTitle}>
+                    <FormattedMessage id="home.educationalProgram.box1" />
+                  </div>
                 </div>
-              </div>
-            </RadiumLink>
-          </Col>
-          <Col style={style.boxColumn} xs={6} md={4}>
-            <RadiumLink to="/reservation" style={style.boxLink}>
-              <div style={{ ...style.standardBox, ...style.box2 }} key="box2" >
-                <div style={style.boxTitle}>
-                  <FormattedMessage id="home.educationalProgram.box2" />
+              </RadiumLink>
+            </Col>
+            <Col style={style.boxColumn} xs={6} md={4}>
+              <RadiumLink to="/reservation" style={style.boxLink}>
+                <div style={{ ...style.standardBox, ...style.box2 }} key="box2" >
+                  <div style={style.boxTitle}>
+                    <FormattedMessage id="home.educationalProgram.box2" />
+                  </div>
                 </div>
-              </div>
-            </RadiumLink>
-          </Col>
-          <Col style={style.boxColumn} xs={6} md={4}>
-            <RadiumLink to="/reservation" style={style.boxLink}>
-              <div style={{ ...style.standardBox, ...style.box3 }} key="box3" >
-                <div style={style.boxTitle}>
-                  <FormattedMessage id="home.educationalProgram.box3" />
+              </RadiumLink>
+            </Col>
+            <Col style={style.boxColumn} xs={6} md={4}>
+              <RadiumLink to="/reservation" style={style.boxLink}>
+                <div style={{ ...style.standardBox, ...style.box3 }} key="box3" >
+                  <div style={style.boxTitle}>
+                    <FormattedMessage id="home.educationalProgram.box3" />
+                  </div>
                 </div>
-              </div>
-            </RadiumLink>
-          </Col>
-          <Col style={style.boxColumn} xs={6} md={4}>
-            <RadiumLink to="/reservation" style={style.boxLink}>
-              <div style={{ ...style.standardBox, ...style.box4 }} key="box4" >
-                <div style={style.boxTitle}>
-                  <FormattedMessage id="home.educationalProgram.box4" />
+              </RadiumLink>
+            </Col>
+            <Col style={style.boxColumn} xs={6} md={4}>
+              <RadiumLink to="/reservation" style={style.boxLink}>
+                <div style={{ ...style.standardBox, ...style.box4 }} key="box4" >
+                  <div style={style.boxTitle}>
+                    <FormattedMessage id="home.educationalProgram.box4" />
+                  </div>
                 </div>
-              </div>
-            </RadiumLink>
-          </Col>
-          <Col style={style.boxColumn} xs={6} md={4}>
-            <RadiumLink to="/reservation" style={style.boxLink}>
-              <div style={{ ...style.standardBox, ...style.box5 }} key="box5" >
-                <div style={style.boxTitle}>
-                  <FormattedMessage id="home.educationalProgram.box5" />
+              </RadiumLink>
+            </Col>
+            <Col style={style.boxColumn} xs={6} md={4}>
+              <RadiumLink to="/reservation" style={style.boxLink}>
+                <div style={{ ...style.standardBox, ...style.box5 }} key="box5" >
+                  <div style={style.boxTitle}>
+                    <FormattedMessage id="home.educationalProgram.box5" />
+                  </div>
                 </div>
-              </div>
-            </RadiumLink>
-          </Col>
-          <Col style={style.boxColumn} xs={6} md={4}>
-            <RadiumLink to="/reservation" style={style.boxLink}>
-              <div style={{ ...style.standardBox, ...style.box6 }} key="box6" >
-                <div style={style.boxTitle}>
-                  <FormattedMessage id="home.educationalProgram.box6" />
+              </RadiumLink>
+            </Col>
+            <Col style={style.boxColumn} xs={6} md={4}>
+              <RadiumLink to="/reservation" style={style.boxLink}>
+                <div style={{ ...style.standardBox, ...style.box6 }} key="box6" >
+                  <div style={style.boxTitle}>
+                    <FormattedMessage id="home.educationalProgram.box6" />
+                  </div>
                 </div>
-              </div>
-            </RadiumLink>
-          </Col>
+              </RadiumLink>
+            </Col>
+          </Row>
         </Row>
-      </Row>
+      </Element>
     );
   }
 }

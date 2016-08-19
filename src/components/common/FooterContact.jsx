@@ -2,9 +2,16 @@
 import React, { Component } from 'react';
 import radium from 'radium';
 import { Row } from 'react-bootstrap';
+import Scroll from 'react-scroll';
+const Element = Scroll.Element;
 
 /* Components */
 import StyledButton from '../common/StyledButton';
+
+/* Constants */
+import {
+  CONTACT_SCROLL,
+} from './scrollConstants';
 
 /* Styles */
 const style = {
@@ -35,30 +42,34 @@ const style = {
 export default class FooterContact extends Component {
   render() {
     return (
-      <div style={style.footerContactContainer}>
-        <Row>
-          <h1>
-            514-293-6244
-          </h1>
-        </Row>
+      <Element name={CONTACT_SCROLL}>
+        <div style={style.footerContactContainer}>
 
-        <Row>
-          <h3>
-            <a
-              style={style.emailLink}
-              href="mailto:jbertrand@annees-lumiere.com"
-              target="_top"
-              key="joanieBertrand"
-            >
-              jbertrand@annees-lumiere.com
-            </a>
-          </h3>
-        </Row>
+          <Row>
+            <h1>
+              514-293-6244
+            </h1>
+          </Row>
 
-        <Row style={style.inscriptionButtonRow}>
-          <StyledButton textId="home.mission.button" link="/reservation" />
-        </Row>
-      </div>
+          <Row>
+            <h3>
+              <a
+                  style={style.emailLink}
+                  href="mailto:jbertrand@annees-lumiere.com"
+                  target="_top"
+                  key="joanieBertrand"
+              >
+                jbertrand@annees-lumiere.com
+              </a>
+            </h3>
+          </Row>
+
+          <Row style={style.inscriptionButtonRow}>
+            <StyledButton textId="home.mission.button" link="/reservation" />
+          </Row>
+        </div>
+
+      </Element>
     );
   }
 }

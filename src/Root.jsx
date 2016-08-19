@@ -11,7 +11,7 @@ import { IntlProvider } from 'react-intl';
 import configureStore from './utils/configure-store';
 import * as storage from './persistence/storage';
 import * as components from './components';
-import * as constants from './constants';
+import * as constants from './actions/constants';
 import * as i18n from './i18n';
 
 const {

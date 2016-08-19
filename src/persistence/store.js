@@ -1,4 +1,4 @@
-import * as constants from '../constants';
+import * as constants from '../actions/constants';
 import * as storage from './storage';
 
 export default function persistenceHandler(next) {

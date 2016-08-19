@@ -12,8 +12,8 @@ import createHistory from 'history/lib/createBrowserHistory';
 import withScroll from 'scroll-behavior';
 
 const history = withScroll(createHistory(), (prevLocation, location) => (
-  // Scroll to top when attempting to vist the current path.
-  prevLocation && location.pathname === prevLocation.pathname ? [0, 0] : true
+  // Don't scroll if the pathname is the same.
+  !prevLocation || location.pathname !== prevLocation.pathname
 ));
 
 const storeEnhancers = [

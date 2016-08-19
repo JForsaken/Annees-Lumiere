@@ -1,4 +1,4 @@
-import { SHOW_ERROR } from '../constants';
+import { SHOW_ERROR } from '../actions/constants';
 
 export default function handleActionError(dispatch, error, source) {
   return dispatch({

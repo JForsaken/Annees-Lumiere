@@ -6,7 +6,7 @@ import {
   POST_RESERVATION_SUCCESS,
   POST_RESERVATION_FAILED,
   FETCH_LANGUAGES,
-} from '../constants';
+} from './constants';
 
 const SAMFISH_API = 'http://localhost:5000';
 

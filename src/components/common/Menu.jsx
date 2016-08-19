@@ -13,11 +13,20 @@ import MenuListItem from './MenuListItem';
 /* Actions */
 import * as applicationActions from '../../actions/application';
 
+/* Constants */
+import {
+  CONTACT_SCROLL,
+  ABOUT_SCROLL,
+  PROGRAMS_SCROLL
+} from './scrollConstants';
+
 
 const menuItems = [
-  { text: <FormattedMessage id="menu.reservation" />, link: '/reservation', icon: 'fa fa-user' },
-  { text: <FormattedMessage id="menu.account" />, link: '/account', icon: 'fa fa-user' },
-  { text: <FormattedMessage id="menu.about" />, link: '/about', icon: 'fa fa-dot-circle-o' },
+  { text: <FormattedMessage id="menu.about" />, link: '/', query: { scroll: ABOUT_SCROLL }, icon: 'fa fa-dot-circle-o' },
+  { text: <FormattedMessage id="menu.contact" />, link: '/', query: { scroll: CONTACT_SCROLL }, icon: 'fa fa-user' },
+  { text: <FormattedMessage id="menu.programs" />, link: '/', query: { scroll: PROGRAMS_SCROLL }, icon: 'fa fa-calendar-check-o' },
+  { text: <FormattedMessage id="menu.reservation" />, link: '/reservation', icon: 'fa fa-pencil-square-o' },
+  // { text: <FormattedMessage id="menu.account" />, link: '/account', icon: 'fa fa-user' },
 ];
 
 @radium
@@ -72,7 +81,8 @@ class Menu extends Component {
                 <MenuListItem
                   {...item}
                   key={i}
-                  onClick={this.state.expanded ? this.toggleNav : null}
+                    /* Constants */
+                    import onClick={this.state.expanded ? this.toggleNav : null}
                 />)
             }
           </Nav>

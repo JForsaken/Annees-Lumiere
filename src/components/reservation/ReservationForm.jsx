@@ -21,7 +21,7 @@ import { extractReservationBody } from './helpers';
 import {
   POST_RESERVATION_SUCCESS,
   POST_RESERVATION_FAILED,
-} from '../../constants';
+} from '../../actions/constants';
 
 
 const style = {
@@ -146,14 +146,13 @@ class ReservationForm extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps) {
+  componentWillUpdate(nextProps) {
     const currentReservation = this.props.samfish.reservation;
     const reservation = nextProps.samfish.reservation;
 
     if (reservation.lastAction !== currentReservation.lastAction) {
       this.handleSamfishResponse(reservation);
     }
-    return true;
   }
 
   getLanguageOptions() {

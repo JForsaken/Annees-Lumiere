@@ -122,6 +122,8 @@ export default {
   'menu.reservation': 'Inscription',
   'menu.about': 'À Propos',
   'menu.account': 'Compte',
+  'menu.contact': 'Contact',
+  'menu.programs': 'Programmes éducatifs',
 
   // TEST
   'superSecretArea.info': 'Ceci est une zone super secrète.',
