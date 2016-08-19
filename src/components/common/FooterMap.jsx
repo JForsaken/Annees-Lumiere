@@ -21,6 +21,7 @@ const style = {
   },
   mapImg: {
     backgroundImage: `url(${photoMap})`,
+    overflow: 'hidden',
     display: 'inline-block',
     height: '420px',
     width: '500px',

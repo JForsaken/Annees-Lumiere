@@ -20,7 +20,7 @@
     text-shadow: 0 2px 2px #222;
     top: 48%;
     transition: all .2s ease-out;
-    z-index: 10 !important; }
+    z-index: 1000 !important; }
     @media (max-width: 768px) {
       .image-gallery-content .image-gallery-left-nav,
       .image-gallery-content .image-gallery-right-nav {
@@ -77,7 +77,7 @@
   position: absolute;
   text-align: center;
   width: 100%;
-  z-index: 10 !important; }
+  z-index: 1000 !important; }
   .image-gallery-bullets .image-gallery-bullets-container {
     margin: 0;
     padding: 0; }
