@@ -29,16 +29,16 @@ const menuItems = [
     icon: 'fa fa-dot-circle-o',
   },
   {
-    text: <FormattedMessage id="menu.contact" />,
-    link: '/',
-    query: { scroll: CONTACT_SCROLL },
-    icon: 'fa fa-user',
-  },
-  {
     text: <FormattedMessage id="menu.programs" />,
     link: '/',
     query: { scroll: PROGRAMS_SCROLL },
     icon: 'fa fa-calendar-check-o',
+  },
+  {
+    text: <FormattedMessage id="menu.contact" />,
+    link: '/',
+    query: { scroll: CONTACT_SCROLL },
+    icon: 'fa fa-user',
   },
   {
     text: <FormattedMessage id="menu.reservation" />,
