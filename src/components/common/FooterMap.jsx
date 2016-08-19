@@ -26,7 +26,7 @@ const style = {
     width: '500px',
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    margin: '0 auto',
+    margin: '10px auto 0 auto',
   },
 
   line: {
