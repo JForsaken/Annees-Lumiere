@@ -13,6 +13,7 @@ import HomeHeadline from './HomeHeadline';
 import BusinessValues from './BusinessValues';
 import SecureHealth from './SecureHealth';
 import EducationalProgram from './EducationalProgram';
+import ImgGallery from './ImgGallery';
 
 /* Styles */
 const style = {
@@ -59,6 +60,7 @@ export default class Home extends Component {
           <BusinessValues />
           <EducationalProgram />
           <SecureHealth />
+          <ImgGallery />
           <Footer />
         </div>
 

@@ -121,6 +121,9 @@ export default {
   'menu.contact': 'Contact',
   'menu.programs': 'Educational programs',
 
+  // IMAGE GALLERY
+  'imgGallery.title': 'Our workplace',
+
   // TEST
   'superSecretArea.info': 'This is a super secret area.',
 
