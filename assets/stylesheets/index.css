@@ -13,5 +13,5 @@ html { box-sizing: border-box; }
 /* Local CSS */
 
 @import "errors.css";
-
+@import "img-gallery.scss";
 @import "annees-lumiere.scss";

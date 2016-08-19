@@ -125,6 +125,9 @@ export default {
   'menu.contact': 'Contact',
   'menu.programs': 'Programmes éducatifs',
 
+  // IMAGE GALLERY
+  'imgGallery.title': 'Notre milieu',
+
   // TEST
   'superSecretArea.info': 'Ceci est une zone super secrète.',
 
