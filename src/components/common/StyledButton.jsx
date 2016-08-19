@@ -10,19 +10,19 @@ const RadiumLink = radium(Link);
 
 const style = {
   styledButton: {
-    border: '2px solid#404040',
+    border: '2px solid #3a3a3a',
+    backgroundColor: '#545454',
     padding: '.5em 1em',
     fontWeight: 700,
     fontSize: 20,
-    color: '#404040',
-    backgroundColor: 'rgba(0,0,0,0)',
+    color: 'white',
     textDecoration: 'none',
     borderRadius: '2px',
     ':hover': {
       cursor: 'pointer',
-      border: '2px solid black',
-      backgroundColor: 'black',
-      color: 'white',
+      border: '2px solid#545454',
+      backgroundColor: 'rgba(0,0,0,0)',
+      color: '#545454',
     },
   },
 

@@ -20,21 +20,6 @@ const menuItems = [
   { text: <FormattedMessage id="menu.about" />, link: '/about', icon: 'fa fa-dot-circle-o' },
 ];
 
-const style = {
-  langSwitcher: {
-    textDecoration: 'none',
-  },
-  langSwitcherText: {
-    textDecoration: 'none',
-    color: '#9d9d9d',
-    ':hover': {
-      cursor: 'pointer',
-      fontWeight: 700,
-      color: 'black',
-    },
-  },
-};
-
 @radium
 class Menu extends Component {
 
@@ -91,8 +76,8 @@ class Menu extends Component {
                 />)
             }
           </Nav>
-          <Nav style={style.langSwitcher} pullRight>
-            <NavItem style={style.langSwitcherText} onClick={this.handleSwitchLocale}>
+          <Nav pullRight>
+            <NavItem onClick={this.handleSwitchLocale}>
               {locale.toUpperCase()}
             </NavItem>
           </Nav>
