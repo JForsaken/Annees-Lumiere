@@ -130,7 +130,7 @@ export default class EducationalProgram extends Component {
               <RadiumLink to="/reservation" style={style.boxLink}>
                 <div style={{ ...style.standardBox, ...style.box1 }} key="box1" >
                   <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box1" />
+                    <FormattedMessage id="home.educationalProgram.box1.title" />
                   </div>
                 </div>
               </RadiumLink>
@@ -139,7 +139,7 @@ export default class EducationalProgram extends Component {
               <RadiumLink to="/reservation" style={style.boxLink}>
                 <div style={{ ...style.standardBox, ...style.box2 }} key="box2" >
                   <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box2" />
+                    <FormattedMessage id="home.educationalProgram.box2.title" />
                   </div>
                 </div>
               </RadiumLink>
@@ -148,7 +148,7 @@ export default class EducationalProgram extends Component {
               <RadiumLink to="/reservation" style={style.boxLink}>
                 <div style={{ ...style.standardBox, ...style.box3 }} key="box3" >
                   <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box3" />
+                    <FormattedMessage id="home.educationalProgram.box3.title" />
                   </div>
                 </div>
               </RadiumLink>
@@ -157,7 +157,7 @@ export default class EducationalProgram extends Component {
               <RadiumLink to="/reservation" style={style.boxLink}>
                 <div style={{ ...style.standardBox, ...style.box4 }} key="box4" >
                   <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box4" />
+                    <FormattedMessage id="home.educationalProgram.box4.title" />
                   </div>
                 </div>
               </RadiumLink>
@@ -166,7 +166,7 @@ export default class EducationalProgram extends Component {
               <RadiumLink to="/reservation" style={style.boxLink}>
                 <div style={{ ...style.standardBox, ...style.box5 }} key="box5" >
                   <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box5" />
+                    <FormattedMessage id="home.educationalProgram.box5.title" />
                   </div>
                 </div>
               </RadiumLink>
@@ -175,7 +175,7 @@ export default class EducationalProgram extends Component {
               <RadiumLink to="/reservation" style={style.boxLink}>
                 <div style={{ ...style.standardBox, ...style.box6 }} key="box6" >
                   <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box6" />
+                    <FormattedMessage id="home.educationalProgram.box6.title" />
                   </div>
                 </div>
               </RadiumLink>
