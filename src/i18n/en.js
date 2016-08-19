@@ -119,6 +119,7 @@ export default {
   'menu.about': 'About',
   'menu.account': 'Account',
   'menu.contact': 'Contact',
+  'menu.programs': 'Educational programs',
 
   // TEST
   'superSecretArea.info': 'This is a super secret area.',
