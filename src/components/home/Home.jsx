@@ -36,7 +36,7 @@ export default class Home extends Component {
 
   componentWillUpdate(nextProps) {
     if (!isEqual(this.props.location.query, nextProps.location.query)) {
-      const { scroll }  = nextProps.location.query;
+      const { scroll } = nextProps.location.query;
 
       if (scroll) {
         scroller.scrollTo(scroll, {

@@ -54,10 +54,10 @@ export default class FooterContact extends Component {
           <Row>
             <h3>
               <a
-                  style={style.emailLink}
-                  href="mailto:jbertrand@annees-lumiere.com"
-                  target="_top"
-                  key="joanieBertrand"
+                style={style.emailLink}
+                href="mailto:jbertrand@annees-lumiere.com"
+                target="_top"
+                key="joanieBertrand"
               >
                 jbertrand@annees-lumiere.com
               </a>
