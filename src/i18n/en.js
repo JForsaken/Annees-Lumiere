@@ -118,6 +118,7 @@ export default {
   'menu.reservation': 'Reservation',
   'menu.about': 'About',
   'menu.account': 'Account',
+  'menu.contact': 'Contact',
 
   // TEST
   'superSecretArea.info': 'This is a super secret area.',

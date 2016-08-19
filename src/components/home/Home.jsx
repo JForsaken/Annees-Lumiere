@@ -1,7 +1,9 @@
 /* Node modules */
 import React, { Component } from 'react';
 import radium from 'radium';
-
+import Scroll from 'react-scroll';
+import { isEqual } from 'lodash';
+const scroller = Scroll.scroller;
 
 /* Components */
 import Footer from '../common/Footer';
@@ -31,6 +33,22 @@ const style = {
 
 @radium
 export default class Home extends Component {
+
+  componentWillUpdate(nextProps) {
+    if (!isEqual(this.props.location.query, nextProps.location.query)) {
+      const { scroll } = nextProps.location.query;
+
+      if (scroll) {
+        scroller.scrollTo(scroll, {
+          duration: 1000,
+          delay: 100,
+          offset: -30,
+          smooth: true,
+        });
+      }
+    }
+  }
+
   render() {
     return (
       <div>

@@ -3,9 +3,16 @@ import React, { Component } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import radium from 'radium';
 import { FormattedHTMLMessage } from 'react-intl';
+import Scroll from 'react-scroll';
+const Element = Scroll.Element;
 
 /* Components */
 import photoFille from '../../../assets/images/melonEauv2.jpg';
+
+/* Constants */
+import {
+  ABOUT_SCROLL,
+} from '../common/scrollConstants';
 
 /* Styles */
 const style = {
@@ -77,24 +84,27 @@ export default class HomeHeadline extends Component {
     const width = this.state.windowWidth;
     if (width > 800) {
       return (
-        <Row style={style.homeHeadlineBackground}>
-          <Col xs={6} />
-          <Col xs={6} style={style.transbox}>
-            <div style={style.text}>
-              <FormattedHTMLMessage id="home.homeHeadline.text" />
-            </div>
-          </Col>
-        </Row>
+        <Element name={ABOUT_SCROLL}>
+          <Row style={style.homeHeadlineBackground}>
+            <Col xs={6} />
+            <Col xs={6} style={style.transbox}>
+              <div style={style.text}>
+                <FormattedHTMLMessage id="home.homeHeadline.text" />
+              </div>
+            </Col>
+          </Row>
+        </Element>
       );
     }
     return (
-      <div>
-        <Row style={style.textMobile}>
-          <FormattedHTMLMessage id="home.homeHeadline.text" />
-        </Row>
-        <div style={style.homeHeadlineBackgroundMobile} />
-      </div>
-
+      <Element name={ABOUT_SCROLL}>
+        <div>
+          <Row style={style.textMobile}>
+            <FormattedHTMLMessage id="home.homeHeadline.text" />
+          </Row>
+          <div style={style.homeHeadlineBackgroundMobile} />
+        </div>
+      </Element>
     );
   }
 }

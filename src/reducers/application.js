@@ -1,4 +1,4 @@
-import * as constants from '../constants';
+import * as constants from '../actions/constants';
 import createReducer from '../utils/create-reducer';
 
 const initialState = {

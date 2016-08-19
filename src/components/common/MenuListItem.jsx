@@ -8,26 +8,28 @@ export default class MenuListItem extends Component {
     icon: PropTypes.string.isRequired,
     isExternal: PropTypes.bool,
     link: PropTypes.string.isRequired,
+    query: PropTypes.object,
     text: PropTypes.any.isRequired,
     onClick: PropTypes.any,
   };
 
   renderLink() {
-    let link = (
-      <Link to={this.props.link} onClick={this.props.onClick}>
-        <i className={this.props.icon}></i> {this.props.text}
+    const { link, query, onClick, icon, text, isExternal } = this.props;
+    let generatedlink = (
+      <Link to={link} query={query} onClick={onClick}>
+        <i className={icon}></i> {text}
       </Link>
     );
 
-    if (this.props.isExternal) {
-      link = (
-        <a href={this.props.link} target="_blank">
-          <i className={this.props.icon}></i> {this.props.text}
+    if (isExternal) {
+      generatedlink = (
+        <a href={link} target="_blank">
+          <i className={icon}></i> {text}
         </a>
       );
     }
 
-    return link;
+    return generatedlink;
   }
 
   render() {
