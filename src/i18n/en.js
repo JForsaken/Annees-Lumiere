@@ -90,8 +90,8 @@ export default {
   'home.homeHeadline.text': '<h2>Welcome,</h2></br> <i>Années-Lumière is a nursery blablnalbabla anglais privée qui offre des services de garde aux enfants âgés de 6 mois à 5 ans.</i></br></br>Notre programme éducatif a été conçu par des PROFESSIONNELS DE LA PETITE ENFANCE et s’inspire des plus récentes théories d’éducation. Chez nous, votre enfant aura la chance d’évoluer dans un environnement <b style="font-size:18px;">chaleureux, sécuritaire et stimulant</b> où nous l’aidons à se construire une image positive de lui-même et des autres.</br></br> Nos éducatrices qualifiées offrent des activités structurées qui permettent notamment le <b style="font-size:18px;">développement de nouvelles aptitudes sociales, physiques et intellectuelles</b> qui aideront votre enfant à RÉUSSIR DANS LE MONDE QUI L’ENTOUR. Nous réservons également à notre petite routine des périodes de temps libre ce qui favorise <b style="font-size:18px;">la créativité, l’initiative, la confiance en soi et la joie de vivre.</b>',
 
   // secureHealth.component
-  'home.secureHealth.titleTop': 'Health &',
-  'home.secureHealth.titleBottom': 'Security',
+
+  'home.secureHealth.title': '<u><h3 style= "margin:0">Health &</h3></u><h1 style= "margin-top:0">Security</h1>',
   'home.secureHealth.text': 'This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component This is the text for secureHealth component',
 
   // businessValues.component

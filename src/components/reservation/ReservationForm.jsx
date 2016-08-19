@@ -23,7 +23,7 @@ import {
   POST_RESERVATION_FAILED,
 } from '../../actions/constants';
 
-
+/* Styles */
 const style = {
 
   formContainer: {

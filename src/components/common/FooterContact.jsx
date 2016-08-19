@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import radium from 'radium';
 import { Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import Scroll from 'react-scroll';
 const Element = Scroll.Element;
 
@@ -39,8 +40,11 @@ const style = {
 };
 
 @radium
-export default class FooterContact extends Component {
+class FooterContact extends Component {
   render() {
+    const currentPage = this.props.router.location.pathname;
+    const isReservationPage = currentPage.includes('reservation');
+
     return (
       <Element name={CONTACT_SCROLL}>
         <div style={style.footerContactContainer}>
@@ -65,7 +69,11 @@ export default class FooterContact extends Component {
           </Row>
 
           <Row style={style.inscriptionButtonRow}>
-            <StyledButton textId="home.mission.button" link="/reservation" />
+            {!isReservationPage && <StyledButton
+              textId="home.mission.button"
+              link="/reservation"
+            />
+            }
           </Row>
         </div>
 
@@ -73,3 +81,8 @@ export default class FooterContact extends Component {
     );
   }
 }
+
+export default connect(
+  ({ router }) => ({ router })
+)(FooterContact);
+
