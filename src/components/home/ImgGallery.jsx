@@ -6,9 +6,9 @@ import ImageGallery from 'react-image-gallery';
 import { FormattedMessage } from 'react-intl';
 
 /* Images */
-import image1 from '../../../assets/images/crayons.jpg';
-import image2 from '../../../assets/images/avion.jpg';
-import image3 from '../../../assets/images/educatrice.jpg';
+import image1 from '../../../assets/images/peinture_gallery.jpg';
+import image2 from '../../../assets/images/educatrice_gallery.jpg';
+import image3 from '../../../assets/images/soccer_gallery.jpg';
 
 /* Styles */
 const style = {
