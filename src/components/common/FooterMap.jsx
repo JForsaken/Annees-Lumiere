@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import radium from 'radium';
 import { Row } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
-import photoFille from '../../../assets/images/map.jpg';
+import photoMap from '../../../assets/images/map.jpg';
 
 
 /* Styles */
@@ -20,8 +20,8 @@ const style = {
     paddingTop: 20,
   },
   mapImg: {
-    backgroundImage: `url(${photoFille})`,
-    paddingTop: 20,
+    backgroundImage: `url(${photoMap})`,
+    display: 'inline-block',
     height: '420px',
     width: '500px',
     backgroundSize: 'contain',
@@ -50,7 +50,9 @@ export default class FooterContact extends Component {
           </h1>
         </Row>
 
-        <div style={style.mapImg} />
+        <a href="https://goo.gl/maps/qQQJeEpDraU2" target="_blank" key="maps">
+          <div style={style.mapImg} />
+        </a>
 
         <Row>
           <h2>
