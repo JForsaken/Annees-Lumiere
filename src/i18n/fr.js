@@ -120,21 +120,26 @@ export default {
   'home.educationalProgram.box3.sub1': 'SOCIOAFFECTIF ET MORAL',
   'home.educationalProgram.box4.sub1': 'SOCIOAFFECTIF ET MORAL',
   'home.educationalProgram.box5.sub1': 'SOCIOAFFECTIF ET MORAL',
-  'home.educationalProgram.box6.sub1': 'SOCIOAFFECTIF ET MORAL',
+  'home.educationalProgram.box6.sub1': 'ACTIVITÉ',
 
   'home.educationalProgram.box1.sub2': 'COGNITIF ET LANGAGIER',
   'home.educationalProgram.box2.sub2': 'COGNITIF ET LANGAGIER',
   'home.educationalProgram.box3.sub2': 'COGNITIF ET LANGAGIER',
   'home.educationalProgram.box4.sub2': 'COGNITIF ET LANGAGIER',
   'home.educationalProgram.box5.sub2': 'COGNITIF ET LANGAGIER',
-  'home.educationalProgram.box6.sub2': 'COGNITIF ET LANGAGIER',
+  'home.educationalProgram.box6.sub2': 'LE REPOS',
 
   'home.educationalProgram.box1.sub3': 'MOTEUR',
   'home.educationalProgram.box2.sub3': 'MOTEUR',
   'home.educationalProgram.box3.sub3': 'MOTEUR',
   'home.educationalProgram.box4.sub3': 'MOTEUR',
   'home.educationalProgram.box5.sub3': 'MOTEUR',
-  'home.educationalProgram.box6.sub3': 'MOTEUR',
+  'home.educationalProgram.box6.sub3': 'LES TEMPS LIBRES',
+
+  // additionalSubActivity
+  'home.educationalProgram.box6.sub4': 'LA COLLATION ET DINNER',
+  'home.educationalProgram.box6.sub5': 'HYGIÈNE PERSONNELLE ET RESPONSABILITÉS',
+
 
   // text1
   'home.educationalProgram.box1.text1': '',
@@ -142,7 +147,7 @@ export default {
   'home.educationalProgram.box3.text1': '<ul><li>Verbaliser ce qu’il ressent</li><li>Apprendre des stratégies d’autorégulation</li><li>Développer son empathique</li><li>L’amener à développer son autonomie et son initiative</li><li>Renforcir son estime de soi et l’inciter à essayer de nouvelles choses</li><li>Jouer avec un ami </li></ul>',
   'home.educationalProgram.box4.text1': '<ul><li>Exprimer ses besoins par des mots, comme «j’ai faim», «je suis fatigué»</li><li>Exprimer de façon plus précise sa colère avec des mots, et non des gestes</li><li>Démontrer des comportements prosociaux, comme aider un ami ou partager</li><li>Jouer avec d’autres enfants</li><li>Partager et coopérer</li><li>Utiliser des mots de politesses, comme «merci» et «s’il vous plaît»</li><li>Maintenir une bonne hygiène personnelle</li></ul>',
   'home.educationalProgram.box5.text1': '<ul><li>Avoir une bonne image de lui-même et des autres</li><li>Ressentir de la fierté</li><li>Développer son sens des responsabilités</li><li>Travailler en équipe afin de poursuivre un but commun</li><li>Persévérer devant les tâches difficiles </li></ul>',
-  'home.educationalProgram.box6.text1': '',
+  'home.educationalProgram.box6.text1': '<ul>«L’enfant apprend par le jeu».</br>C’est pourquoi l’éducatrice planifie à chaque semaine différentes activités stimulantes et amusantes favorisant le développement global de l’enfant et l’amenant progressivement à s’adapter à la vie en collectivité.</br><li>Développement du langage</li><li>Socialisation</li><li>Dessins et écritures</li><li>Arts</li><li>Construction et expression créative</li><li>Sciences</li><li>Musique</li><li>Sports</li><li>Anglais</li><li>Écouter et raconter une histoire</li><li>Activités culinaires</li><li>Jardinage</li><li>Activités pleine aire et écologie</li><li>Culture et ouverture sur le monde</li><li>Sorties spéciales </li></ul>',
 
   // text2
   'home.educationalProgram.box1.text2': '',
@@ -150,7 +155,7 @@ export default {
   'home.educationalProgram.box3.text2': '<ul><li>Jouer à «faire semblant» et imiter</li><li>Intégrer des nouveaux types de mots (verbes, adjectifs, articles)</li><li>Comprendre des nouveaux concepts comme «en haut» et «en bas»</li><li>Reconnaître les formes et les couleurs</li><li>Grouper logiquement des objets dans des ensembles </li></ul>',
   'home.educationalProgram.box4.text2': '<ul><li>L’amener à comprendre les raisons des consignes à respecter</li><li>Faire des phrases complètes</li><li>Classer les objets selon leur utilisation</li><li>Entretenir une conversation</li><li>Compter jusqu’à 10</li><li>Parler d’évènements qui ont eu lieu</li><li>Jouer à des jeux de rôles en adoptant les comportements qui y sont associés</li></ul>',
   'home.educationalProgram.box5.text2': '<ul><li>Faire des phrases avec des verbes conjugués</li><li>Utiliser correctement les mots «hier» et «demain»</li><li>Connaître les différentes saisons et jours de la semaine</li><li>Placer des objets selon une suite logique</li><li>Comprendre des concepts abstraits, comme «plus gros que» ou «plus petit que»</li><li>Développer sa capacité de raisonnement </li></ul>',
-  'home.educationalProgram.box6.text2': 'MOTEUR',
+  'home.educationalProgram.box6.text2': 'La période de la sieste à la garderie peu s’avérer être un moment bien difficile pour les enfants. Afin de les aider à se laisser aller au sommeil, nous effectuerons toujours le même petit rituel d’«avant-dodo» et les éducatrices, chaleureuses et rassurantes, resteront présentes auprès des enfants tout au long de la période.',
 
   // text3
   'home.educationalProgram.box1.text3': '',
@@ -158,7 +163,11 @@ export default {
   'home.educationalProgram.box3.text3': '<ul><li>Empiler des gros cubes pour faire une construction</li><li>Plier et découper du papier</li><li>Dessiner des choses simples comme des croix, des cercles et des petites lignes</li><li>Fermer une fermeture éclaire</li><li>Monter et descendre des escaliers</li><li>Pédaler sur un tricycle</li><li>Lancer une balle</li></ul>',
   'home.educationalProgram.box4.text3': '<ul><li>Découper des formes simples à l’aide de ciseaux</li><li>Tenir un crayon entre le pouce et l’index</li><li>Lancer et attraper un ballon</li><li>Grimper, glisser, se balancer</li></ul>',
   'home.educationalProgram.box5.text3': '<ul><li>Découper en suivant les traces d’une ligne</li><li>Inclure des éléments de détails dans un dessin</li><li>Respecter les limites des lignes dans un coloriage</li><li>S’habiller et se déshabiller seul pour sortir dehors ou rentrer à l’intérieur</li><li>Savoir écrire son nom et quelques lettres</li><li>Sauter par devant et par-derrière sur une courte distance </li></ul>',
-  'home.educationalProgram.box6.text3': 'MOTEUR',
+  'home.educationalProgram.box6.text3': 'Périodes où l’enfant est libre de choisir de faire ce qu’il a envie de faire, tout en étant guidé et soutenu par son éducatrice. Les jeux libres favorisent la créativité, l’initiative, la confiance en soi, la joie de vivre et éveil la curiosité des tout-petits.',
+
+  // additionalTextActivity
+  'home.educationalProgram.box6.text4': 'Une alimentation saine favorise un développement global et harmonieux, et contribue au maintien d’une bonne santé physique et mentale. Ainsi, la garderie éducative Années-lumière servira uniquement des repas équilibrés, variés et nutritifs, qui tiennent compte du Guide alimentaire canadien. ',
+  'home.educationalProgram.box6.text5': 'Moments d’«avant-manger» et d’«après-manger», où l’enfant apprend à prendre soin de lui-même, par exemple «comment bien se laver les mains» et «comment bien se brosser les dents».  Ceux-ci apprennent également à se responsabiliser et à s’intégrer à la vie en société en effectuant des petites tâches comme mettre la table, distribuer les plats aux autres, nettoyer la table, etc. ',
 
   // LOGOUT
   'logout': 'Déconnexion',
