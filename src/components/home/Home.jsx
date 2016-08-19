@@ -35,18 +35,24 @@ const style = {
 @radium
 export default class Home extends Component {
 
+  componentDidMount() {
+    this.scrollAnimation(this.props.location.query.scroll);
+  }
+
   componentWillUpdate(nextProps) {
     if (!isEqual(this.props.location.query, nextProps.location.query)) {
-      const { scroll } = nextProps.location.query;
+      this.scrollAnimation(nextProps.location.query.scroll);
+    }
+  }
 
-      if (scroll) {
-        scroller.scrollTo(scroll, {
-          duration: 1000,
-          delay: 100,
-          offset: -30,
-          smooth: true,
-        });
-      }
+  scrollAnimation(scrollLocation) {
+    if (scrollLocation) {
+      scroller.scrollTo(scrollLocation, {
+        duration: 1000,
+        delay: 100,
+        offset: -30,
+        smooth: true,
+      });
     }
   }
 
