@@ -133,11 +133,11 @@ export default class EducationalProgram extends Component {
 
     for (let i = 1; i <= boxQty; i++) {
       boxes.push(
-        <Col style={style.boxColumn} xs={6} md={4}>
+        <Col style={style.boxColumn} xs={6} md={4} key={`cbox${i}`}>
           <a style={style.boxLink} onClick={evt => this.handleBoxClick(i)} key={`abox${i}`}>
             <div style={{ ...style.standardBox, ...style[`box${i}`] }} key={`box${i}`} >
               <div style={style.boxTitle}>
-                <FormattedMessage id={`home.educationalProgram.box${i}`} />
+                <FormattedMessage id={`home.educationalProgram.box${i}.title`} />
               </div>
             </div>
           </a>
@@ -148,6 +148,8 @@ export default class EducationalProgram extends Component {
   }
 
   render() {
+
+    const { lastClickedBox } = this.state;
     return (
       <Element name={PROGRAMS_SCROLL}>
         <Row style={style.educationalProgramBackground}>
@@ -155,61 +157,6 @@ export default class EducationalProgram extends Component {
             <FormattedMessage id="home.educationalProgram.title" />
           </h1>
           <Row>
-<<<<<<< 2eea6e102e0d4e7241b67456ab3094cdbc373e71
-            <Col style={style.boxColumn} xs={6} md={4}>
-              <RadiumLink to="/reservation" style={style.boxLink}>
-                <div style={{ ...style.standardBox, ...style.box1 }} key="box1" >
-                  <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box1.title" />
-                  </div>
-                </div>
-              </RadiumLink>
-            </Col>
-            <Col style={style.boxColumn} xs={6} md={4}>
-              <RadiumLink to="/reservation" style={style.boxLink}>
-                <div style={{ ...style.standardBox, ...style.box2 }} key="box2" >
-                  <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box2.title" />
-                  </div>
-                </div>
-              </RadiumLink>
-            </Col>
-            <Col style={style.boxColumn} xs={6} md={4}>
-              <RadiumLink to="/reservation" style={style.boxLink}>
-                <div style={{ ...style.standardBox, ...style.box3 }} key="box3" >
-                  <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box3.title" />
-                  </div>
-                </div>
-              </RadiumLink>
-            </Col>
-            <Col style={style.boxColumn} xs={6} md={4}>
-              <RadiumLink to="/reservation" style={style.boxLink}>
-                <div style={{ ...style.standardBox, ...style.box4 }} key="box4" >
-                  <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box4.title" />
-                  </div>
-                </div>
-              </RadiumLink>
-            </Col>
-            <Col style={style.boxColumn} xs={6} md={4}>
-              <RadiumLink to="/reservation" style={style.boxLink}>
-                <div style={{ ...style.standardBox, ...style.box5 }} key="box5" >
-                  <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box5.title" />
-                  </div>
-                </div>
-              </RadiumLink>
-            </Col>
-            <Col style={style.boxColumn} xs={6} md={4}>
-              <RadiumLink to="/reservation" style={style.boxLink}>
-                <div style={{ ...style.standardBox, ...style.box6 }} key="box6" >
-                  <div style={style.boxTitle}>
-                    <FormattedMessage id="home.educationalProgram.box6.title" />
-                  </div>
-                </div>
-              </RadiumLink>
-            </Col>
             {this.renderBoxes()}
           </Row>
         </Row>
@@ -217,7 +164,10 @@ export default class EducationalProgram extends Component {
             springConfig={{ stiffness: 200, damping: 30 }}
             isOpened={this.state.isSectionOpened}
         >
-          <EducationalDetails boxNumber={this.state.lastClickedBox} />
+          <EducationalDetails
+              boxNumber={lastClickedBox}
+              color={lastClickedBox ? style[`box${lastClickedBox}`][':hover'].backgroundColor : 'white'}
+          />
         </Collapsible>
       </Element>
     );
