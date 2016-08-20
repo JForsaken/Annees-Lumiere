@@ -8,14 +8,14 @@ import { cloneDeep } from 'lodash';
 /* Styles */
 const style = {
 
- detailsContainer: {
+  detailsContainer: {
     textAlign: 'center',
     paddingTop: 20,
     paddingBottom: 20,
     background: '#f0f0f0',
   },
 
-singleDetailContainer: {
+  singleDetailContainer: {
     display: 'inline-block',
     '@media (min-width: 300px)': {
       width: '100%',
@@ -54,7 +54,7 @@ singleDetailContainer: {
     fontSize: 65,
   },
 
-line: {
+  line: {
     margin: '20px auto 20px auto',
     display: 'table',
     borderWidth: '0 0 1px',

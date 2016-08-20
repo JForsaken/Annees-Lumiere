@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import radium from 'radium';
 import { Col, Row } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'react-router';
 import Collapsible from 'react-collapse';
 import Scroll from 'react-scroll';
 const Element = Scroll.Element;
@@ -127,14 +126,14 @@ export default class EducationalProgram extends Component {
     });
   }
 
-  renderBoxes(){
+  renderBoxes() {
     const boxQty = 6;
     const boxes = [];
 
     for (let i = 1; i <= boxQty; i++) {
       boxes.push(
         <Col style={style.boxColumn} xs={6} md={4} key={`cbox${i}`}>
-          <a style={style.boxLink} onClick={evt => this.handleBoxClick(i)} key={`abox${i}`}>
+          <a style={style.boxLink} onClick={() => this.handleBoxClick(i)} key={`abox${i}`}>
             <div style={{ ...style.standardBox, ...style[`box${i}`] }} key={`box${i}`} >
               <div style={style.boxTitle}>
                 <FormattedMessage id={`home.educationalProgram.box${i}.title`} />
@@ -142,14 +141,15 @@ export default class EducationalProgram extends Component {
             </div>
           </a>
         </Col>
-      )
+      );
     }
     return boxes;
   }
 
   render() {
-
     const { lastClickedBox } = this.state;
+    const styleColor = lastClickedBox ? style[`box${lastClickedBox}`][':hover'] : null;
+
     return (
       <Element name={PROGRAMS_SCROLL}>
         <Row style={style.educationalProgramBackground}>
@@ -161,12 +161,12 @@ export default class EducationalProgram extends Component {
           </Row>
         </Row>
         <Collapsible
-            springConfig={{ stiffness: 200, damping: 30 }}
-            isOpened={this.state.isSectionOpened}
+          springConfig={{ stiffness: 200, damping: 30 }}
+          isOpened={this.state.isSectionOpened}
         >
           <EducationalDetails
-              boxNumber={lastClickedBox}
-              color={lastClickedBox ? style[`box${lastClickedBox}`][':hover'].backgroundColor : 'white'}
+            boxNumber={lastClickedBox}
+            color={styleColor ? styleColor.backgroundColor : 'white'}
           />
         </Collapsible>
       </Element>
