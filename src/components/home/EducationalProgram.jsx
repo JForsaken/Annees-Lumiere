@@ -1,14 +1,15 @@
 /* Node modules */
 import React, { Component } from 'react';
-import { Col, Row } from 'react-bootstrap';
 import radium from 'radium';
+import { Col, Row } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router';
+import Collapsible from 'react-collapse';
 import Scroll from 'react-scroll';
 const Element = Scroll.Element;
 
 /* Components */
-const RadiumLink = radium(Link);
+import EducationalDetails from './EducationalDetails';
 
 /* Constants */
 import {
@@ -49,8 +50,6 @@ const style = {
     '@media (min-width: 800px)': {
       fontSize: '35px',
     },
-
-
   },
 
   boxTitle: {
@@ -118,6 +117,36 @@ const style = {
 @radium
 export default class EducationalProgram extends Component {
 
+  handleBoxClick(boxIndex) {
+    const isOpened = this.state.lastClickedBox !== boxIndex;
+    const clickedBox = !isOpened ? null : boxIndex;
+
+    this.setState({
+      lastClickedBox: clickedBox,
+      isSectionOpened: isOpened,
+    });
+  }
+
+  renderBoxes(){
+    const boxQty = 6;
+    const boxes = [];
+
+    for (let i = 1; i <= boxQty; i++) {
+      boxes.push(
+        <Col style={style.boxColumn} xs={6} md={4}>
+          <a style={style.boxLink} onClick={evt => this.handleBoxClick(i)} key={`abox${i}`}>
+            <div style={{ ...style.standardBox, ...style[`box${i}`] }} key={`box${i}`} >
+              <div style={style.boxTitle}>
+                <FormattedMessage id={`home.educationalProgram.box${i}`} />
+              </div>
+            </div>
+          </a>
+        </Col>
+      )
+    }
+    return boxes;
+  }
+
   render() {
     return (
       <Element name={PROGRAMS_SCROLL}>
@@ -126,6 +155,7 @@ export default class EducationalProgram extends Component {
             <FormattedMessage id="home.educationalProgram.title" />
           </h1>
           <Row>
+<<<<<<< 2eea6e102e0d4e7241b67456ab3094cdbc373e71
             <Col style={style.boxColumn} xs={6} md={4}>
               <RadiumLink to="/reservation" style={style.boxLink}>
                 <div style={{ ...style.standardBox, ...style.box1 }} key="box1" >
@@ -180,8 +210,15 @@ export default class EducationalProgram extends Component {
                 </div>
               </RadiumLink>
             </Col>
+            {this.renderBoxes()}
           </Row>
         </Row>
+        <Collapsible
+            springConfig={{ stiffness: 200, damping: 30 }}
+            isOpened={this.state.isSectionOpened}
+        >
+          <EducationalDetails boxNumber={this.state.lastClickedBox} />
+        </Collapsible>
       </Element>
     );
   }

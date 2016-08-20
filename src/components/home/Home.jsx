@@ -69,7 +69,6 @@ export default class Home extends Component {
           <ImgGallery />
           <Footer />
         </div>
-
       </div>
     );
   }
