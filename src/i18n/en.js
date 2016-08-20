@@ -104,12 +104,12 @@ export default {
 
   // educationalProgram.component
   'home.educationalProgram.title': 'Our educational program',
-  'home.educationalProgram.box1': '6-18 months old',
-  'home.educationalProgram.box2': '18-24 months old',
-  'home.educationalProgram.box3': '2-3 years old',
-  'home.educationalProgram.box4': '3-4 years old',
-  'home.educationalProgram.box5': '4-5 years old',
-  'home.educationalProgram.box6': 'Activities',
+  'home.educationalProgram.box1.title': '6-18 months old',
+  'home.educationalProgram.box2.title': '18-24 months old',
+  'home.educationalProgram.box3.title': '2-3 years old',
+  'home.educationalProgram.box4.title': '3-4 years old',
+  'home.educationalProgram.box5.title': '4-5 years old',
+  'home.educationalProgram.box6.title': 'Activities',
 
   // LOGOUT
   'logout': 'Logout',
