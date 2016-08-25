@@ -8,18 +8,10 @@ const initialState = {
     'fr',
     'en',
   ],
-  user: {
-    // TODO: have a checkbox to update the state
-    // e.g.: on the login page and/or menu
-    // permissions: ['manage_account']
-    permissions: [],
-  },
   error: null,
 };
 
 const actionHandlers = {
-  [constants.LOGGED_IN]: (_, action) => action.payload,
-  [constants.LOG_OUT]: () => ({ token: null }),
   [constants.LOCALE_SWITCHED]: (_, action) => ({ locale: action.payload }),
 
   // TODO: this handle only API error responses.

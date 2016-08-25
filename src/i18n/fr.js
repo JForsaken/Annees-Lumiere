@@ -25,6 +25,13 @@ export default {
   'forbidden': 'Interdit',
   'forbiddenReason': 'Vous êtes pas autorisé à accéder à la page XXX.',
 
+  // LOGIN FORM
+  'login.form.title': 'Connexion',
+  'login.form.email': 'Adresse courriel',
+  'login.form.password': 'Mot de passe',
+  'login.form.modal.title': 'Échec de connexion.',
+  'login.form.modal.content': 'Veuillez vérifier la validité de vos infos. :(',
+
   // FORM
   'form.title': 'Inscription',
   'form.parent': 'Parent',

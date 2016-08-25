@@ -8,6 +8,7 @@ import DevTools from './components/common/DevTools';
 import { ReduxRouter } from 'redux-router';
 import { connect } from 'react-redux';
 import { IntlProvider } from 'react-intl';
+import { isEmpty } from 'lodash';
 import configureStore from './utils/configure-store';
 import * as storage from './persistence/storage';
 import * as components from './components';
@@ -17,11 +18,10 @@ import * as i18n from './i18n';
 const {
   About,
   Account,
-  AccountHome,
+  Dashboard,
   Application,
   Home,
   Login,
-  SuperSecretArea,
   Reservation,
 } = components;
 
@@ -40,13 +40,13 @@ const initialState = {
 export const store = configureStore(initialState);
 
 function logout(nextState, replaceState) {
-  store.dispatch({ type: constants.LOG_OUT });
+  store.dispatch({ type: constants.LOGOUT });
   replaceState({}, '/login');
 }
 
 function requireAuth(nextState, replaceState) {
   const state = store.getState();
-  const isLoggedIn = Boolean(state.application.token);
+  const isLoggedIn = !isEmpty(state.samfish.login.user);
   if (!isLoggedIn) {
     replaceState({
       nextPathname: nextState.location.pathname,
@@ -59,11 +59,10 @@ function renderRoutes() {
     <ReduxRouter>
       <Route component={Application}>
         <Route path="/" component={Home} />
-        <Redirect from="/account" to="/account/profile" />
+        <Redirect from="/account" to="/account/dashboard" />
         <Route path="about" component={About} />
         <Route path="account" component={Account} onEnter={requireAuth}>
-          <Route path="profile" component={AccountHome} />
-          <Route path="secret-area" component={SuperSecretArea} />
+          <Route path="dashboard" component={Dashboard} />
         </Route>
         <Route path="login" component={Login} />
         <Route path="logout" onEnter={logout} />

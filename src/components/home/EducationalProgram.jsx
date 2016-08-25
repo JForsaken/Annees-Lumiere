@@ -116,6 +116,14 @@ const style = {
 @radium
 export default class EducationalProgram extends Component {
 
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      isSectionOpened: false,
+    };
+  }
+
   handleBoxClick(boxIndex) {
     const isOpened = this.state.lastClickedBox !== boxIndex;
     const clickedBox = !isOpened ? null : boxIndex;

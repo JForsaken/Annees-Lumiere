@@ -294,7 +294,7 @@ class ReservationForm extends Component {
     const modalStyle = samfishErrors ? style.modal.errors : style.modal.success;
 
     return (
-      <ModalContainer style={style.modal.container} onClose={this.handleModalClose}>
+      <ModalContainer onClose={this.handleModalClose}>
         <ModalDialog style={modalStyle} onClose={this.handleModalClose}>
           <h2>
             <FormattedMessage id={`form.modal.title.${messageType}`} />
