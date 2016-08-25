@@ -22,6 +22,13 @@ export default {
   'forbidden': 'Forbidden',
   'forbiddenReason': 'You are not authorized to access page XXX.',
 
+  // LOGIN FORM
+  'login.form.title': 'Login',
+  'login.form.email': 'Email',
+  'login.form.password': 'Password',
+  'login.form.modal.title': 'Failed login.',
+  'login.form.modal.content': 'Please review your login information. :(',
+
   // FORM
   'form.title': 'Reservation',
   'form.parent': 'Parent',

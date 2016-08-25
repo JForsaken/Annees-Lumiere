@@ -6,6 +6,9 @@ import {
   POST_RESERVATION_SUCCESS,
   POST_RESERVATION_FAILED,
   FETCH_LANGUAGES,
+  LOGIN_PENDING,
+  LOGIN_SUCCESS,
+  LOGIN_FAILED,
 } from './constants';
 
 const SAMFISH_API = 'http://localhost:5000';
@@ -27,6 +30,15 @@ export function postReservationPending() {
     type: POST_RESERVATION_PENDING,
     pending: true,
     errors: false,
+  });
+}
+
+export function loginPending() {
+  return dispatch => dispatch({
+    type: LOGIN_PENDING,
+    pending: true,
+    errors: false,
+    user: {},
   });
 }
 
@@ -59,3 +71,33 @@ export function postReservation(reservation) {
       });
   };
 }
+
+export function login(loginAttempt) {
+  return dispatch => {
+    fetch(`${SAMFISH_API}/login`, {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(loginAttempt),
+    })
+      .then(processResponse)
+      .then(data => {
+        dispatch({
+          type: LOGIN_SUCCESS,
+          user: data.body,
+          errors: false,
+          pending: false,
+        });
+      })
+      .catch(() => {
+        dispatch({
+          type: LOGIN_FAILED,
+          errors: true,
+          pending: false,
+        });
+      });
+  };
+}
+

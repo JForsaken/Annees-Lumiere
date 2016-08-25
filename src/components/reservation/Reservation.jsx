@@ -41,7 +41,6 @@ class Reservation extends React.Component {
   }
 }
 
-
 export default connect(
   ({ samfish }) => ({ samfish }),
   dispatch => ({

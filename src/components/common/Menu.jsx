@@ -79,7 +79,11 @@ const menuItems = [
     link: '/reservation',
     icon: 'fa fa-pencil-square-o',
   },
-  // { text: <FormattedMessage id="menu.account" />, link: '/account', icon: 'fa fa-user' },
+  {
+    text: <FormattedMessage id="menu.account" />,
+    link: '/account',
+    icon: 'fa fa-user',
+  },
 ];
 
 @radium
