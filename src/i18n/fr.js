@@ -91,11 +91,11 @@ export default {
   'home.mission.button': 'Inscription',
 
   // homeHeadline.component
-  'home.homeHeadline.text': '<h2>BIENVENUE,</h2></br> <i>Années-Lumière est une garderie privée qui offre des services de garde aux enfants âgés de 6 mois à 5 ans.</i></br></br>Notre programme éducatif a été conçu par des PROFESSIONNELS DE LA PETITE ENFANCE et s’inspire des plus récentes théories d’éducation. Chez nous, votre enfant aura la chance d’évoluer dans un environnement <b style="font-size:18px;">chaleureux, sécuritaire et stimulant</b> où nous l’aidons à se construire une image positive de lui-même et des autres.</br></br> Nos éducatrices qualifiées offrent des activités structurées qui permettent notamment le <b style="font-size:18px;">développement de nouvelles aptitudes sociales, physiques et intellectuelles</b> qui aideront votre enfant à RÉUSSIR DANS LE MONDE QUI L’ENTOUR. Nous réservons également à notre petite routine des périodes de temps libre ce qui favorise <b style="font-size:18px;">la créativité, l’initiative, la confiance en soi et la joie de vivre.</b>',
+  'home.homeHeadline.text': '<h2>BIENVENUE,</h2></br> <i>Années-Lumière est une garderie privée qui offre des services de garde aux enfants âgés de 6 mois à 5 ans.</i></br></br>Notre programme éducatif a été conçu par des PROFESSIONNELS DE LA PETITE ENFANCE et s’inspire des plus récentes théories d’éducation. Chez nous, votre enfant aura la chance d’évoluer dans un environnement <b style="font-size:18px;">chaleureux, sécuritaire et stimulant</b> où nous l’aiderons à se construire une image positive de lui-même et des autres.</br></br> Nos éducatrices qualifiées ont planifié des activités structurées qui permettront notamment le <b style="font-size:18px;">développement de nouvelles aptitudes sociales, physiques et intellectuelles</b> qui aideront votre enfant à RÉUSSIR DANS LE MONDE QUI L’ENTOURE. Nous réservons également notre petite routine quotidienne des périodes de temps libre qui favoriseront <b style="font-size:18px;">la créativité, l’initiative, la confiance en soi et la joie de vivre.</b>',
 
   // secureHealth.component
   'home.secureHealth.title': '<u><h3 style= "margin:0">Santé &</h3></u><h1 style= "margin-top:0">Sécurité</h1>',
-  'home.secureHealth.text': 'Chez nous, votre enfant aura la chance de jouer dans de grands espaces libres de tous obstacles, propres et sécuritaires, avec du matériel éducatif et de l’équipement adaptés à chaque groupe d’âge et maintenu en bon état d’entretien. Les enfants seront placée sous constante surveillance d’un adulte qui leur donnera toute l’attention et le support nécessaire. À tous les jours, si le temps le permet, nous effectuerons des petites activités d’apprentissages et des jeux libres à l’extérieur. De plus, nous servirons à votre enfant deux collations et un repas équilibrés et nutritifs, qui tiennent compte du Guide alimentaire canadien.',
+  'home.secureHealth.text': 'Chez nous, votre enfant pourra jouer dans de grands espaces modernes, propres et sécuritaires. De plus, nous mettrons à la disposition des enfants du matériel éducatif et de l’équipement qui sera adapté à chaque groupe d’âge. Les enfants seront placés sous  la constante surveillance d’un adulte qui leur donnera toute l’attention et le support  dont ils ont besoin. Tous les jours, si le temps le permet, nous effectuerons des petites activités d’apprentissages ainsi que des jeux libres à l’extérieur. De plus, nous servirons à votre enfant deux collations santé en plus d’un repas équilibré et nutritif, qui tiendront compte du Guide alimentaire canadien.',
 
   // businessValues.component
   'home.businessValues.title': 'Nos valeurs',
@@ -106,7 +106,7 @@ export default {
   'home.businessValues.value5': 'STIMULATION',
 
   // educationalProgram.component
-  'home.educationalProgram.title': 'Notre programme éducatif',
+  'home.educationalProgram.title': 'Objectifs du programme éducatif',
   'home.educationalProgram.box1.title': '6-18 mois',
   'home.educationalProgram.box2.title': '18-24 mois',
   'home.educationalProgram.box3.title': '2-3 ans',
@@ -120,7 +120,7 @@ export default {
   'home.educationalProgram.box3.sub1': 'SOCIOAFFECTIF ET MORAL',
   'home.educationalProgram.box4.sub1': 'SOCIOAFFECTIF ET MORAL',
   'home.educationalProgram.box5.sub1': 'SOCIOAFFECTIF ET MORAL',
-  'home.educationalProgram.box6.sub1': 'ACTIVITÉ',
+  'home.educationalProgram.box6.sub1': 'ACTIVITÉS',
 
   'home.educationalProgram.box1.sub2': 'COGNITIF ET LANGAGIER',
   'home.educationalProgram.box2.sub2': 'COGNITIF ET LANGAGIER',
@@ -147,7 +147,7 @@ export default {
   'home.educationalProgram.box3.text1': '<ul><li>Verbaliser ce qu’il ressent</li><li>Apprendre des stratégies d’autorégulation</li><li>Développer son empathique</li><li>L’amener à développer son autonomie et son initiative</li><li>Renforcir son estime de soi et l’inciter à essayer de nouvelles choses</li><li>Jouer avec un ami </li></ul>',
   'home.educationalProgram.box4.text1': '<ul><li>Exprimer ses besoins par des mots, comme «j’ai faim», «je suis fatigué»</li><li>Exprimer de façon plus précise sa colère avec des mots, et non des gestes</li><li>Démontrer des comportements prosociaux, comme aider un ami ou partager</li><li>Jouer avec d’autres enfants</li><li>Partager et coopérer</li><li>Utiliser des mots de politesses, comme «merci» et «s’il vous plaît»</li><li>Maintenir une bonne hygiène personnelle</li></ul>',
   'home.educationalProgram.box5.text1': '<ul><li>Avoir une bonne image de lui-même et des autres</li><li>Ressentir de la fierté</li><li>Développer son sens des responsabilités</li><li>Travailler en équipe afin de poursuivre un but commun</li><li>Persévérer devant les tâches difficiles </li></ul>',
-  'home.educationalProgram.box6.text1': '<ul>«L’enfant apprend par le jeu».</br>C’est pourquoi l’éducatrice planifie à chaque semaine différentes activités stimulantes et amusantes favorisant le développement global de l’enfant et l’amenant progressivement à s’adapter à la vie en collectivité.</br></br><li>Développement du langage</li><li>Socialisation</li><li>Dessins et écritures</li><li>Arts</li><li>Construction et expression créative</li><li>Sciences</li><li>Musique</li><li>Sports</li><li>Anglais</li><li>Écouter et raconter une histoire</li><li>Activités culinaires</li><li>Jardinage</li><li>Activités pleine aire et écologie</li><li>Culture et ouverture sur le monde</li><li>Sorties spéciales </li></ul>',
+  'home.educationalProgram.box6.text1': '<ul>«L’enfant apprend par le jeu».</br>C’est pourquoi l’éducatrice planifie à chaque semaine différentes activités stimulantes et amusantes favorisant le développement global de l’enfant et l’amenant progressivement à s’adapter à la vie en collectivité.</br></br><li>Développement du langage</li><li>Causerie</li><li>Socialisation</li><li>Dessins et écritures</li><li>Arts</li><li>Construction et expression créative</li><li>Initiation aux sciences et aux mathématiques</li><li>Musique</li><li>Initiation aux sports</li><li>Initiation à l&#39;anglais</li><li>Écouter et raconter une histoire</li><li>Hygiène personnelle et responsabilités</li><li>Activités culinaires</li><li>Jardinage</li><li>Activités plein air et écologie</li><li>Activités culturelles et ouverture sur le monde</li><li>Exploration</li><li>Sorties spéciales</li></ul>',
 
   // text2
   'home.educationalProgram.box1.text2': '',
@@ -163,7 +163,7 @@ export default {
   'home.educationalProgram.box3.text3': '<ul><li>Empiler des gros cubes pour faire une construction</li><li>Plier et découper du papier</li><li>Dessiner des choses simples comme des croix, des cercles et des petites lignes</li><li>Fermer une fermeture éclaire</li><li>Monter et descendre des escaliers</li><li>Pédaler sur un tricycle</li><li>Lancer une balle</li></ul>',
   'home.educationalProgram.box4.text3': '<ul><li>Découper des formes simples à l’aide de ciseaux</li><li>Tenir un crayon entre le pouce et l’index</li><li>Lancer et attraper un ballon</li><li>Grimper, glisser, se balancer</li></ul>',
   'home.educationalProgram.box5.text3': '<ul><li>Découper en suivant les traces d’une ligne</li><li>Inclure des éléments de détails dans un dessin</li><li>Respecter les limites des lignes dans un coloriage</li><li>S’habiller et se déshabiller seul pour sortir dehors ou rentrer à l’intérieur</li><li>Savoir écrire son nom et quelques lettres</li><li>Sauter par devant et par-derrière sur une courte distance </li></ul>',
-  'home.educationalProgram.box6.text3': 'Périodes où l’enfant est libre de choisir de faire ce qu’il a envie de faire, tout en étant guidé et soutenu par son éducatrice. Les jeux libres favorisent la créativité, l’initiative, la confiance en soi, la joie de vivre et éveil la curiosité des tout-petits.',
+  'home.educationalProgram.box6.text3': "Périodes durant lesquelles l’enfant sera libre de choisir ce qu’il a envie de faire, tout en étant guidé et soutenu par son éducatrice. Les jeux libres favorisent la créativité, l’initiative, la confiance en soi, la joie de vivre en plus d'éveiller la curiosité des tout-petits.",
 
   // additionalTextActivity
   'home.educationalProgram.box6.text4': 'Une alimentation saine favorise un développement global et harmonieux, et contribue au maintien d’une bonne santé physique et mentale. Ainsi, la garderie éducative Années-lumière servira uniquement des repas équilibrés, variés et nutritifs, qui tiennent compte du Guide alimentaire canadien. ',
