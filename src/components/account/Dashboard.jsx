@@ -72,6 +72,7 @@ class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
     this.handleSearchChanged = this.handleSearchChanged.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
 
     this.state = {
       isShowingModal: false,
@@ -101,6 +102,10 @@ class Dashboard extends Component {
         this.props.actions.fetchReservations();
       }
     }
+  }
+
+  handleModalClose() {
+    this.setState({ isShowingModal: false });
   }
 
   isSearchValidated(searchee, filter) {
