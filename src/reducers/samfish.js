@@ -8,6 +8,19 @@ const initialState = {
     errors: false,
     pending: false,
   },
+  reservations: {
+    response: {},
+    lastAction: null,
+    errors: false,
+    pending: false,
+  },
+  repliedReservation: {
+    id: null,
+    replied: null,
+    lastAction: null,
+    errors: false,
+    pending: false,
+  },
   login: {
     user: {},
     lastAction: null,
@@ -19,7 +32,6 @@ const initialState = {
 const actionHandlers = {
 
   /* RESERVATION */
-  [constants.FETCH_LANGUAGES]: (state, action) => ({ languages: action.languages }),
   [constants.POST_RESERVATION_PENDING]: (state, action) => ({
     reservation: {
       response: {},
@@ -44,12 +56,46 @@ const actionHandlers = {
       pending: action.pending,
     },
   }),
+  [constants.FETCH_RESERVATIONS_PENDING]: (state, action) => ({
+    reservations: {
+      response: {},
+      lastAction: action.type,
+      errors: action.errors,
+      pending: action.pending,
+    },
+  }),
+  [constants.FETCH_RESERVATIONS]: (state, action) => ({
+    reservations: {
+      response: action.response,
+      lastAction: action.type,
+      errors: action.errors,
+      pending: action.pending,
+    },
+  }),
   [constants.CLEAR_RESERVATION]: () => ({
     reservation: {
       response: {},
       lastAction: null,
       errors: false,
       pending: false,
+    },
+  }),
+  [constants.REPLY_RESERVATION_PENDING]: (state, action) => ({
+    repliedReservation: {
+      id: null,
+      replied: null,
+      lastAction: action.type,
+      errors: action.errors,
+      pending: action.pending,
+    },
+  }),
+  [constants.REPLY_RESERVATION]: (state, action) => ({
+    repliedReservation: {
+      id: action.id,
+      replied: action.replied,
+      lastAction: action.type,
+      errors: action.errors,
+      pending: action.pending,
     },
   }),
 
