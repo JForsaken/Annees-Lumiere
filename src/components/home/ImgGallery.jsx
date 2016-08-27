@@ -12,6 +12,11 @@ import image3 from '../../../assets/images/soccer_gallery.jpg';
 
 /* Styles */
 const style = {
+  header: {
+    textAlign: 'center',
+    paddingTop: '15px',
+    paddingBottom: '15px',
+  },
   container: {
     textAlign: 'center',
   },
@@ -35,18 +40,22 @@ export default class ImgGallery extends Component {
     ];
 
     return (
-      <div style={style.container}>
-        <h1>
-          <FormattedMessage id="imgGallery.title" />
-        </h1>
-        <ImageGallery
-          ref={i => this.imageGallery = i}
-          items={images}
-          showThumbnails={false}
-          showBullets
-          slideInterval={2000}
-          onImageLoad={this.handleImageLoad}
-        />
+      <div>
+        <div style={style.header}>
+          <h1>
+            <FormattedMessage id="imgGallery.title" />
+          </h1>
+        </div>
+        <div style={style.container}>
+          <ImageGallery
+            ref={i => this.imageGallery = i}
+            items={images}
+            showThumbnails={false}
+            showBullets
+            slideInterval={2000}
+            onImageLoad={this.handleImageLoad}
+          />
+        </div>
       </div>
     );
   }
