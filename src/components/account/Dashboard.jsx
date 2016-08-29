@@ -97,9 +97,6 @@ class Dashboard extends Component {
                nextProps.samfish.repliedReservation.lastAction === REPLY_RESERVATION) {
       if (nextProps.samfish.repliedReservation.errors) {
         this.setState({ isShowingModal: true });
-      } else {
-        this.props.actions.fetchReservationsPending();
-        this.props.actions.fetchReservations();
       }
     }
   }

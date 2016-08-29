@@ -1,5 +1,6 @@
 import * as constants from '../actions/constants';
 import createReducer from '../utils/create-reducer';
+import { cloneDeep, find } from 'lodash';
 
 const initialState = {
   reservation: {
@@ -89,15 +90,28 @@ const actionHandlers = {
       pending: action.pending,
     },
   }),
-  [constants.REPLY_RESERVATION]: (state, action) => ({
-    repliedReservation: {
-      id: action.id,
-      replied: action.replied,
-      lastAction: action.type,
-      errors: action.errors,
-      pending: action.pending,
-    },
-  }),
+  [constants.REPLY_RESERVATION]: (state, action) => {
+    const clone = cloneDeep(state.reservations.response);
+    clone.forEach(o => {
+      if (o.id === action.id) {
+        o.replied = action.replied;
+        return false;
+      }
+    });
+
+    return {
+      repliedReservation: {
+        id: action.id,
+        replied: action.replied,
+        lastAction: action.type,
+        errors: action.errors,
+        pending: action.pending,
+      },
+      reservations: {
+        response: clone,
+      },
+    }
+  },
 
   /* LOGIN */
   [constants.LOGIN_PENDING]: (state, action) => ({

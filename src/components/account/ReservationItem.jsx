@@ -2,13 +2,13 @@
 import React, { Component, PropTypes } from 'react';
 import radium from 'radium';
 import { Button, Panel } from 'react-bootstrap';
+import { cloneDeep } from 'lodash';
 
 /* Styles */
 const style = {
 
   container: {
     borderRadius: 10,
-    background: '#f0f0f0',
     padding: 20,
     margin: '20px auto 0 auto',
     '@media (min-width: 300px)': {
@@ -18,6 +18,14 @@ const style = {
       width: '75%',
     },
   },
+
+  replied: {
+    color: '#5cb85c',
+  },
+
+  notReplied: {
+    color: '#c9302c',
+  }
 };
 
 @radium
@@ -82,13 +90,36 @@ export default class ReservationItem extends Component {
       replied,
     } = this.props.reservation;
 
+    const replyIndicator = replied ?
+                           <i
+                               className="fa fa-check"
+                               style={style.replied}
+                           /> :
+                           <i
+                               className="fa fa-times"
+                               style={style.notReplied}
+                           />;
+
+    const boxStyle = cloneDeep(style.container);
+    boxStyle.background = id % 2 == 0 ? '#d3d3d3' : '#f7f7f7';
+
     return (
-      <div style={style.container}>
+      <div style={boxStyle}>
         <h3>
-          {`Reservation #${id}`}
+          {`Reservation #${id}`} {replyIndicator}
         </h3>
         <h4>
           {emailAddress}
+        </h4>
+        <h4> Replied:
+          <Button
+              style={{ marginLeft: 5, fontSize: 18 }}
+              bsStyle={replied ? 'success' : 'danger'}
+              bsSize="small"
+              onClick={this.handleReplyClick}
+          >
+            {String(replied)}
+          </Button>
         </h4>
         <Panel header={`${firstname} ${lastname}`} bsStyle="primary">
           <p>
@@ -106,17 +137,6 @@ export default class ReservationItem extends Component {
           </p>
           <p>
             <b>Profession:</b> {profession}
-          </p>
-          <p>
-            <b>Replied:</b>
-            <Button
-              style={{ marginLeft: 5 }}
-              bsStyle="info"
-              bsSize="xsmall"
-              onClick={this.handleReplyClick}
-            >
-              {String(replied)}
-            </Button>
           </p>
         </Panel>
 
