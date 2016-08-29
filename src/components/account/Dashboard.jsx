@@ -109,29 +109,40 @@ class Dashboard extends Component {
     let isValid = false;
 
     if (!filter) {
-      isValid = true;
+      return true;
     }
 
     const clone = cloneDeep(searchee);
     delete clone.kids;
 
-    forEach(clone, o => {
-      if (String(o).toLowerCase().indexOf(filter) >= 0) {
-        isValid = true;
-        return false;
-      }
-      return true;
-    });
+    // if starts with #, search only on ids
+    if (filter[0] === '#' && /\d+/g.test(filter.substr(1, filter.length))) {
+      return (String(searchee.id).indexOf(filter.substr(1, filter.length)) !== -1);
+    }
 
-    forEach(searchee.kids, l => {
-      forEach(l, o => {
-        if (String(o).toLowerCase().indexOf(filter) >= 0) {
+    // parent attributes search
+    if (!isValid) {
+      forEach(clone, o => {
+        if (String(o).toLowerCase().indexOf(filter) !== -1) {
           isValid = true;
           return false;
         }
         return true;
       });
-    });
+    }
+
+    // kids search
+    if (!isValid) {
+      forEach(searchee.kids, l => {
+        forEach(l, o => {
+          if (String(o).toLowerCase().indexOf(filter) !== -1) {
+            isValid = true;
+            return false;
+          }
+          return true;
+        });
+      });
+    }
 
     return isValid;
   }
