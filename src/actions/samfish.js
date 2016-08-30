@@ -15,7 +15,7 @@ import {
   LOGIN_FAILED,
 } from './constants';
 
-const SAMFISH_API = 'http://localhost:5000';
+const SAMFISH_API = 'https://samfish-webserver.herokuapp.com';
 
 export function postReservationPending() {
   return dispatch => dispatch({

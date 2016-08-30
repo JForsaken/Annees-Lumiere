@@ -14,6 +14,7 @@ import * as samfishActions from '../../actions/samfish';
 /* Styles */
 const style = {
   page: {
+    overflowX: 'hidden',
     paddingTop: 50,
     paddingRight: 35,
     paddingLeft: 35,
