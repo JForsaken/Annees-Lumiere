@@ -91,9 +91,9 @@ export default class ReservationItem extends Component {
             <FormattedMessage id="dashboard.modal.delete.content" />
           </h4>
           <Button
-              style={{ width: '100%', fontSize: 18 }}
-              bsStyle="danger"
-              onClick={this.handleConfirmDelete}
+            style={{ width: '100%', fontSize: 18 }}
+            bsStyle="danger"
+            onClick={this.handleConfirmDelete}
           >
             <FormattedMessage id="dashboard.confirm" />
           </Button>
@@ -142,7 +142,6 @@ export default class ReservationItem extends Component {
       language,
       profession,
       replied,
-      hidden,
     } = this.props.reservation;
 
     const replyIndicator = replied ?
@@ -200,9 +199,9 @@ export default class ReservationItem extends Component {
         {this.renderKids()}
 
         <Button
-            style={{ width: '100%', fontSize: 18 }}
-            bsStyle="danger"
-            onClick={this.handleDeleteClick}
+          style={{ width: '100%', fontSize: 18 }}
+          bsStyle="danger"
+          onClick={this.handleDeleteClick}
         >
           <FormattedMessage id="dashboard.delete" />
         </Button>

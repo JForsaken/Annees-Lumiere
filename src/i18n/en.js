@@ -35,7 +35,7 @@ export default {
   'dashboard.search': 'Search...',
   'dashboard.modal.title': "Couldn't fetch the reservations.",
   'dashboard.modal.content': 'Looks like we have server issues, please try again later. :(',
-  'dashboard.modal.delete.title': "Are you sure?",
+  'dashboard.modal.delete.title': 'Are you sure?',
   'dashboard.modal.delete.content': 'This is a big deal, click confirm only if this is really what you want to do!',
   'dashboard.confirm': 'Confirm',
   'dashboard.delete': 'Delete',

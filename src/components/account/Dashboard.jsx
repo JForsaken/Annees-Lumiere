@@ -17,7 +17,10 @@ import ReservationItem from './ReservationItem';
 const RadiumRow = radium(Row);
 
 /* Constants */
-import { REPLY_RESERVATION } from '../../actions/constants';
+import {
+  REPLY_RESERVATION,
+  DELETE_RESERVATION,
+} from '../../actions/constants';
 
 /* Styles */
 const style = {
