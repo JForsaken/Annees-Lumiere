@@ -29,7 +29,7 @@ const style = {
       width: '95%',
     },
     '@media (min-width: 800px)': {
-      width: '75%',
+      width: '85%',
     },
   },
 
@@ -194,7 +194,7 @@ class Dashboard extends Component {
 
   renderSpinner() {
     return (
-      <div style={style.spinnerContainer} className="loader"></div>
+      <div style={style.spinnerContainer} className="loader" />
     );
   }
 
@@ -202,7 +202,7 @@ class Dashboard extends Component {
     const { intl } = this.props;
 
     return (
-      <div style={style.dashboardContainer}>
+      <RadiumRow style={style.dashboardContainer}>
         {this.state.isShowingModal && this.renderModal()}
 
         <h1>
@@ -226,7 +226,7 @@ class Dashboard extends Component {
         {this.props.samfish.reservations.pending && this.renderSpinner()}
         {this.renderReservations()}
 
-      </div>
+      </RadiumRow>
     );
   }
 }
