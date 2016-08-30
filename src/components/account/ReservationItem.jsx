@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import radium from 'radium';
 import { Button, Panel } from 'react-bootstrap';
 import { cloneDeep } from 'lodash';
+import { FormattedMessage } from 'react-intl';
 
 /* Styles */
 const style = {
@@ -25,7 +26,7 @@ const style = {
 
   notReplied: {
     color: '#c9302c',
-  }
+  },
 };
 
 @radium
@@ -91,52 +92,52 @@ export default class ReservationItem extends Component {
     } = this.props.reservation;
 
     const replyIndicator = replied ?
-                           <i
-                               className="fa fa-check"
-                               style={style.replied}
-                           /> :
-                           <i
-                               className="fa fa-times"
-                               style={style.notReplied}
-                           />;
+      <i
+        className="fa fa-check"
+        style={style.replied}
+      /> :
+      <i
+        className="fa fa-times"
+        style={style.notReplied}
+      />;
 
     const boxStyle = cloneDeep(style.container);
-    boxStyle.background = id % 2 == 0 ? '#d3d3d3' : '#f7f7f7';
+    boxStyle.background = id % 2 === 0 ? '#d3d3d3' : '#f7f7f7';
 
     return (
       <div style={boxStyle}>
         <h3>
-          {`Reservation #${id}`} {replyIndicator}
+          <FormattedMessage id="menu.reservation" /> {`#${id}`} {replyIndicator}
         </h3>
         <h4>
           {emailAddress}
         </h4>
-        <h4> Replied:
+        <h4> <FormattedMessage id="form.replied" />:
           <Button
-              style={{ marginLeft: 5, fontSize: 18 }}
-              bsStyle={replied ? 'success' : 'danger'}
-              bsSize="small"
-              onClick={this.handleReplyClick}
+            style={{ marginLeft: 5, fontSize: 18 }}
+            bsStyle={replied ? 'success' : 'danger'}
+            bsSize="small"
+            onClick={this.handleReplyClick}
           >
-            {String(replied)}
+            <FormattedMessage id={`form.${replied ? 'yes' : 'no'}`} />
           </Button>
         </h4>
         <Panel header={`${firstname} ${lastname}`} bsStyle="primary">
           <p>
-            <b>Address:</b> {address}
+            <b><FormattedMessage id="form.address" />:</b> {address}
           </p>
           <p>
-            <b>Phone:</b> {primaryPhoneNumber}
+            <b><FormattedMessage id="form.primaryPhoneNumber" />:</b> {primaryPhoneNumber}
           </p>
           {optionalPhoneNumber &&
             <p>
-              <b>Optional phone:</b> {optionalPhoneNumber}
+              <b><FormattedMessage id="form.optionalPhoneNumber" />:</b> {optionalPhoneNumber}
             </p>}
           <p>
-            <b>Language:</b> {language}
+            <b><FormattedMessage id="form.language" />:</b> {language}
           </p>
           <p>
-            <b>Profession:</b> {profession}
+            <b><FormattedMessage id="form.profession" />:</b> {profession}
           </p>
         </Panel>
 

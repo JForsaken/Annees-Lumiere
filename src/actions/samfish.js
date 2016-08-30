@@ -159,7 +159,7 @@ export function replyReservation(id, username, replied) {
         dispatch({
           type: REPLY_RESERVATION,
           id,
-          replied: err.statusCode === 200 ? replied : null,
+          replied: err.statusCode === 200 ? replied : !replied,
           pending: false,
           errors: err.statusCode !== 200,
         });

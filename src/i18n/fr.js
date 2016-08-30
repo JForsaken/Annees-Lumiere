@@ -32,6 +32,13 @@ export default {
   'login.form.modal.title': 'Échec de connexion.',
   'login.form.modal.content': 'Veuillez vérifier la validité de vos infos. :(',
 
+  // DASHBOARD
+  'dashboard.title': 'Dashboard',
+  'dashboard.logout': 'Cliquez içi pour vous déconnecter.',
+  'dashboard.search': 'Rechercher...',
+  'dashboard.modal.title': 'Échec dans la requête de réservations.',
+  'dashboard.modal.content': 'Nos serveurs sont présentement hors service, veuillez réessayer plus tard :(',
+
   // FORM
   'form.title': 'Inscription',
   'form.parent': 'Parent',
@@ -47,6 +54,9 @@ export default {
   'form.primaryPhoneNumber': 'Numéro de téléphone primaire',
   'form.optionalPhoneNumber': 'Numéro de téléphone optionnel',
   'form.profession': 'Profession',
+  'form.replied': 'Répondu',
+  'form.yes': 'Oui',
+  'form.no': 'Non',
   'form.language': 'Langue maternelle',
   'form.birthday': 'Date de naissance',
   'form.birthDay': 'Jour',

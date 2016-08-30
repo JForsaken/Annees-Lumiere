@@ -29,6 +29,13 @@ export default {
   'login.form.modal.title': 'Failed login.',
   'login.form.modal.content': 'Please review your login information. :(',
 
+  // DASHBOARD
+  'dashboard.title': 'Dashboard',
+  'dashboard.logout': 'Click here to log out.',
+  'dashboard.search': 'Search...',
+  'dashboard.modal.title': "Couldn't fetch the reservations.",
+  'dashboard.modal.content': 'Looks like we have server issues, please try again later. :(',
+
   // FORM
   'form.title': 'Reservation',
   'form.parent': 'Parent',
@@ -44,6 +51,9 @@ export default {
   'form.primaryPhoneNumber': 'Primary phone number',
   'form.optionalPhoneNumber': 'Optional phone number',
   'form.profession': 'Profession',
+  'form.replied': 'Replied',
+  'form.yes': 'Yes',
+  'form.no': 'No',
   'form.language': 'Preferred language',
   'form.birthday': 'Date of birth',
   'form.birthDay': 'Day',
@@ -55,7 +65,7 @@ export default {
   'form.modal.title.success': 'Reservation submitted!',
   'form.modal.title.errors': 'Oops! Something went wrong...',
   'form.modal.content.success': 'Verify your email inbox for the confirmation message :)',
-  'form.modal.content.errors': 'Our servers look down, please try again later :(',
+  'form.modal.content.errors': 'Looks like we have server issues, please try again later. :(',
 
   // FORM ERRORS
   'form.errors.required': 'Required',

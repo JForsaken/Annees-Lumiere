@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ModalContainer, ModalDialog } from 'react-modal-dialog';
 import { cloneDeep, isEmpty, forEach } from 'lodash';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 /* Actions */
 import * as samfishActions from '../../actions/samfish';
@@ -67,6 +68,7 @@ const style = {
 };
 
 @radium
+@injectIntl
 class Dashboard extends Component {
 
   constructor(props, context) {
@@ -156,10 +158,10 @@ class Dashboard extends Component {
       <ModalContainer onClose={this.handleModalClose}>
         <ModalDialog style={style.modal} onClose={this.handleModalClose}>
           <h2>
-            Couldn't fetch the reservations.
+            <FormattedMessage id="dashboard.modal.title" />
           </h2>
           <h4>
-            Looks like we have server issues, please try again later. :(
+            <FormattedMessage id="dashboard.modal.content" />
           </h4>
         </ModalDialog>
       </ModalContainer>
@@ -197,24 +199,26 @@ class Dashboard extends Component {
   }
 
   render() {
+    const { intl } = this.props;
+
     return (
       <div style={style.dashboardContainer}>
         {this.state.isShowingModal && this.renderModal()}
 
         <h1>
-          Dashboard
+          <FormattedMessage id="dashboard.title" />
         </h1>
 
         <Row>
           <Link to="/logout">
-            Click here to logout.
+            <FormattedMessage id="dashboard.logout" />
           </Link>
         </Row>
 
         <RadiumRow style={style.searchContainer}>
           <FormControl
             type="text"
-            placeholder="Search..."
+            placeholder={intl.messages['dashboard.search']}
             onChange={this.handleSearchChanged}
           />
         </RadiumRow>
