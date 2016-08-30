@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import logger from '../middleware/logger';
 import persistenceStore from '../persistence/store';
 import * as reducers from '../reducers';
-import createHistory from 'history/lib/createBrowserHistory';
+import createHistory from 'history/lib/createHashHistory';
 import withScroll from 'scroll-behavior';
 
 const history = withScroll(createHistory(), (prevLocation, location) => (
