@@ -94,12 +94,15 @@ class Dashboard extends Component {
       if (nextProps.samfish.reservations.errors) {
         this.setState({ isShowingModal: true });
       }
-    } else if (samfish.repliedReservation.lastAction !==
+    } else if ((samfish.repliedReservation.lastAction !==
                nextProps.samfish.repliedReservation.lastAction &&
-               nextProps.samfish.repliedReservation.lastAction === REPLY_RESERVATION) {
-      if (nextProps.samfish.repliedReservation.errors) {
-        this.setState({ isShowingModal: true });
-      }
+               nextProps.samfish.repliedReservation.errors &&
+               nextProps.samfish.repliedReservation.lastAction === REPLY_RESERVATION) ||
+               (samfish.deletedReservation.lastAction !==
+               nextProps.samfish.deletedReservation.lastAction &&
+               nextProps.samfish.deletedReservation.errors &&
+               nextProps.samfish.deletedReservation.lastAction === DELETE_RESERVATION)) {
+      this.setState({ isShowingModal: true });
     }
   }
 
@@ -177,7 +180,7 @@ class Dashboard extends Component {
 
     const renderedReservations = [];
     reservations.response.forEach((r, i) => {
-      if (this.isSearchValidated(r, filter)) {
+      if (this.isSearchValidated(r, filter) && !r.hidden) {
         renderedReservations.push(
           <ReservationItem
             reservation={r}

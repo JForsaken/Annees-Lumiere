@@ -8,6 +8,8 @@ import {
   FETCH_RESERVATIONS_PENDING,
   REPLY_RESERVATION,
   REPLY_RESERVATION_PENDING,
+  DELETE_RESERVATION,
+  DELETE_RESERVATION_PENDING,
   LOGIN_PENDING,
   LOGIN_SUCCESS,
   LOGIN_FAILED,
@@ -160,6 +162,49 @@ export function replyReservation(id, username, replied) {
           type: REPLY_RESERVATION,
           id,
           replied: err.statusCode === 200 ? replied : !replied,
+          pending: false,
+          errors: err.statusCode !== 200,
+        });
+      });
+  };
+}
+
+export function deleteReservationPending() {
+  return dispatch => dispatch({
+    type: DELETE_RESERVATION_PENDING,
+    pending: true,
+    errors: false,
+  });
+}
+
+export function deleteReservation(id, username) {
+  const body = {
+    username,
+    hidden: true,
+  };
+
+  return dispatch => {
+    fetch(`${SAMFISH_API}/reservations/hide/${id}`, {
+      method: 'put',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+      .then(processResponse)
+      .then(() => {
+        dispatch({
+          type: DELETE_RESERVATION,
+          id,
+          pending: false,
+          errors: false,
+        });
+      })
+      .catch(err => {
+        dispatch({
+          type: DELETE_RESERVATION,
+          id,
           pending: false,
           errors: err.statusCode !== 200,
         });

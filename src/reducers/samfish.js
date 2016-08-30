@@ -22,6 +22,12 @@ const initialState = {
     errors: false,
     pending: false,
   },
+  deletedReservation: {
+    id: null,
+    lastAction: null,
+    errors: false,
+    pending: false,
+  },
   login: {
     user: {},
     lastAction: null,
@@ -81,6 +87,36 @@ const actionHandlers = {
       pending: false,
     },
   }),
+  [constants.DELETE_RESERVATION]: (state, action) => {
+    const clone = cloneDeep(state.reservations.response);
+    clone.forEach((o, i) => {
+      if (o.id === action.id) {
+        clone[i].hidden = true;
+        return false;
+      }
+      return true;
+    });
+
+    return {
+      repliedReservation: {
+        id: action.id,
+        lastAction: action.type,
+        errors: action.errors,
+        pending: action.pending,
+      },
+      reservations: {
+        response: clone,
+      },
+    };
+  },
+  [constants.DELETE_RESERVATION_PENDING]: (state, action) => ({
+    deletedReservation: {
+      id: null,
+      lastAction: action.type,
+      errors: action.errors,
+      pending: action.pending,
+    },
+  }),
   [constants.REPLY_RESERVATION_PENDING]: (state, action) => ({
     repliedReservation: {
       id: null,
@@ -113,6 +149,7 @@ const actionHandlers = {
       },
     };
   },
+
 
   /* LOGIN */
   [constants.LOGIN_PENDING]: (state, action) => ({

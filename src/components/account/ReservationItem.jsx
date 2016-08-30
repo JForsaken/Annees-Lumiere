@@ -4,6 +4,7 @@ import radium from 'radium';
 import { Button, Panel } from 'react-bootstrap';
 import { cloneDeep } from 'lodash';
 import { FormattedMessage } from 'react-intl';
+import { ModalContainer, ModalDialog } from 'react-modal-dialog';
 
 /* Styles */
 const style = {
@@ -27,6 +28,14 @@ const style = {
   notReplied: {
     color: '#c9302c',
   },
+
+  modal: {
+    textAlign: 'center',
+    background: '#f4e9e9',
+    borderTop: '11px solid #c12e2a',
+    boxShadow: '#c12e2a 0px 0px 1px',
+  },
+
 };
 
 @radium
@@ -40,6 +49,15 @@ export default class ReservationItem extends Component {
     super(props, context);
 
     this.handleReplyClick = this.handleReplyClick.bind(this);
+    this.handleDeleteClick = this.handleDeleteClick.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
+    this.handleConfirmDelete = this.handleConfirmDelete.bind(this);
+
+    this.state = { isShowingModal: false };
+  }
+
+  handleModalClose() {
+    this.setState({ isShowingModal: false });
   }
 
   handleReplyClick() {
@@ -48,6 +66,41 @@ export default class ReservationItem extends Component {
 
     this.props.actions.replyReservationPending();
     this.props.actions.replyReservation(id, username, !replied);
+  }
+
+  handleDeleteClick() {
+    this.setState({ isShowingModal: true });
+  }
+
+  handleConfirmDelete() {
+    const { id } = this.props.reservation;
+    const { username } = this.props.samfish.login.user;
+
+    this.props.actions.deleteReservationPending();
+    this.props.actions.deleteReservation(id, username);
+  }
+
+  renderModal() {
+    return (
+      <ModalContainer onClose={this.handleModalClose}>
+        <ModalDialog style={style.modal} onClose={this.handleModalClose}>
+          <h2>
+            <FormattedMessage id="dashboard.modal.delete.title" />
+          </h2>
+          <h4>
+            <FormattedMessage id="dashboard.modal.delete.content" />
+          </h4>
+          <Button
+              style={{ width: '100%', fontSize: 18 }}
+              bsStyle="danger"
+              onClick={this.handleConfirmDelete}
+          >
+            <FormattedMessage id="dashboard.confirm" />
+          </Button>
+
+        </ModalDialog>
+      </ModalContainer>
+    );
   }
 
   renderKids() {
@@ -62,7 +115,7 @@ export default class ReservationItem extends Component {
           bsStyle="success"
         >
           <p>
-            <b>Birthday:</b> {k.birthday}
+            <b>Birthday:</b> {k.birthday.substr(0, 10)}
           </p>
           <p>
             <b>Language:</b> {k.language}
@@ -89,6 +142,7 @@ export default class ReservationItem extends Component {
       language,
       profession,
       replied,
+      hidden,
     } = this.props.reservation;
 
     const replyIndicator = replied ?
@@ -106,6 +160,8 @@ export default class ReservationItem extends Component {
 
     return (
       <div style={boxStyle}>
+        {this.state.isShowingModal && this.renderModal()}
+
         <h3>
           <FormattedMessage id="menu.reservation" /> {`#${id}`} {replyIndicator}
         </h3>
@@ -142,6 +198,14 @@ export default class ReservationItem extends Component {
         </Panel>
 
         {this.renderKids()}
+
+        <Button
+            style={{ width: '100%', fontSize: 18 }}
+            bsStyle="danger"
+            onClick={this.handleDeleteClick}
+        >
+          <FormattedMessage id="dashboard.delete" />
+        </Button>
 
       </div>
     );

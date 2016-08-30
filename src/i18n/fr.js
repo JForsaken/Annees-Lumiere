@@ -38,6 +38,10 @@ export default {
   'dashboard.search': 'Rechercher...',
   'dashboard.modal.title': 'Échec dans la requête de réservations.',
   'dashboard.modal.content': 'Nos serveurs sont présentement hors service, veuillez réessayer plus tard :(',
+  'dashboard.modal.delete.title': "Êtes-vous sûr?",
+  'dashboard.modal.delete.content': "Cliquez 'confirmer' à vos risques et périls!",
+  'dashboard.confirm': 'Confirmer',
+  'dashboard.delete': 'Supprimer',
 
   // FORM
   'form.title': 'Inscription',
