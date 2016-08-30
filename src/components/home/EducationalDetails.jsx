@@ -113,15 +113,55 @@ export default class EducationalDetails extends Component {
     return details;
   }
 
+  renderActivity() {
+    const detailsQty = 5;
+    const details = [];
+    const detailSticker = cloneDeep(style.detailSticker);
+    const fontIcons = [
+      'fa fa-hand-peace-o',
+      'fa fa-leanpub',
+      'fa fa-cogs',
+      'fa fa-cutlery',
+      'fa fa-medkit',
+    ];
+
+    detailSticker.color = this.props.color;
+    detailSticker.boxShadow = `0 0 0 6px ${this.props.color}`;
+
+    for (let i = 1; i <= detailsQty; i++) {
+      let tempReturn = (
+        <Col xs={12} md={i <= 3 ? 4 : 6}>
+          <div style={style.singleDetailContainer}>
+
+            <div style={style.contentHeader}>
+              <i style={detailSticker} className={fontIcons[i - 1]}> </i>
+              <h3 style={style.contentTitle}>
+                <FormattedMessage id={`home.educationalProgram.box6.sub${i}`} />
+              </h3>
+            </div>
+
+            <div style={style.line} />
+            <div style={style.content}>
+              <FormattedHTMLMessage id={`home.educationalProgram.box6.text${i}`} />
+            </div>
+          </div>
+        </Col>
+      );
+
+      tempReturn = i === 3 ? <Row>{tempReturn}</Row> : tempReturn;
+      details.push(tempReturn);
+    }
+    return details;
+  }
+
   render() {
     const { boxNumber } = this.props;
     if (!boxNumber) {
       return null;
     }
-
     return (
       <Row style={style.detailsContainer}>
-        {this.renderDetails(boxNumber)}
+        {boxNumber === 6 ? this.renderActivity() : this.renderDetails(boxNumber)}
       </Row>
     );
   }
