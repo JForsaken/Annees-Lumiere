@@ -159,16 +159,9 @@ export default class EducationalDetails extends Component {
     if (!boxNumber) {
       return null;
     }
-    if (boxNumber === 6) {
-      return (
-        <Row style={style.detailsContainer}>
-          {this.renderActivity(boxNumber)}
-        </Row>
-      );
-    }
     return (
-      <Row style={style.detailsContainerSix}>
-        {this.renderDetails(boxNumber)}
+      <Row style={style.detailsContainer}>
+        {boxNumber === 6 ? this.renderActivity() : this.renderDetails(boxNumber)}
       </Row>
     );
   }
