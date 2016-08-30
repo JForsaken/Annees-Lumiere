@@ -59,7 +59,7 @@ function renderRoutes() {
     <ReduxRouter>
       <Route component={Application}>
         <Route path="/" component={Home} />
-        <Redirect from="/account" to="/account/dashboard" />
+        <Redirect from="/dashboard" to="/account/dashboard" />
         <Route path="about" component={About} />
         <Route path="account" component={Account} onEnter={requireAuth}>
           <Route path="dashboard" component={Dashboard} />
