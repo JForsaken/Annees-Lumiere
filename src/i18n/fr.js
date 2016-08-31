@@ -46,9 +46,9 @@ export default {
   // FORM
   'form.title': 'Inscription',
   'form.parent': 'Parent',
-  'form.kid': 'Kid',
+  'form.kid': 'Enfant',
   'form.clearValues': 'Vider les champs',
-  'form.removeKid': 'Supprimer un enfant',
+  'form.removeKid': 'Enlever un enfant',
   'form.addKid': 'Ajouter un enfant',
   'form.submit': 'Soumettre',
   'form.firstname': 'Prénom',
@@ -82,6 +82,7 @@ export default {
   'form.errors.selectDateOption': ' ',
   'form.errors.date': 'Format de date invalide',
   'form.errors.maxLength': 'Ne doit pas être plus que 30 caractères',
+  'form.errors.maxCapacity': ' Un maximum de 10 enfants est permis!',
 
   // FORM MONTHS
   'form.months.1': 'Janvier',

@@ -43,10 +43,10 @@ export default {
   // FORM
   'form.title': 'Reservation',
   'form.parent': 'Parent',
-  'form.kid': 'Enfant',
+  'form.kid': 'Kid',
   'form.clearValues': 'Clear values',
-  'form.removeKid': "Supprimer l'enfant",
-  'form.addKid': 'Ajouter un enfant',
+  'form.removeKid': "Remove Kid",
+  'form.addKid': 'Add Kid',
   'form.submit': 'Submit',
   'form.firstname': 'First name',
   'form.lastname': 'Last name',
@@ -79,6 +79,7 @@ export default {
   'form.errors.selectDateOption': ' ',
   'form.errors.date': 'Invalid date format',
   'form.errors.maxLength': 'Must be no more than 30 characters',
+  'form.errors.maxCapacity': ' No more than 10 kids allowed!',
 
   // FORM MONTHS
   'form.months.1': 'January',
