@@ -43,40 +43,40 @@ const actionHandlers = {
     reservation: {
       response: {},
       lastAction: action.type,
-      errors: action.errors,
-      pending: action.pending,
+      errors: false,
+      pending: true,
     },
   }),
   [constants.POST_RESERVATION_SUCCESS]: (state, action) => ({
     reservation: {
       response: action.response,
       lastAction: action.type,
-      errors: action.errors,
-      pending: action.pending,
+      errors: false,
+      pending: false,
     },
   }),
   [constants.POST_RESERVATION_FAILED]: (state, action) => ({
     reservation: {
       response: action.response,
       lastAction: action.type,
-      errors: action.errors,
-      pending: action.pending,
+      errors: true,
+      pending: false,
     },
   }),
   [constants.FETCH_RESERVATIONS_PENDING]: (state, action) => ({
     reservations: {
       response: {},
       lastAction: action.type,
-      errors: action.errors,
-      pending: action.pending,
+      errors: false,
+      pending: true,
     },
   }),
   [constants.FETCH_RESERVATIONS]: (state, action) => ({
     reservations: {
       response: action.response,
       lastAction: action.type,
-      errors: action.errors,
-      pending: action.pending,
+      errors: false,
+      pending: false,
     },
   }),
   [constants.CLEAR_RESERVATION]: () => ({
@@ -101,8 +101,8 @@ const actionHandlers = {
       repliedReservation: {
         id: action.id,
         lastAction: action.type,
-        errors: action.errors,
-        pending: action.pending,
+        errors: false,
+        pending: false,
       },
       reservations: {
         response: clone,
@@ -113,8 +113,8 @@ const actionHandlers = {
     deletedReservation: {
       id: null,
       lastAction: action.type,
-      errors: action.errors,
-      pending: action.pending,
+      errors: false,
+      pending: true,
     },
   }),
   [constants.REPLY_RESERVATION_PENDING]: (state, action) => ({
@@ -122,8 +122,8 @@ const actionHandlers = {
       id: null,
       replied: null,
       lastAction: action.type,
-      errors: action.errors,
-      pending: action.pending,
+      errors: false,
+      pending: true,
     },
   }),
   [constants.REPLY_RESERVATION]: (state, action) => {
@@ -141,8 +141,8 @@ const actionHandlers = {
         id: action.id,
         replied: action.replied,
         lastAction: action.type,
-        errors: action.errors,
-        pending: action.pending,
+        errors: false,
+        pending: false,
       },
       reservations: {
         response: clone,
@@ -157,7 +157,7 @@ const actionHandlers = {
       user: {},
       lastAction: action.type,
       errors: false,
-      pending: false,
+      pending: true,
     },
   }),
   [constants.LOGIN_SUCCESS]: (state, action) => ({

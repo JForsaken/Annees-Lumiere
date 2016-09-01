@@ -20,17 +20,12 @@ const SAMFISH_API = 'https://samfish-webserver.herokuapp.com';
 export function postReservationPending() {
   return dispatch => dispatch({
     type: POST_RESERVATION_PENDING,
-    pending: true,
-    errors: false,
   });
 }
 
 export function loginPending() {
   return dispatch => dispatch({
     type: LOGIN_PENDING,
-    pending: true,
-    errors: false,
-    user: {},
   });
 }
 
@@ -50,7 +45,6 @@ export function postReservation(reservation) {
           type: POST_RESERVATION_SUCCESS,
           response: data,
           errors: false,
-          pending: false,
         });
       })
       .catch(err => {
@@ -58,7 +52,6 @@ export function postReservation(reservation) {
           type: POST_RESERVATION_FAILED,
           response: err,
           errors: true,
-          pending: false,
         });
       });
   };
@@ -80,7 +73,6 @@ export function login(loginAttempt) {
           type: LOGIN_SUCCESS,
           user: data.body,
           errors: false,
-          pending: false,
         });
       })
       .catch(() => {
@@ -96,8 +88,6 @@ export function login(loginAttempt) {
 export function fetchReservationsPending() {
   return dispatch => dispatch({
     type: FETCH_RESERVATIONS_PENDING,
-    pending: true,
-    errors: false,
   });
 }
 
@@ -110,7 +100,6 @@ export function fetchReservations() {
           type: FETCH_RESERVATIONS,
           response: data.body,
           errors: false,
-          pending: false,
         });
       })
       .catch(err => {
@@ -118,7 +107,6 @@ export function fetchReservations() {
           type: FETCH_RESERVATIONS,
           response: err,
           errors: true,
-          pending: false,
         });
       });
   };
@@ -127,8 +115,6 @@ export function fetchReservations() {
 export function replyReservationPending() {
   return dispatch => dispatch({
     type: REPLY_RESERVATION_PENDING,
-    pending: true,
-    errors: false,
   });
 }
 
@@ -153,7 +139,6 @@ export function replyReservation(id, username, replied) {
           type: REPLY_RESERVATION,
           id,
           replied,
-          pending: false,
           errors: false,
         });
       })
@@ -162,7 +147,6 @@ export function replyReservation(id, username, replied) {
           type: REPLY_RESERVATION,
           id,
           replied: err.statusCode === 200 ? replied : !replied,
-          pending: false,
           errors: err.statusCode !== 200,
         });
       });
@@ -172,8 +156,6 @@ export function replyReservation(id, username, replied) {
 export function deleteReservationPending() {
   return dispatch => dispatch({
     type: DELETE_RESERVATION_PENDING,
-    pending: true,
-    errors: false,
   });
 }
 
@@ -197,7 +179,6 @@ export function deleteReservation(id, username) {
         dispatch({
           type: DELETE_RESERVATION,
           id,
-          pending: false,
           errors: false,
         });
       })
@@ -205,7 +186,6 @@ export function deleteReservation(id, username) {
         dispatch({
           type: DELETE_RESERVATION,
           id,
-          pending: false,
           errors: err.statusCode !== 200,
         });
       });
