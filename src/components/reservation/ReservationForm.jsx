@@ -410,7 +410,8 @@ class ReservationForm extends Component {
     const maxKidContainer = (
       <div style={style.maxKidContainer}>
         <div style={style.maxKidText}>
-          <i className="fa fa-exclamation-triangle" /> No more than 10 kids allowed!
+          <i className="fa fa-exclamation-triangle" />
+          <FormattedMessage id="form.errors.maxCapacity" />
         </div>
       </div>
     );
