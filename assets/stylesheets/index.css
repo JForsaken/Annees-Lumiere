@@ -15,4 +15,5 @@ html { box-sizing: border-box; }
 @import "errors.css";
 @import "img-gallery.scss";
 @import "annees-lumiere.scss";
+@import "loading-bar.scss";
 @import "spinner.scss";

@@ -7,12 +7,6 @@ import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { ModalContainer, ModalDialog } from 'react-modal-dialog';
 
-/* Components */
-import FieldGroup from '../common/FieldGroup';
-const RadiumButton = radium(Button);
-const RadiumRow = radium(Row);
-const RadiumForm = radium(Form);
-
 /* Utils */
 import reservationFormValidation, { fields } from './reservationFormValidation';
 import { extractReservationBody } from './helpers';
@@ -22,6 +16,14 @@ import {
   POST_RESERVATION_SUCCESS,
   POST_RESERVATION_FAILED,
 } from '../../actions/constants';
+
+
+/* Components */
+import FieldGroup from '../common/FieldGroup';
+
+const RadiumButton = radium(Button);
+const RadiumRow = radium(Row);
+const RadiumForm = radium(Form);
 
 /* Styles */
 const style = {
@@ -112,6 +114,8 @@ const style = {
   },
 
   lastButtonRowItem: {
+    width: 160,
+    height: 45,
     margin: 5,
   },
 
@@ -427,6 +431,11 @@ class ReservationForm extends Component {
       </RadiumButton>
     );
 
+
+    const submitButtonContent = samfish.reservation.pending ?
+      <div className="spinner" /> :
+      <div><i className="fa fa-paper-plane" /> <FormattedMessage id="form.submit" /></div>;
+
     return (
       <RadiumRow style={style.formContainer}>
       {this.state.isShowingModal && this.renderModal()}
@@ -509,7 +518,7 @@ class ReservationForm extends Component {
               type="submit"
               disabled={samfish.reservation.pending}
             >
-              <i className="fa fa-paper-plane" /> <FormattedMessage id="form.submit" />
+              {submitButtonContent}
             </Button>
             <Button
               style={style.lastButtonRowItem}

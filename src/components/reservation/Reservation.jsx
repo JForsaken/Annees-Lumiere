@@ -16,10 +16,17 @@ const style = {
   page: {
     overflowX: 'hidden',
     paddingTop: 50,
-    paddingRight: 35,
-    paddingLeft: 35,
+    '@media (min-width: 300px)': {
+      paddingRight: 15,
+      paddingLeft: 15,
+    },
+    '@media (min-width: 800px)': {
+      paddingRight: 35,
+      paddingLeft: 35,
+    },
   },
 };
+
 @radium
 class Reservation extends React.Component {
 
