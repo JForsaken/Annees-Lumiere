@@ -29,6 +29,12 @@ const style = {
     marginTop: 50,
   },
 
+  spinnerContainer: {
+    margin: '0, auto',
+    display: 'inline-block',
+  },
+
+
   formTitle: {
     textAlign: 'center',
   },
@@ -153,6 +159,10 @@ class Login extends Component {
       intl,
     } = this.props;
 
+    const submitButtonContent = samfish.login.pending ?
+      <div className="spinner" /> :
+      <div><i className="fa fa-paper-plane" /> {intl.messages['login.form.title']}</div>;
+
     return (
       <div style={style.formContainer}>
         {this.state.isShowingModal && this.renderModal()}
@@ -176,12 +186,13 @@ class Login extends Component {
           />
           <div style={style.formButtonContainer}>
             <Button
+              style={{ width: 150, height: 45 }}
               bsStyle="primary"
               bsSize="large"
               type="submit"
               disabled={samfish.login.pending}
             >
-              <i className="fa fa-paper-plane" /> {intl.messages['login.form.title']}
+              {submitButtonContent}
             </Button>
           </div>
         </Form>

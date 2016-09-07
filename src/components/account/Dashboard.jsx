@@ -56,7 +56,7 @@ const style = {
     },
   },
 
-  spinnerContainer: {
+  loaderContainer: {
     margin: '0, auto',
     display: 'inline-block',
     '@media (min-width: 300px)': {
@@ -198,9 +198,9 @@ class Dashboard extends Component {
     return renderedReservations;
   }
 
-  renderSpinner() {
+  renderLoader() {
     return (
-      <div style={style.spinnerContainer} className="loader" />
+      <div style={style.loaderContainer} className="loader" />
     );
   }
 
@@ -229,7 +229,7 @@ class Dashboard extends Component {
           />
         </RadiumRow>
 
-        {this.props.samfish.reservations.pending && this.renderSpinner()}
+        {this.props.samfish.reservations.pending && this.renderLoader()}
         {this.renderReservations()}
 
       </RadiumRow>

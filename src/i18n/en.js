@@ -45,7 +45,7 @@ export default {
   'form.parent': 'Parent',
   'form.kid': 'Kid',
   'form.clearValues': 'Clear values',
-  'form.removeKid': "Remove Kid",
+  'form.removeKid': 'Remove Kid',
   'form.addKid': 'Add Kid',
   'form.submit': 'Submit',
   'form.firstname': 'First name',
